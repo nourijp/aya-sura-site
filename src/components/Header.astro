@@ -1,0 +1,130 @@
+---
+const nav = [
+  { label: 'Stories & Books', href: '/books/' },
+  { label: 'Cards & Games', href: '/cards/' },
+  { label: 'Adventure Club', href: '/club/' },
+  { label: 'App', href: '/app/' },
+  { label: 'Meet Aya & Sura', href: '/characters/' },
+  { label: 'For Parents', href: '/parents/' }
+];
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">Aya &amp; Sura</a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        {nav.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn-secondary" href="https://www.ayasura.com" rel="noopener">Shop</a>
+    </div>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="visually-hidden">Menu</span>
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile" hidden>
+    <ul>
+      {nav.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+      <li><a href="/about/">About</a></li>
+    </ul>
+    <div class="mobile-nav-ctas">
+      <a class="btn btn-primary" href="/club/">Join the Adventure Club</a>
+      <a class="btn btn-secondary" href="https://www.ayasura.com" rel="noopener">Shop</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-nav');
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.hasAttribute('hidden') === false;
+    if (isOpen) {
+      menu?.setAttribute('hidden', '');
+      toggle.setAttribute('aria-expanded', 'false');
+    } else {
+      menu?.removeAttribute('hidden');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+  });
+</script>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--brand-deep);
+    margin-right: auto;
+  }
+  .primary-nav { display: none; }
+  .primary-nav ul { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
+  .primary-nav a { text-decoration: none; font-weight: 600; font-size: .95rem; }
+  .header-cta { display: none; }
+
+  .nav-toggle {
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-small);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+    position: relative;
+  }
+  .nav-toggle-bars::before { position: absolute; top: -6px; width: 20px; height: 2px; background: var(--text); }
+  .nav-toggle-bars::after { position: absolute; top: 6px; width: 20px; height: 2px; background: var(--text); }
+
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+
+  .mobile-nav {
+    border-top: 1px solid var(--line);
+    padding: 1rem clamp(1.25rem, 4vw, 3rem) 1.5rem;
+  }
+  .mobile-nav ul { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: .75rem; }
+  .mobile-nav a { text-decoration: none; font-weight: 600; }
+  .mobile-nav-ctas { display: flex; flex-direction: column; gap: .75rem; }
+
+  @media (min-width: 980px) {
+    .primary-nav { display: block; }
+    .header-cta { display: block; }
+    .nav-toggle { display: none; }
+    .mobile-nav { display: none !important; }
+  }
+</style>

@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MediaPlaceholder from '../components/MediaPlaceholder.astro';
+import UpdateForm from '../components/UpdateForm.astro';
+import { foundingClub } from '../config/commerce.ts';
+import { audience } from '../config/audience.ts';
+---
+<Layout title="Adventure Club" description="A new Aya & Sura adventure to look forward to — one story, one theme, a month of ways to play.">
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <p class="eyebrow">Aya &amp; Sura Adventure Club</p>
+        <h1>A new Aya &amp; Sura adventure to look forward to.</h1>
+        <p>Each adventure starts with a story and grows into things children can do—coloring, puzzles, games, collectibles and simple family activities. It is designed to give children more time with characters they know without giving parents another complicated curriculum to manage.</p>
+        {foundingClub.live ? (
+          <>
+            <div class="btn-row"><a class="btn btn-primary" href="#founding-offer">Join the 3-Month Founding Club</a></div>
+            <p class="muted">Three digital adventures. One upfront founding price. No automatic renewal during the pilot.</p>
+          </>
+        ) : (
+          <div class="btn-row"><a class="btn btn-primary" href="#club-updates">Get Club Updates</a></div>
+        )}
+      </div>
+      <MediaPlaceholder label="CLUB HERO — complete digital pack composite" ratio="wide" variant={1} />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>One story becomes a whole month of ways to play.</h2>
+      <p>Instead of making unrelated worksheets, we build each month's activities around one Aya &amp; Sura story and one useful theme. That keeps the experience connected for children—and lets families use as much or as little as fits their week.</p>
+      <div class="grid grid-3" style="margin-top:2rem;">
+        <div class="card"><h3>Read</h3><p class="muted">A short illustrated Aya &amp; Sura story introduces the month's adventure.</p></div>
+        <div class="card"><h3>Solve &amp; Make</h3><p class="muted">Puzzles, drawing prompts and simple activities continue the story off the page.</p></div>
+        <div class="card"><h3>Color</h3><p class="muted">Clean line-art pages let children revisit scenes and characters in their own way.</p></div>
+        <div class="card"><h3>Collect</h3><p class="muted">A card, badge or other collectible gives each adventure a place in the growing Aya &amp; Sura world.</p></div>
+        <div class="card"><h3>Talk</h3><p class="muted">A short grown-up page gives parents a few conversation prompts and one simple family activity—no lesson-plan preparation required.</p></div>
+        <div class="card"><h3>Explore</h3><p class="muted">As the app grows, selected adventures can connect to audio, badges, cards or interactive extras.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Built for school-age kids who are ready to do more on their own.</h2>
+      <p>The founding digital Club is being designed around a working range of approximately ages 6–10. Younger children may enjoy parts of it with a grown-up, while older children can read, solve, color and explore more independently. We are testing the first releases before locking the final public age range.</p>
+      <p class="tag">Working range: {audience.clubAgeLabel}</p>
+      <div class="todo-note">TODO(owner): this age range is a WORKING hypothesis, not approved for permanent production copy. See src/config/audience.ts.</div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>Muslim childhood is bigger than one subject.</h2>
+      <p>Some adventures may touch on Quran vocabulary, Ramadan, Eid or everyday Muslim habits. Others may center on friendship, patience, family, curiosity, responsibility, courage or trying again after a mistake. The goal is not to turn every story into a formal class. It is to let faith, family and growing up exist naturally in the same world.</p>
+    </div>
+  </section>
+
+  {foundingClub.live && (
+    <section id="founding-offer" class="section section--deep">
+      <div class="container">
+        <h2>Join the first three adventures.</h2>
+        <p>Founding families receive the first three digital Aya &amp; Sura Adventure Club releases as they are published. This first run is intentionally simple: one purchase, three monthly releases, and no automatic renewal. Your family's feedback will help shape what the Club becomes next.</p>
+        <p class="tag">3-Month Founding Adventure Club — {foundingClub.price}</p>
+        <ul>
+          <li>3 monthly illustrated mini-stories</li>
+          <li>3 activity packs</li>
+          <li>coloring pages</li>
+          <li>printable collectibles</li>
+          <li>parent conversation/activity pages</li>
+          <li>selected app extras when available</li>
+        </ul>
+        <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href="https://www.ayasura.com" rel="noopener">Join the Founding Club</a>
+        <p class="muted" style="color:#fff2df;">Digital product. Print at home. No automatic renewal during this founding pilot.</p>
+      </div>
+    </section>
+  )}
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>Print what you want, when you want it.</h2>
+      <p>The founding Club starts digitally so families can access each adventure immediately, reprint favorite activities and participate from anywhere without waiting for a package in the mail. We will also be learning which pieces are worth turning into ready-to-play physical mail in the future.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Could Aya &amp; Sura arrive in the mail too?</h2>
+      <p>Possibly. A future physical option could include professionally printed mini-books, cards, stickers and other lightweight surprises. The founding digital Club lets us discover which parts children actually keep, use and ask for before we manufacture them.</p>
+      <span class="btn btn-ghost" aria-disabled="true">Printed option being explored</span>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>See what a monthly adventure looks like</h2>
+      <div class="grid grid-3" style="margin-top:1.5rem;">
+        <MediaPlaceholder label="STORY SPREAD — Month 1 preview" ratio="card" variant={1} />
+        <MediaPlaceholder label="COLORING PAGE — Month 1 preview" ratio="card" variant={2} />
+        <MediaPlaceholder label="ACTIVITY PAGE — Month 1 preview" ratio="card" variant={3} />
+        <MediaPlaceholder label="COLLECTIBLE — Month 1 preview" ratio="card" variant={4} />
+        <MediaPlaceholder label="PARENT PAGE — Month 1 preview" ratio="card" variant={1} />
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section section--surface">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>Is this an Islamic curriculum?</summary>
+          <p>No. Aya &amp; Sura is a character-led story and activity experience for Muslim families. Islamic values, vocabulary and seasonal themes can appear naturally, but the Club is not intended to replace a structured Quran, Arabic or Islamic-studies curriculum.</p>
+        </details>
+        <details>
+          <summary>Does my child need to know Arabic?</summary>
+          <p>No. Arabic may appear in optional vocabulary or card activities, but families should be able to enjoy the core story and activities without studying Arabic.</p>
+        </details>
+        <details>
+          <summary>Do I need a printer?</summary>
+          <p>The founding Club is designed as a print-at-home digital product, so a printer gives you the full experience. Story pages can still be read on a screen, but many activities are intended to be printed.</p>
+        </details>
+        <details>
+          <summary>Can siblings use one membership?</summary>
+          <p>The digital pack is intended for use by children in the purchaser's household.</p>
+        </details>
+        <details>
+          <summary>Is there a monthly renewal?</summary>
+          <p>Not during the first three-month pilot. You pay once for the three founding releases. If we continue with an ongoing membership, founding families will be invited first.</p>
+        </details>
+        <details>
+          <summary>What ages is it for?</summary>
+          <p>The current working range is approximately ages 6–10. We are testing the first adventures with families before making that range permanent, because the right age depends on reading level, activity difficulty and how independently children can use the pack.</p>
+        </details>
+        <details>
+          <summary>Will every month be about Quran or Arabic?</summary>
+          <p>No. Aya &amp; Sura can explore faith, family, friendship, emotions, curiosity, responsibility and everyday life. Some months may include optional Quran or Arabic extensions, but those are not the only reason to join.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="club-updates" class="section section--deep">
+    <div class="container">
+      <h2>Be there for the beginning.</h2>
+      <p>Aya &amp; Sura has already grown from characters into physical cards, a book in development and an app. The Adventure Club is the next step: an ongoing world families can return to month after month.</p>
+      <UpdateForm heading="See what Aya & Sura builds next." body="Get updates about new stories, the Adventure Club, the book and other Aya & Sura releases." buttonLabel="Keep Me Updated" formId="club-updates-form" />
+    </div>
+  </section>
+</Layout>

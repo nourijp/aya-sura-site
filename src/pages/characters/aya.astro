@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+---
+<Layout title="Meet Aya">
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <h1>Meet Aya</h1>
+        <p>Aya brings a lot of energy into a room. She is curious, expressive and often ready to act before everyone else has finished thinking. That can lead to fun, surprises—and sometimes situations she has to work through.</p>
+      </div>
+      <MediaPlaceholder label="CHARACTER — full-body approved Aya" ratio="portrait" variant={1} />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>What makes Aya, Aya?</h2>
+      <ul>
+        <li>She gets excited quickly.</li>
+        <li>She cares deeply about the people and things she loves.</li>
+        <li>She can be impatient when something feels too slow.</li>
+        <li>She is willing to explore, ask and try.</li>
+        <li>Her confidence does not mean she always gets things right.</li>
+      </ul>
+      <div class="grid grid-3">
+        <MediaPlaceholder label="Aya expression crop 1" ratio="square" variant={2} />
+        <MediaPlaceholder label="Aya expression crop 2" ratio="square" variant={3} />
+        <MediaPlaceholder label="Aya expression crop 3" ratio="square" variant={4} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container hero hero--split">
+      <MediaPlaceholder label="SCENE — Aya and Sura sibling scene" ratio="wide" variant={2} />
+      <div>
+        <h2>Aya and Sura</h2>
+        <p>Aya's energy and Sura's more thoughtful approach do not always match, which is exactly why they make a useful pair. Their relationship gives stories room to show children that siblings can disagree, learn from each other and still remain close.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>Find Aya in</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Cards &amp; Games</h3>
+          <p class="muted">Aya appears throughout the current Aya &amp; Sura flashcard decks.</p>
+          <a class="btn btn-ghost" href="/cards/">Explore Cards &amp; Games</a>
+        </div>
+        <div class="card">
+          <h3>Giving Thanks to Allah</h3>
+          <p class="muted">Aya is part of the family story in our upcoming book, nearing completion.</p>
+          <a class="btn btn-ghost" href="/books/giving-thanks-to-allah/">See the Book</a>
+        </div>
+        <div class="card">
+          <h3>Adventure Club</h3>
+          <p class="muted">Aya is one of the anchors of every monthly Club adventure.</p>
+          <a class="btn btn-ghost" href="/club/">See the Adventure Club</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

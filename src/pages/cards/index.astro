@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+---
+<Layout title="Cards & Games">
+  <section class="section">
+    <div class="container">
+      <h1>Learn it. Hear it. Play with it.</h1>
+      <p>Aya &amp; Sura flashcards were made to be used, not simply memorized once and put away. Children can look, listen, match, quiz themselves and turn the decks into simple family games.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/cards/quran-edition/">Explore the Quran Edition</a>
+        <a class="btn btn-secondary" href="/cards/surah-edition/">Explore the Surah Edition</a>
+      </div>
+      <MediaPlaceholder label="CARDS HERO — both real deck boxes + sample cards" ratio="wide" variant={1} />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>Two decks, two starting points</h2>
+      <div class="grid grid-2" style="margin-top:1.5rem;">
+        <div class="card">
+          <h3>Aya &amp; Sura Flashcards — Quran Edition</h3>
+          <p class="muted">Build familiarity with Quran vocabulary through visual cards, listening and repeat play. Use the deck on its own, alongside the audio companion, or with simple games that make practice more active.</p>
+          <a class="btn btn-ghost" href="/cards/quran-edition/">View Quran Edition</a>
+        </div>
+        <div class="card">
+          <h3>Aya &amp; Sura Deck — Surah Edition</h3>
+          <p class="muted">Work through Al-Fatihah, Al-Ikhlas and Al-'Asr with a focused set of cards that helps children break the surahs into smaller pieces they can see, hear and revisit.</p>
+          <a class="btn btn-ghost" href="/cards/surah-edition/">View Surah Edition</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>Turn the deck into a game.</h2>
+      <div class="grid grid-4" style="margin-top:1.5rem;">
+        <div class="card"><h3>Listen &amp; Find</h3><p class="muted">Play the audio and race to find the matching card.</p></div>
+        <div class="card"><h3>Group Quiz</h3><p class="muted">Take turns drawing cards and trying the matching word or answer.</p></div>
+        <div class="card"><h3>Self Quiz</h3><p class="muted">Use one side of the card as the prompt and the other to check yourself.</p></div>
+        <div class="card"><h3>Matching &amp; Memory</h3><p class="muted">Use cards as a base for simple matching or memory-style play where appropriate.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>Hear the cards too.</h2>
+      <p>Existing Aya &amp; Sura decks include QR-linked companion resources and audio. Those resources will remain available as the website changes, so families who already own the cards can keep using what came with their purchase.</p>
+      <a class="btn btn-secondary" href="/resources/cards/">Card Audio &amp; Resources</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,5 @@
+old_url,product,printed_qr,current_http_status,current_destination,resource_type,new_route,migration,verified
+# TODO(owner): populate this inventory by inspecting the live WordPress/WooCommerce
+# site and by manually scanning every physical card/deck QR code, per
+# 12_QR_RESOURCE_COMPATIBILITY.md. Do not invent rows — leave this file empty
+# of real data until the actual inventory has been collected.

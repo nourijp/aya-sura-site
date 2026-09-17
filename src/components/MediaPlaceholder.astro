@@ -1,0 +1,104 @@
+---
+// Gradient placeholder used everywhere a real image/illustration/photo is
+// called for but not yet supplied. Never mimics a final illustration.
+interface Props {
+  label: string;
+  ratio?: 'wide' | 'square' | 'portrait' | 'card';
+  variant?: 1 | 2 | 3 | 4;
+  note?: string;
+}
+
+const { label, ratio = 'wide', variant = 1, note } = Astro.props;
+
+const ratios: Record<string, string> = {
+  wide: '16 / 9',
+  square: '1 / 1',
+  portrait: '3 / 4',
+  card: '4 / 3'
+};
+---
+
+<figure class={`media-placeholder placeholder-${variant}`} style={`--ratio:${ratios[ratio]}`}>
+  <div class="mp-inner">
+    <span class="mp-eyebrow">Image placeholder</span>
+    <p class="mp-label">{label}</p>
+    {note && <p class="mp-note">{note}</p>}
+  </div>
+  <div class="mp-blob mp-blob-a" aria-hidden="true"></div>
+  <div class="mp-blob mp-blob-b" aria-hidden="true"></div>
+</figure>
+
+<style>
+  .media-placeholder {
+    position: relative;
+    margin: 0;
+    aspect-ratio: var(--ratio);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+  }
+
+  .placeholder-1 {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,.72), transparent 28%),
+      linear-gradient(135deg, #f7c86a 0%, #ef8e67 52%, #d9747a 100%);
+  }
+  .placeholder-2 {
+    background:
+      radial-gradient(circle at 75% 25%, rgba(255,255,255,.55), transparent 25%),
+      linear-gradient(135deg, #8fc6c8 0%, #b7d6c6 50%, #f2d58a 100%);
+  }
+  .placeholder-3 {
+    background: linear-gradient(135deg, #f5c1ba, #f6dc9b 48%, #9ac4bd);
+  }
+  .placeholder-4 {
+    background: linear-gradient(145deg, #7ea9bb, #bba9cf 52%, #efb188);
+  }
+
+  .mp-blob {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,.18);
+    z-index: 0;
+  }
+  .mp-blob-a { width: 40%; aspect-ratio: 1; top: -10%; right: -8%; }
+  .mp-blob-b { width: 26%; aspect-ratio: 1; bottom: -12%; left: 6%; }
+
+  .mp-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    text-align: center;
+    background: rgba(255,255,255,.82);
+    border-radius: var(--radius-small);
+    padding: 1rem 1.25rem;
+    backdrop-filter: blur(2px);
+  }
+
+  .mp-eyebrow {
+    display: block;
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 700;
+    color: #7a4620;
+    margin-bottom: .35rem;
+  }
+
+  .mp-label {
+    margin: 0;
+    font-weight: 700;
+    color: #27231f;
+    font-size: .95rem;
+    line-height: 1.3;
+  }
+
+  .mp-note {
+    margin: .35rem 0 0;
+    font-size: .78rem;
+    color: #57504a;
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { commerce, foundingClub } from '../config/commerce.ts';
+---
+<Layout title="Shop">
+  <section class="section">
+    <div class="container">
+      <h1>Shop Aya &amp; Sura</h1>
+      <p>Start with the products that are available now, then follow the world as new stories, digital adventures and books are added.</p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>Cards &amp; Games</h2>
+      <div class="grid grid-2" style="margin-top:1.5rem;">
+        <div class="card">
+          <h3>Aya &amp; Sura Flashcards — Quran Edition</h3>
+          <p class="muted">Visual vocabulary practice with companion audio and multiple ways to play.</p>
+          <a class="btn btn-primary" href={commerce.quranDeck} rel="noopener">Buy from the Aya &amp; Sura Shop</a>
+        </div>
+        <div class="card">
+          <h3>Aya &amp; Sura Deck — Surah Edition</h3>
+          <p class="muted">A focused card set built around Al-Fatihah, Al-Ikhlas and Al-'Asr.</p>
+          <a class="btn btn-primary" href={commerce.surahDeck} rel="noopener">Buy from the Aya &amp; Sura Shop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>Aya &amp; Sura Adventure Club</h2>
+      <p>New illustrated stories and print-at-home activities designed as an ongoing experience rather than another piece of inventory.</p>
+      {foundingClub.live ? (
+        <a class="btn btn-primary" href="/club/">Join the Founding Club</a>
+      ) : (
+        <a class="btn btn-secondary" href="/club/">See What's Coming</a>
+      )}
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>Giving Thanks to Allah</h2>
+      <p>A new illustrated Aya &amp; Sura children's book about family and gratitude is nearing completion.</p>
+      <a class="btn btn-secondary" href="/books/giving-thanks-to-allah/">Get Book Updates</a>
+    </div>
+  </section>
+</Layout>

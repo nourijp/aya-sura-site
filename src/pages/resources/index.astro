@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Resources">
+  <section class="section">
+    <div class="container">
+      <h1>Resources</h1>
+      <p>This hub holds resources that need to stay reachable no matter how the rest of the site changes — most importantly, the audio and companion material linked from QR codes printed on physical Aya &amp; Sura decks.</p>
+      <div class="grid grid-2" style="margin-top:1.5rem;">
+        <div class="card">
+          <h3>Card Audio &amp; Resources</h3>
+          <p class="muted">Listen, practice and find game ideas for your Aya &amp; Sura deck.</p>
+          <a class="btn btn-ghost" href="/resources/cards/">Open Card Resources</a>
+        </div>
+        <div class="card">
+          <h3>Shipping &amp; Returns</h3>
+          <p class="muted">Shipping and returns are handled through the existing Aya &amp; Sura shop.</p>
+          <a class="btn btn-ghost" href="https://www.ayasura.com" rel="noopener">Visit the Shop</a>
+        </div>
+      </div>
+      <div class="todo-note">
+        TODO(owner): the full legacy QR/URL inventory has not yet been supplied. See migration/legacy-url-inventory.csv and public/_redirects — do not treat this page as a complete migration until that inventory is filled in and every printed QR has been tested per 12_QR_RESOURCE_COMPATIBILITY.md.
+      </div>
+    </div>
+  </section>
+</Layout>

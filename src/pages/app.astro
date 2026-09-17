@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MediaPlaceholder from '../components/MediaPlaceholder.astro';
+import UpdateForm from '../components/UpdateForm.astro';
+import { app as appConfig } from '../config/commerce.ts';
+
+const ctaLabel = appConfig.status === 'live' ? 'Get the App' : appConfig.status === 'beta' ? 'Join the App Beta' : 'Get App Updates';
+---
+<Layout title="The Aya & Sura App">
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <h1>Aya &amp; Sura, beyond the page.</h1>
+        <p>The Aya &amp; Sura app is being built as the digital side of the same character world—connecting learning, audio, stories and play without turning the rest of the brand into a screen-only experience.</p>
+        {appConfig.status === 'live' && appConfig.storeUrl ? (
+          <a class="btn btn-primary" href={appConfig.storeUrl} rel="noopener">{ctaLabel}</a>
+        ) : (
+          <div class="btn-row"><a class="btn btn-primary" href="#app-updates">{ctaLabel}</a></div>
+        )}
+      </div>
+      <MediaPlaceholder label="APP HERO — actual current app home screen inside device frame" ratio="portrait" variant={4} />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>One world, different ways to use it</h2>
+      <p>Physical cards can lead to audio. Stories can lead to activities. Club adventures can eventually unlock digital extras. The goal is for the app to support Aya &amp; Sura products rather than exist as a completely separate brand.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-4">
+        <div class="card"><span class="tag">Planned</span><h3>Listen</h3><p class="muted">Use audio alongside Aya &amp; Sura learning content and physical cards.</p></div>
+        <div class="card"><span class="tag">Planned</span><h3>Explore Cards</h3><p class="muted">Practice familiar content in a digital format when it makes sense.</p></div>
+        <div class="card"><span class="tag">Planned</span><h3>Stories</h3><p class="muted">Bring selected Aya &amp; Sura adventures into the app for reading or listening.</p></div>
+        <div class="card"><span class="tag">Planned</span><h3>Collect</h3><p class="muted">Future Club adventures can connect to badges, cards or digital extras.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>The cards do not stop working when the website changes.</h2>
+      <p>Existing Aya &amp; Sura flashcards include QR-linked companion resources. Those links and audio are part of the product and will remain supported while the site and app evolve.</p>
+      <a class="btn btn-secondary" href="/resources/cards/">Card Audio &amp; Resources</a>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>Built to complement screen-free play</h2>
+      <p>Aya &amp; Sura does not need every activity to happen on a device. The app can handle the things a screen does well—audio, interaction, progress and portable access—while books, cards, coloring and family activities stay physical when that experience is better.</p>
+      <div class="todo-note">Parent trust details (age guidance, ads policy, account requirements, purchases, data/privacy) to be added only once verified against the actual app build — do not invent.</div>
+    </div>
+  </section>
+
+  <section id="app-updates" class="section section--deep">
+    <div class="container">
+      <h2>Follow the app as it grows.</h2>
+      <p>The app is one piece of the Aya &amp; Sura world. As the physical and digital products grow, the goal is to make them feel connected rather than scattered across separate experiences.</p>
+      <UpdateForm heading="See what Aya & Sura builds next." body="Get updates about new stories, the Adventure Club, the book and other Aya & Sura releases." buttonLabel="Keep Me Updated" formId="app-updates-form" />
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,14 @@
+# Cloudflare Pages redirects file.
+#
+# TODO(owner): this is a TEMPLATE ONLY. Real legacy QR/audio URLs printed on
+# physical Aya & Sura decks must be inventoried from the live WordPress site
+# (see migration/legacy-url-inventory.csv) and mapped here BEFORE production
+# cutover. Do not invent real legacy paths — the examples below are
+# illustrative placeholders showing the pattern only.
+#
+# Format:
+# /old-path/  /new-path/  301
+
+# EXAMPLE (placeholder — replace with real inventoried QR paths):
+# /qr/quran-audio/         /resources/cards/quran-edition/   301
+# /qr/surah-audio/         /resources/cards/surah-edition/   301

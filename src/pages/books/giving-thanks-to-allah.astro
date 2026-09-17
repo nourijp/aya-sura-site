@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+import UpdateForm from '../../components/UpdateForm.astro';
+import { book } from '../../config/commerce.ts';
+---
+<Layout title="Giving Thanks to Allah">
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <h1>Giving Thanks to Allah</h1>
+        <p class="eyebrow" style="margin-top:0;">An Aya &amp; Sura story about family, gratitude and the little moments worth noticing.</p>
+        <p>A day with Aya and Sura moves from play and anticipation into imagination and rest, with Mommy, Daddy and Poji nearby. Through the rhythm of an ordinary family day, the story creates room for a simple idea children can understand: gratitude can be part of the moments we already have.</p>
+      </div>
+      <MediaPlaceholder label="BOOK COVER — Giving Thanks to Allah final cover" ratio="portrait" variant={3} />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>Made for reading together</h2>
+      <p>The book is designed as an illustrated family read rather than a textbook or formal lesson. The characters, rhythm and pictures carry the experience first, while the theme gives parents something natural to talk about afterward if they want to.</p>
+
+      <h2>Look inside</h2>
+      <div class="grid grid-3">
+        <MediaPlaceholder label="INTERIOR SPREAD 1" ratio="card" variant={1} />
+        <MediaPlaceholder label="INTERIOR SPREAD 2" ratio="card" variant={2} />
+        <MediaPlaceholder label="INTERIOR SPREAD 3" ratio="card" variant={4} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      {book.status === 'coming-soon' && (
+        <>
+          <h2>Coming soon</h2>
+          <p>The story is nearing completion. Join the update list to hear when printing and ordering are ready.</p>
+          <UpdateForm heading="Get Book Updates" body="Coming soon — join the book update list." buttonLabel="Get Book Updates" formId="book-updates-form" />
+        </>
+      )}
+      {book.status === 'pod-live' && book.orderUrl && (
+        <>
+          <h2>Order the Book</h2>
+          <p>{book.price}</p>
+          <a class="btn btn-primary" href={book.orderUrl} rel="noopener">Order the Book</a>
+        </>
+      )}
+      {book.status === 'crowdfunding' && book.orderUrl && (
+        <>
+          <h2>Support the Campaign</h2>
+          <p class="muted">This is a preorder/campaign, not immediately shipping inventory.</p>
+          <a class="btn btn-primary" href={book.orderUrl} rel="noopener">View the Campaign</a>
+        </>
+      )}
+    </div>
+  </section>
+</Layout>

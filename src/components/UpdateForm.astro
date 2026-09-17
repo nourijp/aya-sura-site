@@ -1,0 +1,38 @@
+---
+// Integration-ready mockup form (per 15_FORMS_EMAIL_AND_ANALYTICS.md).
+// Not wired to a real email service in staging.
+interface Props {
+  heading: string;
+  body: string;
+  buttonLabel: string;
+  formId?: string;
+}
+const { heading, body, buttonLabel, formId = 'update-form' } = Astro.props;
+---
+<div class="update-form card">
+  <h3>{heading}</h3>
+  <p class="muted">{body}</p>
+  <form id={formId} data-mock="true" onsubmit="event.preventDefault(); this.querySelector('[data-status]').textContent='Thanks — this staging form is not yet connected to a live list.';">
+    <label class="visually-hidden" for={`${formId}-email`}>Email address</label>
+    <div class="update-form-row">
+      <input id={`${formId}-email`} type="email" name="email" placeholder="you@example.com" required />
+      <button class="btn btn-primary" type="submit">{buttonLabel}</button>
+    </div>
+    <p data-status class="muted" style="font-size:.85rem;margin-top:.5rem;"></p>
+  </form>
+</div>
+
+<style>
+  .update-form-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+  input[type="email"] {
+    flex: 1 1 220px;
+    padding: .8em 1em;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    font-size: 1rem;
+  }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+</style>

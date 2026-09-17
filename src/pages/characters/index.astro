@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+---
+<Layout title="Meet Aya & Sura">
+  <section class="section">
+    <div class="container">
+      <h1>Meet the Aya &amp; Sura world</h1>
+      <p>Aya and Sura are siblings, which means they can be teammates one minute and completely disagree the next. Their differences give stories room for humor, mistakes, questions and growth. Poji—the little lion doll who is rarely far from Aya—comes along for the ride. As the world expands, more friends and familiar faces can join them.</p>
+      <div class="grid grid-3" style="margin-top:2rem;">
+        <div class="card">
+          <MediaPlaceholder label="CHARACTER — Aya full-body approved art" ratio="portrait" variant={1} />
+          <h3>Aya</h3>
+          <p class="muted">Energetic, expressive and often the first to jump into an idea.</p>
+          <a class="btn btn-ghost" href="/characters/aya/">Meet Aya</a>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="CHARACTER — Sura full-body approved art" ratio="portrait" variant={2} />
+          <h3>Sura</h3>
+          <p class="muted">Thoughtful, observant and more likely to stop and think before jumping in.</p>
+          <a class="btn btn-ghost" href="/characters/sura/">Meet Sura</a>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="CHARACTER — Poji approved art" ratio="portrait" variant={3} />
+          <h3>Poji</h3>
+          <p class="muted">Aya's little lion doll and a constant companion in the Aya &amp; Sura world.</p>
+          <a class="btn btn-ghost" href="/characters/poji/">Meet Poji</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>The world can keep growing.</h2>
+      <p>Aya &amp; Sura is not built around a single one-off story. New friends, family members and guest characters can appear across books, activities and future adventures while Aya and Sura remain at the center.</p>
+      <MediaPlaceholder label="FUTURE CAST — leave as tasteful placeholder until approved characters are selected" ratio="wide" variant={4} />
+    </div>
+  </section>
+</Layout>

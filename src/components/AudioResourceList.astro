@@ -1,0 +1,55 @@
+---
+interface AudioEntry {
+  title: string;
+  arabic?: string;
+  src?: string | null; // path under public/audio/legacy, null while unmigrated
+  cardNumber?: string;
+}
+interface Props {
+  entries: AudioEntry[];
+}
+const { entries } = Astro.props;
+---
+
+<ul class="audio-list">
+  {entries.map((e) => (
+    <li class="audio-item">
+      <div class="audio-meta">
+        <p class="audio-title">
+          {e.cardNumber && <span class="tag">{e.cardNumber}</span>}{' '}
+          {e.title}
+        </p>
+        {e.arabic && <p class="audio-arabic" lang="ar" dir="rtl">{e.arabic}</p>}
+      </div>
+      {e.src ? (
+        <div class="audio-controls">
+          <audio controls preload="none" src={e.src}>
+            Your browser does not support the audio element. <a href={e.src}>Download the audio file</a>.
+          </audio>
+          <a class="btn btn-ghost" href={e.src} download>Download</a>
+        </div>
+      ) : (
+        <p class="todo-note">TODO: audio file not yet migrated — see migration/legacy-url-inventory.csv</p>
+      )}
+    </li>
+  ))}
+</ul>
+
+<style>
+  .audio-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
+  .audio-item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-small);
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+  }
+  .audio-title { margin: 0; font-weight: 700; }
+  .audio-arabic { margin: .25rem 0 0; font-size: 1.1rem; }
+  .audio-controls { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+  audio { max-width: 240px; }
+</style>

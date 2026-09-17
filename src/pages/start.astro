@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MediaPlaceholder from '../components/MediaPlaceholder.astro';
+---
+<Layout title="Start Here" description="A simple, calm place to start — for adults new to Islam or returning to learning.">
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <p class="eyebrow">A Simple Place to Start</p>
+        <h1>Islam can feel like a lot at once. Start with one thing at a time.</h1>
+        <p>If you are new to Islam, returning to learning, or simply curious, this section is designed to make a few basic ideas easier to approach through clear language, visual examples and audio. You do not need to learn everything at once.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#start-small">Start With the Basics</a>
+          <a class="btn btn-secondary" href="#start-small">Explore Quran Vocabulary</a>
+        </div>
+      </div>
+      <MediaPlaceholder label="ADULT START PAGE — calm visual with cards / audio / simple guide; avoid childlike composition" ratio="wide" variant={4} />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>A simple learning path—not a replacement for a teacher or community.</h2>
+      <p>Aya &amp; Sura began as a children's character world, but some of the same visual tools can also make unfamiliar words and concepts easier for adults to remember. This section collects those tools in a calmer, adult-oriented format.</p>
+      <p>For detailed religious rulings, personal questions or areas where Muslim communities differ, we will point you toward qualified sources rather than pretending a short web page can answer everything.</p>
+    </div>
+  </section>
+
+  <section id="start-small" class="section section--soft">
+    <div class="container">
+      <h2>Choose one place to begin.</h2>
+      <div class="grid grid-4" style="margin-top:1.5rem;">
+        <div class="card">
+          <h3>Everyday Words</h3>
+          <p class="muted">Learn a few words and phrases you are likely to hear regularly, with clear definitions and audio where available.</p>
+          <a class="btn btn-ghost" href="/resources/cards/">Everyday Words</a>
+        </div>
+        <div class="card">
+          <h3>Quran Vocabulary</h3>
+          <p class="muted">Use visual cards and audio to become familiar with recurring Quran words without turning the experience into a full language course.</p>
+          <a class="btn btn-ghost" href="/cards/quran-edition/">Quran Vocabulary</a>
+        </div>
+        <div class="card">
+          <h3>Muslim Calendar</h3>
+          <p class="muted">A simple introduction to Ramadan, Eid and other common terms you may encounter.</p>
+          <a class="btn btn-ghost" aria-disabled="true" href="#">Explore the Calendar</a>
+        </div>
+        <div class="card">
+          <h3>What Happens at the Mosque?</h3>
+          <p class="muted">A plain-language orientation to common spaces, words and expectations so a first visit feels less unfamiliar.</p>
+          <a class="btn btn-ghost" aria-disabled="true" href="#">Mosque Basics</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:1rem;">Only sections with real content are linked; the rest are shown as coming soon rather than dead ends.</p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>Already have Aya &amp; Sura cards?</h2>
+      <p>The physical cards include QR-linked audio and supporting material. Adults can use the same resources for visual vocabulary practice, listening and repetition even though the cards were originally designed with families in mind.</p>
+      <a class="btn btn-secondary" href="/resources/cards/">Open Card Audio &amp; Resources</a>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>You do not need a giant course on day one.</h2>
+      <p>Start with a few useful words. Listen again. Save what helps. Come back when you are ready for the next topic. The goal is to make the first steps clearer, not to make your learning feel like another overwhelming checklist.</p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>Is this an Islamic studies course?</summary>
+          <p>No. It is an introductory visual resource and learning pathway. More detailed study should use qualified teachers and sources appropriate to the subject.</p>
+        </details>
+        <details>
+          <summary>Is this only for new Muslims?</summary>
+          <p>No. It can also help anyone who wants a simple refresher or visual introduction to common terms.</p>
+        </details>
+        <details>
+          <summary>Why are Aya &amp; Sura characters here?</summary>
+          <p>The characters and visual system make it possible to reuse clear illustrations, cards and audio resources across different kinds of learning. The adult section uses those tools with a more mature presentation and tone.</p>
+        </details>
+        <details>
+          <summary>Will this tell me exactly how to practice every part of Islam?</summary>
+          <p>No. Detailed practices and rulings can require context and may differ across schools of thought. The goal here is to explain common basics clearly and point to deeper learning where needed.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep">
+    <div class="container">
+      <h2>Start with what feels useful today.</h2>
+      <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href="#start-small">Explore the Basics</a>
+    </div>
+  </section>
+</Layout>

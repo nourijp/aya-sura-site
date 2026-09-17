@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+import { commerce } from '../../config/commerce.ts';
+---
+<Layout title="Flashcards — Quran Edition">
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <h1>Aya &amp; Sura Flashcards — Quran Edition</h1>
+        <p>A visual, hands-on way for children to build familiarity with Quran vocabulary through cards, listening and play.</p>
+        <a class="btn btn-primary" href={commerce.quranDeck} rel="noopener">Buy the Quran Edition — {commerce.quranDeckPrice}</a>
+      </div>
+      <MediaPlaceholder label="PRODUCT PHOTO — Quran Edition deck + cards spread" ratio="card" variant={1} />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <h2>What makes the deck useful</h2>
+      <p>Children do not all learn by sitting with a workbook. Cards make it easy to practice in short bursts, repeat a word without turning it into a long lesson, and use the same material in several different games.</p>
+
+      <h2>Use it your way</h2>
+      <ul>
+        <li>Look through the deck together.</li>
+        <li>Use the audio companion to listen and find.</li>
+        <li>Quiz from one side to the other.</li>
+        <li>Play with siblings or friends.</li>
+        <li>Return to a few cards at a time instead of trying to master everything at once.</li>
+      </ul>
+
+      <h2>Audio included through the companion resources</h2>
+      <p>Scan the QR resource included with the deck to access the companion material. Existing QR links will continue to be supported as AyaSura.com is updated.</p>
+      <a class="btn btn-ghost" href="/resources/cards/quran-edition/">Open Quran Edition Resources</a>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <a class="btn btn-primary" href={commerce.quranDeck} rel="noopener">Buy the Quran Edition — {commerce.quranDeckPrice}</a>
+      <p class="muted" style="margin-top:1rem;">Links to the current WooCommerce store during the staging transition.</p>
+      <div class="todo-note">
+        DETAIL TO CONFIRM (owner, do not invent): exact card count, card dimensions, materials/finish, box dimensions, exact vocabulary scope, recommended age, country of manufacture.
+      </div>
+    </div>
+  </section>
+</Layout>

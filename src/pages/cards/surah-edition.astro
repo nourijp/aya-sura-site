@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+import { commerce } from '../../config/commerce.ts';
+---
+<Layout title="Deck — Surah Edition">
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <h1>Aya &amp; Sura Deck — Surah Edition</h1>
+        <p>A focused card deck designed around three short surahs: Al-Fatihah, Al-Ikhlas and Al-'Asr.</p>
+        <a class="btn btn-primary" href={commerce.surahDeck} rel="noopener">Buy the Surah Edition — {commerce.surahDeckPrice}</a>
+      </div>
+      <MediaPlaceholder label="PRODUCT PHOTO — Surah Edition deck + cards spread" ratio="card" variant={2} />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <p>The Surah Edition gives families a visual way to revisit the words and structure of these surahs in smaller pieces. Pair the cards with the companion audio, use them for quick practice, or turn them into a game.</p>
+
+      <h2>Included surahs</h2>
+      <ul>
+        <li>Al-Fatihah</li>
+        <li>Al-Ikhlas</li>
+        <li>Al-'Asr</li>
+      </ul>
+
+      <h2>Practice without making every session a lesson</h2>
+      <p>Pull out a few cards. Listen. Match. Try again later. The deck is flexible enough to use for a short family activity or as a supplement to more structured Quran learning.</p>
+      <a class="btn btn-ghost" href="/resources/cards/surah-edition/">Open Surah Edition Resources</a>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <a class="btn btn-primary" href={commerce.surahDeck} rel="noopener">Buy the Surah Edition — {commerce.surahDeckPrice}</a>
+    </div>
+  </section>
+</Layout>

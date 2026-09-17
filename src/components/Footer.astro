@@ -1,0 +1,81 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <p class="brand-name">Aya &amp; Sura</p>
+      <p class="muted">Stories, games, activities and adventures created for Muslim kids.</p>
+    </div>
+
+    <nav aria-label="Explore">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/books/">Stories &amp; Books</a></li>
+        <li><a href="/cards/">Cards &amp; Games</a></li>
+        <li><a href="/club/">Adventure Club</a></li>
+        <li><a href="/app/">App</a></li>
+        <li><a href="/characters/">Meet the Characters</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="For Grown-Ups">
+      <h4>For Grown-Ups</h4>
+      <ul>
+        <li><a href="/parents/">For Parents</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/feedback/">Contact</a></li>
+        <li><a href="/club/#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Shop and Help">
+      <h4>Shop &amp; Help</h4>
+      <ul>
+        <li><a href="https://www.ayasura.com" rel="noopener">Shop</a></li>
+        <li><a href="/resources/">Shipping &amp; Returns</a></li>
+        <li><a href="/resources/cards/">Card Audio &amp; Resources</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <p class="muted">&copy; {year} Aya &amp; Sura, LLC. All rights reserved.</p>
+    <a class="muted" href="/start/">New to Islam? Start Here</a>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    padding: clamp(2rem, 5vw, 3.5rem) 0 1.5rem;
+  }
+  .footer-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--brand-deep);
+    margin: 0 0 .5rem;
+  }
+  h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 1rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+  a { text-decoration: none; }
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-size: .85rem;
+  }
+</style>

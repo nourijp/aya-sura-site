@@ -169,3 +169,96 @@ from the UI, and check items off as the owner resolves them.
   - [ ] Automated link-check script (see `README.md` for a manual
       alternative already run for this pass).
   - [ ] CI wiring for the "no debug text in rendered HTML" scan.
+
+## Launch-readiness checklist (v13 pass, against pasted external audit)
+
+Checked current repo state item-by-item before changing anything; only
+fixed what was actually still broken as of the v12 commit.
+
+1. Naming ("Founding Adventure Club" → "Aya & Sura Adventure Club" /
+   "Founding Season"): PASS — no stragglers in visible copy; fixed one
+   stray code comment in `src/config/commerce.ts`.
+2. Homepage hero "Open Card Audio & Resources" link: PASS — already
+   moved to the Cards section, not in the hero.
+3. Adventure Club overcommitment on printable cards: FIXED — reworded
+   "Printable collectible cards" to "Bonus printable extras... vary by
+   issue, not guaranteed every month" in `adventure-club.astro`,
+   homepage feature card, and `checkout-preview.astro`.
+4. Adventure Club ~16-page / 4-8 story-page description: PASS — present
+   and concrete in the "What's included each month" section.
+5. Card Audio & Resources fake content: PASS — `AudioResourceList.astro`
+   shows an honest "Audio coming soon for this card" state, not
+   fabricated sample entries.
+6. App page PLANNED badges / false Stories-in-app implication: PASS —
+   honest "The app is in development" section fully replaces any
+   roadmap-card treatment; no PLANNED badges found.
+7. Characters page Poji grid bug / future-cast placeholder: PASS — Poji
+   renders in a normal card, not oversized; no future-cast block exists
+   (explicit code comment documents why).
+8. Character-model consistency claim (hijab/hair-color): NOT ACTIONED
+   per instructions — this claim is unverified and appears to conflict
+   with the owner's own source art (green hijab on Aya, brown hair on
+   Sura, consistent across all "Aya & Sura Brand Resources" and
+   flashcard illustration assets, including the approved logo). Needs
+   owner confirmation before any character redesign is considered.
+9. Aya's page gradient "expression crop" placeholders: PASS — already
+   removed with an explanatory code comment; page reads as complete as
+   Sura's.
+10. About page startup-y tone: FIXED — closing CTA "Come see what we
+    build next" reworded to "Join a world that keeps growing" with body
+    copy reframed around existing products; H1 and "Explore Aya & Sura
+    today" section were already fixed in v12.
+11. For Parents H1 + consecutive text-only sections: FIXED — H1 changed
+    to "What Aya & Sura is designed to give your child"; added a
+    MediaPlaceholder to break up a run of 5 consecutive text-only
+    sections.
+12. Free Starter Pack polish: PASS — corner-mascot removal and dark
+    `.free-pack.card` background fix (this session, earlier) both still
+    in place; top padding on the hero already clears the sticky header.
+    FIXED — added a MediaPlaceholder showing pack contents (previously
+    text-only with no visual).
+13. FAQ architecture: PASS — `/faq/` is the global FAQ; Adventure Club
+    page kept too many (9) club FAQ entries — FIXED, trimmed to 6
+    club-specific questions plus "See all FAQs" link.
+14. Privacy/Terms real content: PASS — both pages render substantive,
+    staging-appropriate content (72/89 lines respectively).
+15. Contact page: PASS — `/contact/` exists, covers the expected
+    categories, has a working preview-mode confirmation flow.
+16. Forms behavior (Free Starter Pack, Contact, feedback): PASS — all
+    three show a real submit → visible confirmation flow wired to
+    `FORM_MODE`/`EMAIL_MODE`.
+17. Adventure Club purchase path + Month 1 timing: PASS — routes
+    resolve correctly (Home → Adventure Club → Join anchor → Checkout
+    Preview), "about 14 days after enrollment" language present.
+18. Digital fulfillment plain-language description: FIXED — added a
+    "What happens after you purchase" block to `checkout-preview.astro`
+    describing entitlement email → Month 1 delivery in plain language.
+19. Cards & Games pages (`/cards/`, quran-edition, surah-edition): PASS
+    — each has pricing, working Buy CTA to WooCommerce via
+    `src/config/commerce.ts`, how-to-use content, QR/audio explanation,
+    and a link to the matching resources/audio page.
+20. Checkout-preview naming/plan summary: PASS — uses "Aya & Sura
+    Adventure Club — Founding Season," $24.99 total, one-time payment,
+    no auto-renewal, ~14-day Month 1 timing, "Payment disabled in local
+    staging" button.
+
+### Technical checklist spot-check
+- Mobile/tablet layout spot-check (homepage, Adventure Club, For
+  Parents, Characters): no obvious breakage observed in markup/grid
+  classes used (existing responsive grid utilities); a full device-lab
+  pass is DEFERRED (visual-only tool checks were not run this session).
+- Custom `404.astro`: PASS — exists, builds correctly.
+- FAQ `<details>/<summary>` keyboard operability: PASS — native
+  elements, nothing intercepts focus/click.
+- Meaningful `alt` text on real images added this session: PASS —
+  spot-checked (`aya-meet-scene.jpg`, `sura-solo.png`, `aya-sura-prayer.png`,
+  `aya-quran.png`) — all descriptive, not filenames.
+- Unique `<title>`/meta description per page: PASS — spot-checked
+  `Layout.astro` usage across a sample of pages.
+- Site-wide `noindex,nofollow`: PASS — present in `Layout.astro`.
+- OUT OF SCOPE / DEFERRED as instructed: full Lighthouse/performance
+  audits, real checkout/tax/shipping testing, real QR scans, OG/share-
+  image work.
+
+`npm run build` succeeds (31 pages) and `scripts/check-links.mjs`
+postbuild check passes with no dead/empty/unresolved links.

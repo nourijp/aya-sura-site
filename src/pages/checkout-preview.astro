@@ -15,10 +15,15 @@ import { routes } from '../config/routes.ts';
         <p style="font-size:1.8rem;font-weight:800;color:var(--brand-deep);margin:.5rem 0;">${business.foundingPrice.toFixed(2)} total <span style="font-size:1rem;font-weight:600;color:var(--muted);">one-time payment</span></p>
         <ul>
           <li>3 monthly digital Aya &amp; Sura Adventure releases</li>
-          <li>Story, activities, coloring pages and printable collectibles each month</li>
+          <li>Story, activities, coloring pages and bonus printable extras (varies by issue) each month</li>
           <li>Month 1 arrives about {business.foundingDeliveryDelayDays} days after enrollment closes; Months 2 and 3 arrive monthly after that</li>
           <li>No automatic renewal</li>
         </ul>
+      </div>
+
+      <div class="card" style="max-width:520px;margin-top:1.5rem;background:#fff4e6;border-color:var(--brand-deep);">
+        <h3>What happens after you purchase</h3>
+        <p class="muted">Once payment is complete, you'll receive an email confirming your Founding Season enrollment and entitlement. Month 1 is delivered to that email about {business.foundingDeliveryDelayDays} days after enrollment closes, with Months 2 and 3 following monthly. No account setup is required.</p>
       </div>
 
       <div class="card" style="max-width:520px;margin-top:1.5rem;background:#fff4e6;border-color:var(--brand-deep);">

@@ -14,7 +14,7 @@ export const commerce = {
   surahDeckPrice: '$19.99'
 };
 
-// Founding Adventure Club offer — see src/config/business.ts for the
+// Aya & Sura Adventure Club — Founding Season offer — see src/config/business.ts for the
 // authoritative launch-state/price/checkout config (v10). This flag now
 // simply mirrors that state for older call sites.
 import { business } from './business.ts';

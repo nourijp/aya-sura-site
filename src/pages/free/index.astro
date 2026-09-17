@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
 import FreeStarterPack from '../../components/FreeStarterPack.astro';
 import { routes } from '../../config/routes.ts';
 ---
@@ -11,6 +12,7 @@ import { routes } from '../../config/routes.ts';
         <h1>Not ready to join yet? Start with a free Aya &amp; Sura pack.</h1>
         <p>Get a short story, coloring pages, a simple activity and sample printable cards delivered to your inbox. Confirm your email once, then the pack is yours.</p>
       </div>
+      <MediaPlaceholder label="FREE PACK — story page + coloring page + activity + sample cards composite" ratio="wide" variant={2} />
     </div>
   </section>
   <section class="section section--deep">

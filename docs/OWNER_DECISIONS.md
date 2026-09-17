@@ -263,6 +263,126 @@ fixed what was actually still broken as of the v12 commit.
 `npm run build` succeeds (31 pages) and `scripts/check-links.mjs`
 postbuild check passes with no dead/empty/unresolved links.
 
+## Launch-hardening pass (v14, September 2026) — against a real external audit
+
+Copy tightening + fixing a couple of broken/misleading destinations. Not a
+redesign. Two decisions were treated as final and not relitigated: Founding
+Season stays $24.99 everywhere, and App/`/start/` are hidden per below.
+
+### Fixed this pass
+- **Owner decision — App hidden from top nav / `/start/` hidden behind a
+  flag**: `business.adultStartEnabled = false` added to
+  `src/config/business.ts`. `src/pages/start.astro` now 302-redirects to `/`
+  when the flag is off (confirmed in `dist/start/index.html` — a real
+  redirect page, not the adult-learning content). `Footer.astro` only
+  renders the "New to Islam? Start Here" link when the flag is true. `App`
+  removed from `Header.astro` top nav (desktop + mobile); it remains a
+  footer-only link and its own `/app/` page is untouched.
+- Homepage nav reordered (Stories | Cards & Games | Adventure Club |
+  Characters | For Parents); header CTA now shows a ghost "Shop" link next
+  to a primary "Join Adventure Club" button instead of Shop being the sole/
+  primary CTA.
+- Homepage hero: added the "Founding Season · 3 monthly digital Adventures
+  · $24.99 total" line under the primary CTA; button copy aligned to
+  "Explore the Adventure Club" / "Meet the Characters".
+- Adventure Club page + homepage feature card + Poji page + Books page:
+  removed remaining "collectibles" wording, standardized on "bonus
+  printable extras that can vary by issue"; H1 changed to lead with the
+  customer benefit ("Give them a new Aya & Sura adventure..."); "story or
+  comic" → "illustrated story (picture-book style, 4–8 pages)"; timeline
+  copy now says exact dates aren't set yet and will be in the enrollment
+  email, instead of implying a calendar exists.
+- Free Starter Pack renamed to "Free Aya & Sura Adventure Sampler"
+  throughout (`FreeStarterPack.astro`, `/free/`, `/free/check-your-email/`,
+  `/free/confirmed-preview/`, `/free/starter-pack-preview/`, Footer) —
+  route paths unchanged. Removed "sample printable cards" wording (implied
+  card production); component now describes a story preview + one coloring
+  page + one story-connected activity. Deduplicated `/free/` — the hero
+  section repeated the same heading/paragraph the `FreeStarterPack`
+  component renders right below it; the hero now just shows the composite
+  image.
+- `FreeStarterPack.astro` generalized with `eyebrow`/`heading`/`body`/
+  `successHref`/`successMessage` props so other pages can reuse the same
+  Brevo-preview flow instead of building new mailing UI.
+- Giving Thanks to Allah book page: replaced the generic mock `UpdateForm`
+  interest CTA with `FreeStarterPack` (`formId="book-updates-form"`,
+  "Tell Me When the Book Is Ready" button, inline success message instead
+  of redirecting to the Adventure Sampler confirmation page).
+- Stories/Books page: removed "being built" / "not planned as a one-book
+  company" hedges in favor of direct statements; removed the remaining
+  "collectibles" mention in the monthly-story blurb.
+- Cards & Games page: added price (from `commerce.quranDeckPrice` /
+  `surahDeckPrice`) and a "Buy" CTA (linking to `commerce.quranDeck` /
+  `surahDeck`) next to the existing "See What's Inside" link on each
+  product card; heading changed to "Two decks. Lots of ways to play."
+- Internal-planning language sweep: reworded hedges around already-decided
+  facts in `faq.astro` ("It is planned as a one-time payment... should not
+  automatically renew" → "It is a one-time payment... does not
+  automatically renew"), `terms.astro` ("Current staging offer" →
+  "The Founding Season is..."), `app.astro`, and `for-parents.astro`'s
+  "can be tested later" Adventure Club FAQ answer (now states the digital
+  reality plainly: "The Adventure Club is a digital print-at-home
+  experience today. There is no physical/mail edition yet."). Did not
+  touch genuinely-undecided items (exact launch dates, physical Club
+  option).
+- Characters page: reworded "As new friends, family members and guest
+  characters are approved..." (read as an internal approval-queue
+  description) to customer-facing "More friends and familiar faces join
+  the Aya & Sura world as their stories are ready to share..." No new
+  character bios added.
+- Poji: softened "one of the most recognizable companions" to a modest
+  description; Poji's own page was already a complete, non-placeholder
+  page (personality, art placeholder, cross-link to Adventure Club), so it
+  was kept as its own page rather than folded back into the cast page.
+- `shop.astro` (an internal `/shop/` listing page — "Available Now",
+  Adventure Club, Giving Thanks to Allah, each linking to its marketing
+  page with only real "Buy" buttons going external to WooCommerce) already
+  existed from an earlier pass; `routes.shop` was still pointing directly
+  at the external WooCommerce domain. Changed `routes.shop` to `/shop/` so
+  the header/footer "Shop" link goes to the internal bridge page instead.
+- `scripts/check-links.mjs`: added `WORKING` (case-sensitive) to the
+  fake-content-marker scan; `STAGING DRAFT` and `CHECK BACK SOON` were
+  already covered from the v13 pass. Confirmed the postbuild check still
+  fails on `href="#"`/empty hrefs and on a missing `/privacy/`, `/terms/`,
+  `/faq/`, `/contact/` route. Confirmed `noindex,nofollow` is still present
+  site-wide in `Layout.astro`.
+
+### Already correct / not touched
+- Privacy/Terms no longer contained visible "staging draft" disclaimer
+  copy by the time this pass started (only the internal review-status note
+  in this file, which is where it belongs).
+- Refund & Returns: `terms.astro`'s "Refunds and replacements" section
+  already has a conservative digital-goods policy (no refund once
+  delivered, case-by-case for billing errors) consistent with the
+  one-time/no-auto-renew model, plus a note that it hasn't had formal legal
+  review. No changes made; still needs real counsel review before launch.
+- `business.socialProofEnabled` confirmed `false`; no testimonial content
+  found anywhere on the Adventure Club page or site.
+
+### Deferred / explicitly out of scope this pass
+- Analytics/CTA naming convention: no existing convention found in `docs/`.
+  Out of scope per instructions — flagged here as a future to-do: define a
+  consistent event/CTA naming scheme before wiring real analytics.
+- Real checkout/Stripe/QR/Playwright/axe/sitemap/robots/OG image work —
+  unchanged from prior passes, still open (see existing sections above).
+- Image mapping: when new art assets are supplied, follow an
+  asset-inventory-first workflow (read what's already referenced in
+  `src/pages`/`public/images` before touching `MediaPlaceholder` labels,
+  rather than relabeling the whole template at once) — not acted on this
+  pass, no new assets were supplied.
+- `/start/` (still gated off): the audit found "Everyday Words" links to
+  the general Card Audio & Resources page instead of dedicated adult
+  content, and "Quran Vocabulary" links to the Quran Edition sales page
+  instead of dedicated adult-learning content. Both must be fixed with
+  real adult-appropriate destinations before `business.adultStartEnabled`
+  is ever flipped back to `true`.
+- Shop bridge page and refund policy: both already existed/were adequate
+  from earlier passes, so no additional scope was spent here beyond
+  pointing `routes.shop` at the internal page.
+
+`npm run build` succeeds and `scripts/check-links.mjs` passes after this
+pass.
+
 ## v14 pass (September 2026) — external launch-readiness audit
 
 Checked every item against current repo state before changing anything.

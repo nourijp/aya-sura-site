@@ -12,7 +12,10 @@ const nav = [
 ---
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/">Aya &amp; Sura</a>
+    <a class="brand" href="/">
+      <img src="/images/brand/logo-mark-256.png" alt="" width="40" height="40" class="brand-mark" />
+      <span>Aya &amp; Sura</span>
+    </a>
 
     <nav class="primary-nav" aria-label="Primary">
       <ul>
@@ -77,12 +80,22 @@ const nav = [
     padding-bottom: .9rem;
   }
   .brand {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 1.3rem;
     text-decoration: none;
     color: var(--brand-deep);
     margin-right: auto;
+  }
+  .brand-mark {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
   }
   .primary-nav { display: none; }
   .primary-nav ul { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }

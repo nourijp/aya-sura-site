@@ -6,12 +6,21 @@ import MediaPlaceholder from '../components/MediaPlaceholder.astro';
   <section class="section">
     <div class="container hero hero--split">
       <div>
+        <img src="/images/brand/wordmark-banner.png" alt="Aya & Sura logo" class="about-wordmark" width="420" height="285" />
         <h1>Aya &amp; Sura is a world we're building one piece at a time.</h1>
         <p>It started with Muslim characters and the idea that children should be able to see faith, family, humor and everyday life living in the same stories. Since then, Aya &amp; Sura has grown through illustrated characters, physical flashcards, digital ideas, a children's book in development and an app—and there is much more room for the world to grow.</p>
       </div>
       <MediaPlaceholder label="ABOUT TIMELINE — early art + current art + cards + book + app" ratio="wide" variant={2} />
     </div>
   </section>
+
+  <style>
+    .about-wordmark {
+      max-width: 260px;
+      height: auto;
+      margin-bottom: 1.25rem;
+    }
+  </style>
 
   <section class="section section--surface">
     <div class="container">

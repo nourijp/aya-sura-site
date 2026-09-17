@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { routes } from '../../config/routes.ts';
 ---
 <Layout title="Check Your Email" description="Confirm your email to receive your free Aya & Sura Starter Pack.">
-  <section class="section">
+  <section class="section confetti-section">
     <div class="container">
       <h1>Check your email to confirm.</h1>
       <p>We've sent a confirmation link to the address you entered. Click it to receive your free Aya &amp; Sura story, coloring pages, activity and sample cards.</p>
@@ -14,4 +14,26 @@ import { routes } from '../../config/routes.ts';
       </div>
     </div>
   </section>
+
+  <style>
+    .confetti-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .confetti-section::before {
+      content: '';
+      position: absolute;
+      top: -6%;
+      right: -6%;
+      width: min(420px, 55vw);
+      aspect-ratio: 1 / 1;
+      background: url('/images/brand/confetti-accent.png') center / contain no-repeat;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .confetti-section .container {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </Layout>

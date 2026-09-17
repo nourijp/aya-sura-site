@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
 import { routes } from '../../config/routes.ts';
+
+const cardImgStyle = 'width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-card);background:var(--brand-soft);margin-bottom:1rem;';
 ---
 <Layout title="Characters">
   <section class="section">
@@ -16,13 +18,13 @@ import { routes } from '../../config/routes.ts';
       <h2>The center of the world</h2>
       <div class="grid grid-2" style="margin-top:2rem;">
         <div class="card">
-          <MediaPlaceholder label="CHARACTER — Aya full-body approved art" ratio="portrait" variant={1} />
+          <img src="/images/characters/aya-meet-scene.jpg" alt="Aya laughing and pointing while riding a jumping sheep" style={cardImgStyle} width="700" loading="lazy" />
           <h3>Aya</h3>
           <p class="muted">Energetic, expressive and often the first to jump into an idea.</p>
           <a class="btn btn-ghost" href={routes.characterAya}>Meet Aya</a>
         </div>
         <div class="card">
-          <MediaPlaceholder label="CHARACTER — Sura full-body approved art" ratio="portrait" variant={2} />
+          <img src="/images/characters/sura-aya-sandcastle.jpg" alt="Sura building a sandcastle wall while Aya watches nearby" style={`${cardImgStyle}object-position:65% 60%;`} width="1400" loading="lazy" />
           <h3>Sura</h3>
           <p class="muted">Thoughtful, observant and more likely to stop and think before jumping in.</p>
           <a class="btn btn-ghost" href={routes.characterSura}>Meet Sura</a>

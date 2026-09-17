@@ -10,9 +10,26 @@ import UpdateForm from '../../components/UpdateForm.astro';
         <h1>Stories are the heart of the Aya &amp; Sura world.</h1>
         <p>Cards can teach a word. Activities can fill an afternoon. Stories are where children get to know the characters. Aya &amp; Sura's book line is being built to give families warm, illustrated stories they can read together and return to.</p>
       </div>
-      <MediaPlaceholder label="BOOKS HERO — Aya & Sura reading / story-world illustration" ratio="wide" variant={2} />
+      <img
+        src="/images/books/story-world-night.jpg"
+        alt="A starry night sky with a crescent moon over Aya and Sura, tucked in the corner ready for a bedtime story"
+        class="story-world-hero"
+        width="1600"
+        loading="eager"
+      />
     </div>
   </section>
+
+  <style>
+    .story-world-hero {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center bottom;
+      border-radius: var(--radius-card);
+      background: var(--brand-soft);
+    }
+  </style>
 
   <section class="section section--surface">
     <div class="container hero hero--split">

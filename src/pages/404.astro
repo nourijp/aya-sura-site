@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { routes } from '../config/routes.ts';
+---
+<Layout title="Page not found">
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <p class="eyebrow">404</p>
+        <h1>Hmm, this path isn't on the map.</h1>
+        <p>Aya and Sura aren't sure which way to go from here either. The page you're looking for may have moved or the link may be out of date.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={routes.home}>Back to Home</a>
+          <a class="btn btn-secondary" href={routes.characters}>Meet the Characters</a>
+        </div>
+        <p class="muted" style="margin-top:1.5rem;">
+          Looking for a card's audio or resource link? Visit <a href={routes.cardResources}>Card Audio &amp; Resources</a>.
+        </p>
+      </div>
+      <img
+        src="/images/characters/404-signpost.jpg"
+        alt="Aya and Sura standing beneath a confusing signpost with a question mark, a no sign and a checkmark"
+        class="not-found-art"
+        width="700"
+        height="700"
+      />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found-art {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+    background: var(--brand-soft);
+  }
+</style>

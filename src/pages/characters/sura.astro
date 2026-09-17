@@ -9,9 +9,25 @@ import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
         <h1>Meet Sura</h1>
         <p>Sura tends to notice the details. He is thoughtful, practical and more likely to consider what might happen next before rushing into a plan. But being careful does not mean he has every answer either.</p>
       </div>
-      <MediaPlaceholder label="CHARACTER — full-body approved Sura" ratio="portrait" variant={2} />
+      <img
+        src="/images/characters/sura-solo.png"
+        alt="Sura standing calmly with his hands together"
+        class="character-portrait"
+        width="506"
+        loading="eager"
+      />
     </div>
   </section>
+
+  <style>
+    .character-portrait {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      border-radius: var(--radius-card);
+      background: var(--brand-soft);
+    }
+  </style>
 
   <section class="section section--surface">
     <div class="container">

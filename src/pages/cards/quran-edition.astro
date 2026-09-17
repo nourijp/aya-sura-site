@@ -3,11 +3,12 @@ import Layout from '../../layouts/Layout.astro';
 import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
 import { commerce } from '../../config/commerce.ts';
 ---
-<Layout title="Flashcards — Quran Edition">
+<Layout title="Quran Edition — Volume 1">
   <section class="section">
     <div class="container hero hero--split">
       <div>
-        <h1>Aya &amp; Sura Flashcards — Quran Edition</h1>
+        <span class="tag">Volume 1</span>
+        <h1>Aya &amp; Sura Flashcards — Quran Edition, Volume 1</h1>
         <p>A visual, hands-on way for children to build familiarity with Quran vocabulary through cards, listening and play.</p>
         <a class="btn btn-primary" href={commerce.quranDeck} rel="noopener">Buy the Quran Edition — {commerce.quranDeckPrice}</a>
       </div>
@@ -39,9 +40,6 @@ import { commerce } from '../../config/commerce.ts';
     <div class="container">
       <a class="btn btn-primary" href={commerce.quranDeck} rel="noopener">Buy the Quran Edition — {commerce.quranDeckPrice}</a>
       <p class="muted" style="margin-top:1rem;">Links to the current WooCommerce store during the staging transition.</p>
-      <div class="todo-note">
-        DETAIL TO CONFIRM (owner, do not invent): exact card count, card dimensions, materials/finish, box dimensions, exact vocabulary scope, recommended age, country of manufacture.
-      </div>
     </div>
   </section>
 </Layout>

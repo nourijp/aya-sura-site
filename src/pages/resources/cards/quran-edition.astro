@@ -2,20 +2,19 @@
 import Layout from '../../../layouts/Layout.astro';
 import AudioResourceList from '../../../components/AudioResourceList.astro';
 
-// TODO(owner): replace with the real legacy QR/audio inventory once
-// migration/legacy-url-inventory.csv is filled in. Entries with src: null
-// are unmigrated placeholders — do not invent audio files.
+// Owner TODO: replace with the real legacy QR/audio inventory once
+// migration/legacy-url-inventory.csv is filled in — see docs/OWNER_DECISIONS.md.
+// Entries with src: null are unmigrated placeholders; do not invent audio files.
 const entries = [
-  { title: 'Sample vocabulary word — audio pending migration', src: null, cardNumber: 'Card 1' },
-  { title: 'Sample vocabulary word — audio pending migration', src: null, cardNumber: 'Card 2' }
+  { title: 'Sample vocabulary word — audio coming soon', src: null, cardNumber: 'Card 1' },
+  { title: 'Sample vocabulary word — audio coming soon', src: null, cardNumber: 'Card 2' }
 ];
 ---
 <Layout title="Quran Edition Resources">
   <section class="section">
     <div class="container">
       <h1>Quran Edition — Audio &amp; Resources</h1>
-      <p class="muted">This page structurally replaces the legacy QR destination for the Quran Edition deck. Real audio files and card text will be migrated from the existing WordPress site per the QR resource inventory.</p>
-      <div class="todo-note">TODO(owner): legacy QR URL inventory not yet supplied — do not assume this list is complete.</div>
+      <p class="muted">Listen to the audio companion for your Quran Edition deck below. More cards are being added as audio is finished.</p>
       <AudioResourceList entries={entries} />
     </div>
   </section>

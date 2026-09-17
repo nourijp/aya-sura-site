@@ -1,11 +1,13 @@
 ---
+import { routes } from '../config/routes.ts';
+
 const nav = [
-  { label: 'Stories & Books', href: '/books/' },
-  { label: 'Cards & Games', href: '/cards/' },
-  { label: 'Adventure Club', href: '/club/' },
-  { label: 'App', href: '/app/' },
-  { label: 'Meet Aya & Sura', href: '/characters/' },
-  { label: 'For Parents', href: '/parents/' }
+  { label: 'Stories', href: routes.stories },
+  { label: 'Cards & Games', href: routes.cards },
+  { label: 'Adventure Club', href: routes.club },
+  { label: 'Characters', href: routes.characters },
+  { label: 'For Parents', href: routes.parents },
+  { label: 'App', href: routes.app }
 ];
 ---
 <header class="site-header">
@@ -21,7 +23,7 @@ const nav = [
     </nav>
 
     <div class="header-cta">
-      <a class="btn btn-secondary" href="https://www.ayasura.com" rel="noopener">Shop</a>
+      <a class="btn btn-secondary" href={routes.shop} rel="noopener">Shop</a>
     </div>
 
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
@@ -35,11 +37,11 @@ const nav = [
       {nav.map((item) => (
         <li><a href={item.href}>{item.label}</a></li>
       ))}
-      <li><a href="/about/">About</a></li>
+      <li><a href={routes.about}>About</a></li>
     </ul>
     <div class="mobile-nav-ctas">
-      <a class="btn btn-primary" href="/club/">Join the Adventure Club</a>
-      <a class="btn btn-secondary" href="https://www.ayasura.com" rel="noopener">Shop</a>
+      <a class="btn btn-primary" href={routes.club}>Join the Founding Club</a>
+      <a class="btn btn-secondary" href={routes.shop} rel="noopener">Shop</a>
     </div>
   </nav>
 </header>

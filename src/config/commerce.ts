@@ -14,19 +14,23 @@ export const commerce = {
   surahDeckPrice: '$19.99'
 };
 
-// Founding Adventure Club offer — LOCKED per brief: $24.99 / 3 months.
+// Founding Adventure Club offer — see src/config/business.ts for the
+// authoritative launch-state/price/checkout config (v10). This flag now
+// simply mirrors that state for older call sites.
+import { business } from './business.ts';
+
 export const foundingClub = {
-  live: false, // set true when the paid pilot is activated
-  price: '$24.99',
-  term: '3 months',
-  renews: false
+  live: business.launchState === 'founding_open',
+  price: `$${business.foundingPrice.toFixed(2)}`,
+  term: `${business.foundingMonths} months`,
+  renews: business.foundingRecurring
 };
 
-// Book launch state: 'coming-soon' | 'pod-live' | 'crowdfunding'
+// Book launch state: 'development' | 'pod-live' | 'crowdfunding'
 export const book = {
-  status: 'coming-soon' as 'coming-soon' | 'pod-live' | 'crowdfunding',
+  status: business.bookStatus,
   title: 'Giving Thanks to Allah',
-  // TODO(owner): fill in when POD or crowdfunding launch is confirmed
+  // Owner TODO: fill in when POD or crowdfunding launch is confirmed — see docs/OWNER_DECISIONS.md
   price: null as string | null,
   orderUrl: null as string | null
 };

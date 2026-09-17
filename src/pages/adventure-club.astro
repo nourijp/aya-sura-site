@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MediaPlaceholder from '../components/MediaPlaceholder.astro';
+import FreeStarterPack from '../components/FreeStarterPack.astro';
+import { business, getFoundingCheckoutUrl } from '../config/business.ts';
+import { routes } from '../config/routes.ts';
+
+const checkoutHref = getFoundingCheckoutUrl();
+const priceLabel = `$${business.foundingPrice.toFixed(2)}`;
+---
+<Layout title="Founding Adventure Club" description="Three months. Three new Aya & Sura adventures. Join the Founding Adventure Club.">
+  <!-- HERO / SALES PAGE ABOVE FOLD -->
+  <section class="section">
+    <div class="container hero hero--split">
+      <div>
+        <p class="eyebrow">Founding Adventure Club</p>
+        <h1>Three months. Three new Aya &amp; Sura adventures.</h1>
+        <p style="font-size:1.6rem;font-weight:800;color:var(--brand-deep);">{priceLabel} total</p>
+        <p>Join the first group of families to receive the new Aya &amp; Sura Adventure Club. Each month begins with an illustrated story and expands into activities, coloring, collectibles and family conversation.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={checkoutHref}>Join All 3 Months — {priceLabel}</a>
+        </div>
+        <p class="muted">One-time founding payment. No automatic renewal.</p>
+      </div>
+      <MediaPlaceholder label="CLUB HERO — story cover + activity spread + coloring page + cards composite" ratio="wide" variant={1} />
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section section--surface">
+    <div class="container">
+      <h2>What's included each month</h2>
+      <p>Instead of unrelated worksheets, every month is built around one Aya &amp; Sura story and one theme.</p>
+      <div class="grid grid-3" style="margin-top:2rem;">
+        <div class="card">
+          <MediaPlaceholder label="Illustrated short story / comic — sample page" ratio="card" variant={1} />
+          <h3>Illustrated story</h3>
+          <p class="muted">A short illustrated Aya &amp; Sura story or comic introduces the month's adventure.</p>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="Story-connected activity page" ratio="card" variant={2} />
+          <h3>Story-connected activities</h3>
+          <p class="muted">Puzzles and prompts that continue the story off the page.</p>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="Coloring page — line art" ratio="card" variant={3} />
+          <h3>Coloring pages</h3>
+          <p class="muted">Clean line art lets children revisit the month's scenes and characters.</p>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="Printable collectible card" ratio="card" variant={4} />
+          <h3>Printable collectible cards</h3>
+          <p class="muted">A collectible card gives each adventure a place in the growing Aya &amp; Sura world.</p>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="Family challenge card" ratio="card" variant={1} />
+          <h3>Family challenge</h3>
+          <p class="muted">A simple activity families can do together, connected to the month's theme.</p>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="Parent guide page" ratio="card" variant={2} />
+          <h3>Short parent guide</h3>
+          <p class="muted">A few conversation prompts — no lesson-plan preparation required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <h2>How the founding cohort works</h2>
+      <p>The Founding Club is a cohort launch: you can enroll now, and each release goes out to every founding family together. Exact calendar dates will be confirmed once the founding enrollment window closes.</p>
+      <div class="grid grid-4" style="margin-top:2rem;">
+        <div class="card"><span class="tag">Join</span><p class="muted">Become a Founding Family.</p></div>
+        <div class="card"><span class="tag">About {business.foundingDeliveryDelayDays} days later</span><p class="muted">Adventure 1 arrives by email.</p></div>
+        <div class="card"><span class="tag">One month later</span><p class="muted">Adventure 2.</p></div>
+        <div class="card"><span class="tag">One month later</span><p class="muted">Adventure 3, the final founding-season release.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGE -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2>Made for growing readers, creators and curious kids.</h2>
+      <p>Aya &amp; Sura products are designed for different stages rather than forcing one age range onto everything. The Adventure Club is being created for school-age children who can enjoy stories, puzzles, coloring and creative activities with increasing independence. Younger children may join with more grown-up help.</p>
+      <p class="muted">Each product will tell you what kind of reading, printing or grown-up help it expects.</p>
+    </div>
+  </section>
+
+  <!-- MUSLIM CHILDHOOD -->
+  <section class="section">
+    <div class="container">
+      <h2>Muslim childhood is bigger than one subject.</h2>
+      <p>Some adventures may touch on Quran vocabulary, Ramadan, Eid or everyday Muslim habits. Others may center on friendship, patience, family, curiosity, responsibility, courage or trying again after a mistake. The goal is not to turn every story into a formal class — it is to let faith, family and growing up exist naturally in the same world.</p>
+    </div>
+  </section>
+
+  <!-- MID-PAGE CTA -->
+  <section id="join" class="section section--deep">
+    <div class="container">
+      <h2>Join the first three adventures.</h2>
+      <p>Founding families receive the first three digital Aya &amp; Sura Adventure Club releases as they are published. This first run is intentionally simple: one purchase, three monthly releases, and no automatic renewal.</p>
+      <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href={checkoutHref}>Join All 3 Months — {priceLabel}</a>
+      <p class="muted" style="color:#fff2df;">Digital product. Print at home. One-time founding payment.</p>
+    </div>
+  </section>
+
+  <!-- SAMPLE VISUALS -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2>See what a monthly adventure looks like</h2>
+      <div class="grid grid-3" style="margin-top:1.5rem;">
+        <MediaPlaceholder label="STORY SPREAD — Month 1 preview" ratio="card" variant={1} />
+        <MediaPlaceholder label="COLORING PAGE — Month 1 preview" ratio="card" variant={2} />
+        <MediaPlaceholder label="ACTIVITY PAGE — Month 1 preview" ratio="card" variant={3} />
+        <MediaPlaceholder label="COLLECTIBLE — Month 1 preview" ratio="card" variant={4} />
+        <MediaPlaceholder label="PARENT PAGE — Month 1 preview" ratio="card" variant={1} />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section--surface">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>How is Islam part of Aya &amp; Sura?</summary>
+          <p>Aya &amp; Sura is created for Muslim families. Faith is part of the characters' everyday world—in how they give thanks to Allah, make choices, celebrate, care for people, learn and understand the world around them. Some stories will focus directly on Islamic topics. Others will begin with ordinary childhood experiences and let Muslim identity be a natural part of the story.</p>
+        </details>
+        <details>
+          <summary>Will every Adventure be an Islamic lesson?</summary>
+          <p>Every Adventure should have a meaningful connection to Muslim life or values, but not every story needs to feel like a lesson. One month might explore Ramadan or Quran directly. Another might begin with friendship, patience, family, creativity, travel or a problem the characters need to solve.</p>
+        </details>
+        <details>
+          <summary>How do you review Islamic content?</summary>
+          <p>Religious claims, Quran or Arabic content and potentially sensitive Islamic topics receive a separate human review before release. We also keep detailed rulings and areas where Muslims may differ out of casual story copy unless the topic has been deliberately researched and reviewed.</p>
+        </details>
+        <details>
+          <summary>Does my child need to know Arabic?</summary>
+          <p>No. Aya &amp; Sura is designed to be usable without prior Arabic knowledge. Arabic or Quran vocabulary may appear where it fits the product, with support such as definitions or audio when available.</p>
+        </details>
+        <details>
+          <summary>Do I need a printer?</summary>
+          <p>A printer is recommended for the full Adventure Club experience because coloring pages, cards and many activities are designed to be printed. Stories and some content can still be viewed on a screen.</p>
+        </details>
+        <details>
+          <summary>Can siblings share one membership?</summary>
+          <p>Yes. One family membership can be used by children in the same household. Classroom, school or group use may require a separate license later.</p>
+        </details>
+        <details>
+          <summary>Is the Founding Club a subscription?</summary>
+          <p>No. The Founding Adventure Club is a one-time {priceLabel} purchase covering all three founding monthly releases. It does not automatically renew.</p>
+        </details>
+        <details>
+          <summary>When do I get Month 1?</summary>
+          <p>The first founding Adventure is planned for about {business.foundingDeliveryDelayDays} days after the founding enrollment period. Your confirmation email will include the release calendar.</p>
+        </details>
+        <details>
+          <summary>What happens after Month 3?</summary>
+          <p>Founding families will be invited to see what comes next. We will not automatically charge you for a new plan unless you explicitly choose one.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE STARTER PACK FALLBACK -->
+  <section class="section section--deep">
+    <div class="container">
+      <FreeStarterPack formId="club-free-starter" />
+    </div>
+  </section>
+</Layout>

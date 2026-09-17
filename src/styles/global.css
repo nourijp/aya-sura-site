@@ -95,6 +95,7 @@ a { color: inherit; }
   gap: clamp(1.25rem, 2.5vw, 2rem);
 }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.bento-tile--wide { grid-column: 1 / -1; }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 

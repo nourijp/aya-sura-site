@@ -2,19 +2,18 @@
 import Layout from '../../../layouts/Layout.astro';
 import AudioResourceList from '../../../components/AudioResourceList.astro';
 
-// TODO(owner): replace with real legacy QR/audio inventory.
+// Owner TODO: replace with real legacy QR/audio inventory — see docs/OWNER_DECISIONS.md.
 const entries = [
-  { title: 'Al-Fatihah — audio pending migration', arabic: 'الفاتحة', src: null },
-  { title: 'Al-Ikhlas — audio pending migration', arabic: 'الإخلاص', src: null },
-  { title: "Al-'Asr — audio pending migration", arabic: 'العصر', src: null }
+  { title: 'Al-Fatihah — audio coming soon', arabic: 'الفاتحة', src: null },
+  { title: 'Al-Ikhlas — audio coming soon', arabic: 'الإخلاص', src: null },
+  { title: "Al-'Asr — audio coming soon", arabic: 'العصر', src: null }
 ];
 ---
 <Layout title="Surah Edition Resources">
   <section class="section">
     <div class="container">
       <h1>Surah Edition — Audio &amp; Resources</h1>
-      <p class="muted">This page structurally replaces the legacy QR destination for the Surah Edition deck (Al-Fatihah, Al-Ikhlas, Al-'Asr).</p>
-      <div class="todo-note">TODO(owner): legacy QR URL inventory not yet supplied — do not assume this list is complete.</div>
+      <p class="muted">Listen to the audio companion for your Surah Edition deck (Al-Fatihah, Al-Ikhlas, Al-'Asr) below.</p>
       <AudioResourceList entries={entries} />
     </div>
   </section>

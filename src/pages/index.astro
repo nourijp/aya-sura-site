@@ -1,211 +1,181 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MediaPlaceholder from '../components/MediaPlaceholder.astro';
-import UpdateForm from '../components/UpdateForm.astro';
-import { commerce, foundingClub, book } from '../config/commerce.ts';
+import FreeStarterPack from '../components/FreeStarterPack.astro';
+import { commerce, book } from '../config/commerce.ts';
+import { business, getFoundingCheckoutUrl } from '../config/business.ts';
+import { routes } from '../config/routes.ts';
 ---
 <Layout title="Grow up with Aya & Sura">
   <!-- HERO -->
   <section class="section">
     <div class="container hero hero--split">
       <div>
-        <p class="eyebrow">Stories • Play • Learning</p>
+        <p class="eyebrow">Stories • Play • Faith • Learning</p>
         <h1>Grow up with Aya &amp; Sura.</h1>
-        <p>Meet a brother-and-sister duo at the center of stories, games, activities and adventures made for Muslim kids. Read with them, play with them, learn alongside them—and watch their world grow.</p>
+        <p>Meet a brother-and-sister duo at the center of stories, games and adventures made for Muslim kids. Join their first three monthly adventures, explore the cards, and meet the friends who make their world bigger.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/characters/">Explore Aya &amp; Sura</a>
-          <a class="btn btn-secondary" href="/club/">See the Adventure Club</a>
+          <a class="btn btn-primary" href={routes.club}>Join the Founding Club — ${business.foundingPrice.toFixed(2)}</a>
+          <a class="btn btn-secondary" href={routes.characters}>Meet the Characters</a>
         </div>
+        <p class="muted" style="margin-top:.9rem;"><a href={routes.cardResources}>Already have the cards? Open Card Audio &amp; Resources</a></p>
       </div>
       <MediaPlaceholder
-        label="HERO: Aya + Sura + Poji together in an active, everyday/adventure scene"
+        label="HERO: Aya + Sura + Poji together, with hints of the wider cast"
         ratio="wide"
         variant={1}
       />
     </div>
   </section>
 
-  <!-- A WORLD TO READ, PLAY AND EXPLORE -->
+  <!-- FOUNDING CLUB FEATURED SECTION -->
+  <section class="section section--deep">
+    <div class="container hero hero--split">
+      <div>
+        <p class="eyebrow" style="color:#fff2df;">Founding Adventure Club</p>
+        <h2>Three months. Three new adventures. One world to keep coming back to.</h2>
+        <p>Join the first Aya &amp; Sura Adventure Club cohort for ${business.foundingPrice.toFixed(2)} total. Each month starts with a new illustrated story and expands into activities, coloring, collectibles and family conversation.</p>
+        <div class="grid grid-3" style="margin:1.5rem 0;">
+          <div class="card"><span class="tag">Month 1</span><p class="muted">First adventure arrives about {business.foundingDeliveryDelayDays} days after founding enrollment.</p></div>
+          <div class="card"><span class="tag">Month 2</span><p class="muted">A new story and activity pack, about one month later.</p></div>
+          <div class="card"><span class="tag">Month 3</span><p class="muted">The final founding-season adventure, about one month later.</p></div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href={routes.club}>Join All 3 Months — ${business.foundingPrice.toFixed(2)}</a>
+        </div>
+        <p class="muted" style="color:#fff2df;">One-time founding payment. No automatic recurring charge.</p>
+      </div>
+      <MediaPlaceholder label="CLUB COMPOSITE — story cover + activity spread + coloring page + cards" ratio="wide" variant={4} />
+    </div>
+  </section>
+
+  <!-- EXPLORE THE WORLD — VISUAL BENTO -->
   <section class="section section--surface">
     <div class="container">
-      <h2>More than one story. More than one way to play.</h2>
-      <p>Aya &amp; Sura is being built as a world children can return to—in books, cards, activities, digital adventures and the Aya &amp; Sura app. Start wherever your family likes, then keep exploring.</p>
-      <div class="grid grid-4" style="margin-top:2rem;">
-        <div class="card">
-          <h3>Read</h3>
-          <p><strong>Stories children can come back to.</strong></p>
-          <p class="muted">Follow Aya, Sura and their friends through everyday moments, family life, questions, mistakes and discoveries.</p>
-          <a class="btn btn-ghost" href="/books/">Explore Stories &amp; Books</a>
-          <MediaPlaceholder label="BOOK/STORY — open illustrated spread" ratio="card" variant={2} note="" />
+      <h2>More than one story. More than one way into the world.</h2>
+      <div class="grid grid-2" style="margin-top:2rem;">
+        <div class="card bento-tile">
+          <MediaPlaceholder label="BOOK/STORY — open illustrated spread" ratio="wide" variant={2} />
+          <h3>Read their adventures.</h3>
+          <p class="muted">Follow Aya, Sura and their friends through stories about family, friendship, faith, curiosity and growing up.</p>
+          <a class="btn btn-ghost" href={routes.stories}>Explore Stories</a>
         </div>
-        <div class="card">
-          <h3>Play</h3>
-          <p><strong>Cards that turn learning into a game.</strong></p>
-          <p class="muted">Use Aya &amp; Sura cards for matching, listening, memory games, self-quizzing and family play.</p>
-          <a class="btn btn-ghost" href="/cards/">Explore Cards &amp; Games</a>
-          <MediaPlaceholder label="CARDS — deck and several cards in play" ratio="card" variant={3} />
+        <div class="card bento-tile">
+          <MediaPlaceholder label="CARDS — deck and cards in play" ratio="wide" variant={3} />
+          <h3>Play, listen and learn.</h3>
+          <p class="muted">Use the Quran Edition and Surah Edition cards for matching, memory games, listening and family play.</p>
+          <a class="btn btn-ghost" href={routes.cards}>Explore Cards &amp; Games</a>
         </div>
-        <div class="card">
-          <h3>Join</h3>
-          <p><strong>A new adventure to look forward to.</strong></p>
-          <p class="muted">The Aya &amp; Sura Adventure Club is designed around new stories, activities, coloring pages and collectibles released as an ongoing experience.</p>
-          <a class="btn btn-ghost" href="/club/">See the Adventure Club</a>
-          <MediaPlaceholder label="CLUB — monthly digital pack composite" ratio="card" variant={4} />
+        <div class="card bento-tile bento-tile--wide">
+          <MediaPlaceholder label="CLUB — monthly digital pack composite" ratio="wide" variant={4} />
+          <h3>A new adventure every month.</h3>
+          <p class="muted">Join the Founding Adventure Club for three story-led monthly releases with activities, coloring and collectibles.</p>
+          <span class="tag">3 months · ${business.foundingPrice.toFixed(2)}</span>
+          <div><a class="btn btn-ghost" href={routes.club}>Join the Founding Club</a></div>
         </div>
-        <div class="card">
-          <h3>App</h3>
-          <p><strong>Bring the world with you.</strong></p>
-          <p class="muted">The Aya &amp; Sura app is being built to connect stories, cards, audio and interactive play in one place.</p>
-          <a class="btn btn-ghost" href="/app/">Explore the App</a>
-          <MediaPlaceholder label="APP — phone/tablet showing real app screen" ratio="card" variant={1} />
+        <div class="card bento-tile">
+          <MediaPlaceholder label="APP — phone/tablet showing real app screen" ratio="wide" variant={1} />
+          <h3>Bring your card experience to the app.</h3>
+          <p class="muted">The Aya &amp; Sura app extends the flashcard experience with digital support, audio and interactive tools.</p>
+          <a class="btn btn-ghost" href={routes.app}>Explore the App</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MEET THE CHARACTERS -->
+  <!-- CHARACTER WORLD -->
   <section class="section">
     <div class="container">
-      <h2>Meet Aya, Sura and Poji</h2>
-      <p>The products may change. The characters are what tie the world together. Aya and Sura are siblings with different personalities, different ways of looking at things, and plenty to learn from each other along the way. And Poji is never far behind.</p>
+      <h2>Meet the Aya &amp; Sura world.</h2>
+      <p>Aya and Sura are the heart of the brand, but their stories are shaped by siblings, friends, family and the people they meet along the way. Different characters can take the lead when the story calls for it.</p>
       <div class="grid grid-3" style="margin-top:2rem;">
         <div class="card">
           <MediaPlaceholder label="CHARACTER — Aya full-body approved art" ratio="portrait" variant={1} />
           <h3>Aya</h3>
           <p class="muted">Bold, expressive and ready to jump into the next idea.</p>
-          <a class="btn btn-ghost" href="/characters/aya/">Meet Aya</a>
+          <a class="btn btn-ghost" href={routes.characterAya}>Meet Aya</a>
         </div>
         <div class="card">
           <MediaPlaceholder label="CHARACTER — Sura full-body approved art" ratio="portrait" variant={2} />
           <h3>Sura</h3>
           <p class="muted">Thoughtful, observant and usually a little more cautious than his sister.</p>
-          <a class="btn btn-ghost" href="/characters/sura/">Meet Sura</a>
+          <a class="btn btn-ghost" href={routes.characterSura}>Meet Sura</a>
         </div>
         <div class="card">
           <MediaPlaceholder label="CHARACTER — Poji approved art" ratio="portrait" variant={3} />
           <h3>Poji</h3>
           <p class="muted">Aya's little lion doll and a familiar part of the siblings' adventures.</p>
-          <a class="btn btn-ghost" href="/characters/poji/">Meet Poji</a>
+          <a class="btn btn-ghost" href={routes.characterPoji}>Meet Poji</a>
         </div>
       </div>
+      <div style="margin-top:1.5rem;"><a class="btn btn-secondary" href={routes.characters}>Meet All the Characters</a></div>
     </div>
   </section>
 
-  <!-- ADVENTURE CLUB FEATURE -->
-  <section class="section section--deep">
-    <div class="container hero hero--split">
-      <div>
-        <p class="eyebrow" style="color:#fff2df;">{foundingClub.live ? 'Founding Families' : 'Coming Next'}</p>
-        <h2>One new story. One new theme. A month of ways to play.</h2>
-        <p>We're developing the Aya &amp; Sura Adventure Club as an ongoing experience for families who want more than a single book or deck. Each adventure is designed to begin with a story and expand into activities children can color, solve, collect and enjoy together.</p>
-        <ul>
-          <li>A new illustrated Aya &amp; Sura story</li>
-          <li>Printable activities and puzzles</li>
-          <li>Coloring pages built from the same adventure</li>
-          <li>A collectible card, badge or surprise</li>
-          <li>A short guide for parents</li>
-          <li>Optional app extras as the experience grows</li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href="/club/">
-            {foundingClub.live ? 'Join the Founding Adventure Club' : 'See How the Club Works'}
-          </a>
-        </div>
-      </div>
-      <MediaPlaceholder label="CLUB COMPOSITE — story pages + coloring + activity + cards + parent page + app screen" ratio="wide" variant={4} />
-    </div>
-  </section>
-
-  <!-- AVAILABLE NOW -->
+  <!-- AVAILABLE NOW — TWO CARD EDITIONS -->
   <section class="section section--surface">
     <div class="container">
-      <h2>Start with the cards</h2>
-      <p>Aya &amp; Sura began building their learning world through physical flashcards. Two decks are currently available, each with a different way to explore Quran vocabulary and surahs.</p>
+      <h2>Available now: two card series</h2>
+      <p>Aya &amp; Sura began building their learning world through physical flashcards. Two Volume 1 editions are available now, each with a different way to explore Quran vocabulary and surahs.</p>
       <div class="grid grid-2" style="margin-top:2rem;">
         <div class="card">
-          <MediaPlaceholder label="PRODUCT PHOTO — Quran Edition deck + cards spread" ratio="card" variant={1} />
-          <h3>Aya &amp; Sura Flashcards — Quran Edition</h3>
+          <MediaPlaceholder label="PRODUCT PHOTO — Quran Edition deck + cards spread" ratio="wide" variant={1} />
+          <span class="tag">Volume 1</span>
+          <h3>Quran Edition — Volume 1</h3>
           <p class="muted">A colorful deck designed to help children become more familiar with Quran vocabulary through visual recognition, listening and play.</p>
-          <a class="btn btn-ghost" href="/cards/quran-edition/">See the Quran Edition</a>
+          <a class="btn btn-ghost" href={routes.quranEdition}>See the Quran Edition</a>
         </div>
         <div class="card">
-          <MediaPlaceholder label="PRODUCT PHOTO — Surah Edition deck + cards spread" ratio="card" variant={2} />
-          <h3>Aya &amp; Sura Deck — Surah Edition</h3>
+          <MediaPlaceholder label="PRODUCT PHOTO — Surah Edition deck + cards spread" ratio="wide" variant={2} />
+          <span class="tag">Volume 1</span>
+          <h3>Surah Edition — Volume 1</h3>
           <p class="muted">A focused deck built around Al-Fatihah, Al-Ikhlas and Al-'Asr, with cards designed to help children work through the surahs piece by piece.</p>
-          <a class="btn btn-ghost" href="/cards/surah-edition/">See the Surah Edition</a>
+          <a class="btn btn-ghost" href={routes.surahEdition}>See the Surah Edition</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BOOK COMING NEXT -->
+  <!-- GIVING THANKS TO ALLAH SPOTLIGHT -->
   <section class="section">
     <div class="container hero hero--split">
       <MediaPlaceholder label="BOOK COVER — Giving Thanks to Allah (final cover when available)" ratio="portrait" variant={3} />
       <div>
         <p class="eyebrow">In Development</p>
-        <h2>A new Aya &amp; Sura children's book is on the way.</h2>
-        <p>Aya and Sura are moving from cards into longer-form stories. Our next children's book is nearing completion and will bring the characters into a warm illustrated story made for family reading.</p>
-        <h3>Giving Thanks to Allah</h3>
-        <p class="muted">A gentle Aya &amp; Sura story about family, gratitude and noticing the good things around us.</p>
-        {book.status === 'coming-soon' && <UpdateForm heading="Get Book Updates" body="Coming soon — join the book update list." buttonLabel="Get Book Updates" formId="home-book-updates" />}
+        <h2>Giving Thanks to Allah</h2>
+        <p>A gentle Aya &amp; Sura story about family, gratitude and noticing the good things around us. Aya and Sura are moving from cards into longer-form stories, and this book is nearing completion.</p>
+        <a class="btn btn-ghost" href={routes.book}>Read More About the Book</a>
       </div>
     </div>
   </section>
 
-  <!-- MADE FOR REAL FAMILY LIFE -->
+  <!-- MUSLIM CHILDHOOD / BRAND WORLDVIEW -->
   <section class="section section--soft">
     <div class="container">
-      <h2>Meaningful doesn't have to feel like homework.</h2>
-      <p>Aya &amp; Sura is designed around things children already enjoy—stories, characters, games, coloring, collecting and asking questions. Learning can be part of the experience without turning every moment into a lesson.</p>
-      <div class="grid grid-3" style="margin-top:2rem;">
-        <div class="card">
-          <h3>Familiar Muslim characters</h3>
-          <p class="muted">Children get to spend time with characters whose family and Muslim identity are simply part of their world.</p>
-        </div>
-        <div class="card">
-          <h3>Multiple ways to engage</h3>
-          <p class="muted">Read together, play a card game, listen to audio, print an activity or open the app.</p>
-        </div>
-        <div class="card">
-          <h3>Built for parents too</h3>
-          <p class="muted">Activities are designed to be understandable and usable without requiring parents to prepare an entire lesson plan.</p>
-        </div>
+      <h2>Muslim childhood is full of stories.</h2>
+      <p>Faith is not a separate subject in Aya and Sura's lives. It can show up in how they greet people, give thanks to Allah, celebrate, help their family, care for a friend, visit a new place or make a difficult choice. Some adventures will be explicitly about Islamic moments. Others will simply let Muslim kids see a world where being Muslim is already normal.</p>
+      <MediaPlaceholder label="LIFESTYLE ART — everyday Muslim family scene with Aya & Sura" ratio="wide" variant={2} />
+      <div class="grid grid-3" style="margin-top:1.5rem;">
+        <div class="card"><h3>Faith &amp; Values</h3></div>
+        <div class="card"><h3>Family &amp; Friends</h3></div>
+        <div class="card"><h3>Curiosity &amp; Adventure</h3></div>
       </div>
-      <MediaPlaceholder label="LIFESTYLE ART — family/children using Aya & Sura content in an everyday setting" ratio="wide" variant={2} note="" />
     </div>
   </section>
 
-  <!-- FAMILY PROOF -->
-  <section class="section section--surface">
-    <div class="container">
-      <h2>Built with families, not just for them.</h2>
-      <p>We are reconnecting with families who have already used Aya &amp; Sura products so we can learn what children actually enjoyed, what parents found useful and what we should build next.</p>
-      <a class="btn btn-secondary" href="/feedback/">Already own Aya &amp; Sura cards? Share your experience</a>
-    </div>
-  </section>
-
-  <!-- EXTENDED WORLD -->
-  <section class="section">
-    <div class="container hero hero--split">
-      <div>
-        <h2>Part of a bigger world of Muslim characters</h2>
-        <p>Aya &amp; Sura grew from the creative world behind Muslim Manga. As the children's line expands, familiar faces from that wider world may appear in Aya &amp; Sura stories and activities in a style made for younger readers. You never need to know the older stories to enjoy Aya &amp; Sura—their world stands on its own.</p>
-        <a class="btn btn-ghost" href="/about/">About Aya &amp; Sura</a>
+  {business.socialProofEnabled && (
+    <section class="section section--surface">
+      <div class="container">
+        <h2>What families are saying</h2>
+        <!-- Rendered only once real, approved parent quotes exist (business.socialProofEnabled). -->
       </div>
-      <MediaPlaceholder label="EXTENDED WORLD — Aya & Sura foreground with subtle guest-character silhouettes/art" ratio="wide" variant={4} />
-    </div>
-  </section>
+    </section>
+  )}
 
-  <!-- FINAL CTA -->
+  <!-- FREE STARTER PACK -->
   <section class="section section--deep">
     <div class="container">
-      <h2>Come grow with us.</h2>
-      <p>Start with the cards, follow the next story, or join us as Aya &amp; Sura grows into a bigger world of things to read, play and discover.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href="/characters/">Explore Aya &amp; Sura</a>
-        <a class="btn btn-secondary" style="background:transparent;color:#fff9f0;border-color:#fff9f0;" href={commerce.shopBase} rel="noopener">Shop the Cards</a>
-      </div>
+      <FreeStarterPack />
     </div>
   </section>
 </Layout>

@@ -1,4 +1,5 @@
 ---
+import { routes } from '../config/routes.ts';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -11,39 +12,39 @@ const year = new Date().getFullYear();
     <nav aria-label="Explore">
       <h4>Explore</h4>
       <ul>
-        <li><a href="/books/">Stories &amp; Books</a></li>
-        <li><a href="/cards/">Cards &amp; Games</a></li>
-        <li><a href="/club/">Adventure Club</a></li>
-        <li><a href="/app/">App</a></li>
-        <li><a href="/characters/">Meet the Characters</a></li>
+        <li><a href={routes.stories}>Stories &amp; Books</a></li>
+        <li><a href={routes.cards}>Cards &amp; Games</a></li>
+        <li><a href={routes.club}>Adventure Club</a></li>
+        <li><a href={routes.app}>App</a></li>
+        <li><a href={routes.characters}>Characters</a></li>
       </ul>
     </nav>
 
     <nav aria-label="For Grown-Ups">
       <h4>For Grown-Ups</h4>
       <ul>
-        <li><a href="/parents/">For Parents</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/feedback/">Contact</a></li>
-        <li><a href="/club/#faq">FAQ</a></li>
+        <li><a href={routes.parents}>For Parents</a></li>
+        <li><a href={routes.about}>About</a></li>
+        <li><a href={routes.feedback}>Contact</a></li>
+        <li><a href={`${routes.club}#faq`}>FAQ</a></li>
       </ul>
     </nav>
 
     <nav aria-label="Shop and Help">
       <h4>Shop &amp; Help</h4>
       <ul>
-        <li><a href="https://www.ayasura.com" rel="noopener">Shop</a></li>
-        <li><a href="/resources/">Shipping &amp; Returns</a></li>
-        <li><a href="/resources/cards/">Card Audio &amp; Resources</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
+        <li><a href={routes.shop} rel="noopener">Shop</a></li>
+        <li><a href={routes.free}>Free Starter Pack</a></li>
+        <li><a href={routes.cardResources}>Card Audio &amp; Resources</a></li>
+        <li><a href={routes.privacy}>Privacy</a></li>
+        <li><a href={routes.terms}>Terms</a></li>
       </ul>
     </nav>
   </div>
 
   <div class="container footer-bottom">
     <p class="muted">&copy; {year} Aya &amp; Sura, LLC. All rights reserved.</p>
-    <a class="muted" href="/start/">New to Islam? Start Here</a>
+    <a class="muted" href={routes.start}>New to Islam? Start Here</a>
   </div>
 </footer>
 

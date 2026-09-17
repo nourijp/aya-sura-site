@@ -42,7 +42,9 @@ const FAKE_CONTENT_MARKERS = [
   'TODO',
   'Sample vocabulary word',
   'audio coming soon',
-  'Audio coming soon'
+  'Audio coming soon',
+  'STAGING DRAFT',
+  'CHECK BACK SOON'
 ];
 
 const htmlFiles = walk(DIST);

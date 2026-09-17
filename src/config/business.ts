@@ -41,6 +41,11 @@ export const business = {
   // Only render testimonials/parent-proof once real, approved quotes exist.
   socialProofEnabled: false,
 
+  // "New to Islam? Start Here" adult learning section. Hidden/unreachable
+  // until its resource links are fixed (see docs/OWNER_DECISIONS.md) — do
+  // not link to /start/ from anywhere while this is false.
+  adultStartEnabled: false,
+
   // Email capture mode for the Free Starter Pack (see functions/api/free-starter.ts)
   emailMode: (import.meta.env.EMAIL_MODE as EmailMode) || 'preview',
 

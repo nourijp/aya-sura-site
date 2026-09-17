@@ -1,5 +1,6 @@
 ---
 import { routes } from '../config/routes.ts';
+import { business } from '../config/business.ts';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -34,7 +35,7 @@ const year = new Date().getFullYear();
       <h4>Shop &amp; Help</h4>
       <ul>
         <li><a href={routes.shop} rel="noopener">Shop</a></li>
-        <li><a href={routes.free}>Free Starter Pack</a></li>
+        <li><a href={routes.free}>Free Adventure Sampler</a></li>
         <li><a href={routes.cardResources}>Card Audio &amp; Resources</a></li>
         <li><a href={routes.privacy}>Privacy</a></li>
         <li><a href={routes.terms}>Terms</a></li>
@@ -44,7 +45,9 @@ const year = new Date().getFullYear();
 
   <div class="container footer-bottom">
     <p class="muted">&copy; {year} Aya &amp; Sura, LLC. All rights reserved.</p>
-    <a class="muted" href={routes.start}>New to Islam? Start Here</a>
+    {business.adultStartEnabled && (
+      <a class="muted" href={routes.start}>New to Islam? Start Here</a>
+    )}
   </div>
 </footer>
 

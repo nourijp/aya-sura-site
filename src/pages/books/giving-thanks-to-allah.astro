@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
-import UpdateForm from '../../components/UpdateForm.astro';
+import FreeStarterPack from '../../components/FreeStarterPack.astro';
 import { book } from '../../config/commerce.ts';
 ---
 <Layout title="Giving Thanks to Allah">
@@ -35,8 +35,15 @@ import { book } from '../../config/commerce.ts';
       {book.status === 'coming-soon' && (
         <>
           <h2>Coming soon</h2>
-          <p>The story is nearing completion. Join the update list to hear when printing and ordering are ready.</p>
-          <UpdateForm heading="Get Book Updates" body="Coming soon — join the book update list." buttonLabel="Get Book Updates" formId="book-updates-form" />
+          <p>The story is nearing completion. Want to know when the book is ready?</p>
+          <FreeStarterPack
+            formId="book-updates-form"
+            eyebrow="Giving Thanks to Allah"
+            heading="Want to know when the book is ready?"
+            body="Leave your email and we'll let you know as soon as Giving Thanks to Allah is available to order."
+            buttonLabel="Tell Me When the Book Is Ready"
+            successMessage="Thanks — we'll email you as soon as the book is ready."
+          />
         </>
       )}
       {book.status === 'pod-live' && book.orderUrl && (

@@ -6,18 +6,32 @@
 // validates syntax only and never sends a real email.
 interface Props {
   formId?: string;
+  buttonLabel?: string;
+  eyebrow?: string;
+  heading?: string;
+  body?: string;
+  successHref?: string;
+  successMessage?: string;
 }
-const { formId = 'free-starter-pack' } = Astro.props;
+const {
+  formId = 'free-starter-pack',
+  buttonLabel = 'Send Me the Free Adventure Sampler',
+  eyebrow = 'Try Aya & Sura Free',
+  heading = 'Not ready to join yet? Start with a free Aya & Sura Adventure Sampler.',
+  body = "Get a short story preview, one coloring page and one story-connected activity delivered to your inbox. Confirm your email once, then the sampler is yours.",
+  successHref = '/free/check-your-email/',
+  successMessage = ''
+} = Astro.props;
 ---
-<div class="free-pack card">
-  <p class="eyebrow" style="color:#fff2df;">Try Aya &amp; Sura Free</p>
-  <h2>Not ready to join yet? Start with a free Aya &amp; Sura pack.</h2>
-  <p>Get a short story, coloring pages, a simple activity and sample printable cards delivered to your inbox. Confirm your email once, then the pack is yours.</p>
+<div class="free-pack card" data-success-href={successHref} data-success-message={successMessage}>
+  <p class="eyebrow" style="color:#fff2df;">{eyebrow}</p>
+  <h2>{heading}</h2>
+  <p>{body}</p>
   <form id={formId} class="free-pack-form" data-free-starter-form>
     <label class="visually-hidden" for={`${formId}-email`}>Email address</label>
     <div class="update-form-row">
       <input id={`${formId}-email`} type="email" name="email" placeholder="you@example.com" required />
-      <button class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" type="submit">Send Me the Free Starter Pack</button>
+      <button class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" type="submit">{buttonLabel}</button>
     </div>
     <p class="muted" style="font-size:.85rem;margin-top:.5rem;color:#fff2df;">We'll ask you to confirm your email first. You can unsubscribe at any time.</p>
     <p data-status role="status" style="font-size:.85rem;margin-top:.5rem;color:#fff2df;"></p>
@@ -53,6 +67,9 @@ const { formId = 'free-starter-pack' } = Astro.props;
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const el = form as HTMLFormElement;
+      const wrapper = el.closest('[data-success-href]') as HTMLElement | null;
+      const successHref = wrapper?.dataset.successHref || '/free/check-your-email/';
+      const successMessage = wrapper?.dataset.successMessage || '';
       const status = el.querySelector('[data-status]') as HTMLElement | null;
       const emailInput = el.querySelector('input[type="email"]') as HTMLInputElement | null;
       const email = emailInput?.value?.trim() || '';
@@ -69,10 +86,15 @@ const { formId = 'free-starter-pack' } = Astro.props;
         const res = await fetch('/api/free-starter', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({ email, formId: el.id })
         });
         if (res.ok) {
-          window.location.href = '/free/check-your-email/';
+          if (successMessage) {
+            if (status) status.textContent = successMessage;
+            el.reset();
+          } else {
+            window.location.href = successHref;
+          }
           return;
         }
         if (status) status.textContent = "We couldn't send the confirmation email. Please try again.";
@@ -81,7 +103,12 @@ const { formId = 'free-starter-pack' } = Astro.props;
         // so this fetch will fail there even though the form logic is
         // correct. Fall back to the same confirmation route so the staging
         // flow can still be reviewed end-to-end.
-        window.location.href = '/free/check-your-email/';
+        if (successMessage) {
+          if (status) status.textContent = successMessage;
+          el.reset();
+        } else {
+          window.location.href = successHref;
+        }
       }
     });
   });

@@ -1,6 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MediaPlaceholder from '../components/MediaPlaceholder.astro';
+import { business } from '../config/business.ts';
+
+// Hidden behind a flag until its resource links are fixed — see
+// docs/OWNER_DECISIONS.md. Do not remove this guard without also fixing
+// the "Everyday Words" / "Quran Vocabulary" link targets noted there.
+if (!business.adultStartEnabled) {
+  return Astro.redirect('/', 302);
+}
 ---
 <Layout title="Start Here" description="A simple, calm place to start — for adults new to Islam or returning to learning.">
   <section class="section">

@@ -5,7 +5,7 @@ import { business } from '../../config/business.ts';
 
 const isPreview = business.emailMode === 'preview';
 ---
-<Layout title="Check Your Email" description="Confirm your email to receive your free Aya & Sura Starter Pack.">
+<Layout title="Check Your Email" description="Confirm your email to receive your free Aya & Sura Adventure Sampler.">
   <section class="section confetti-section">
     <div class="container">
       <h1>Check your email to confirm.</h1>
@@ -18,7 +18,7 @@ const isPreview = business.emailMode === 'preview';
           </div>
         </>
       ) : (
-        <p>We've sent a confirmation link to the address you entered. Click it to receive your free Aya &amp; Sura story, coloring pages, activity and sample cards.</p>
+        <p>We've sent a confirmation link to the address you entered. Click it to receive your free Aya &amp; Sura Adventure Sampler — a story preview, coloring page and activity.</p>
       )}
       <p class="muted">Don't see it in a minute or two? Check your spam or promotions folder, or <a href={routes.contact}>contact us</a> and we'll help.</p>
       <div class="btn-row" style="margin-top:1.5rem;">

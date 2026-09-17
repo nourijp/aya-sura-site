@@ -262,3 +262,73 @@ fixed what was actually still broken as of the v12 commit.
 
 `npm run build` succeeds (31 pages) and `scripts/check-links.mjs`
 postbuild check passes with no dead/empty/unresolved links.
+
+## v14 pass (September 2026) — external launch-readiness audit
+
+Checked every item against current repo state before changing anything.
+Several items were already completed by a concurrent/earlier session; only
+genuinely-outstanding items were fixed here.
+
+- `/start/` gating: VERIFIED — `business.adultStartEnabled = false` already
+  existed in `src/config/business.ts`; the only `/start/` link site-wide is
+  in `Footer.astro`, already wrapped in `{business.adultStartEnabled && ...}`.
+  No nav/homepage links to `/start/` exist. This was flagged as likely
+  incomplete but was in fact already done. Note: the "Everyday Words" and
+  "Quran Vocabulary" CTAs on `/start/` were reported by the audit as
+  pointing to the wrong destinations — must be fixed before re-enabling.
+- Nav order / App hidden from nav: PASS — App only in footer, not in
+  Header.astro (desktop or mobile).
+- Homepage hero pricing line under CTA: PASS — already present.
+- Adventure Club "collectibles" language: PASS — already reworded to
+  "bonus printable extras that can vary by issue" everywhere checked,
+  including the hero intro paragraph. No "comic" wording found.
+- Free Starter Pack → "Free Aya & Sura Adventure Sampler" rename: PASS —
+  fully renamed across `FreeStarterPack.astro` and all `/free/*` pages;
+  body copy already describes "a short story preview, one coloring page
+  and one story-connected activity"; no duplicate hero content found.
+- Books index tentative phrasing / collectibles: PASS — already tightened
+  to confident copy with "bonus printable extras" wording.
+- Giving Thanks to Allah CTA: PASS — already has an `UpdateForm`-based
+  interest-capture CTA ("Get Book Updates") for the coming-soon state.
+- Cards & Games price + Buy CTA: FIXED — added `commerce.quranDeckPrice`/
+  `commerce.surahDeckPrice` display plus a "Buy" link (to
+  `commerce.quranDeck`/`commerce.surahDeck`) alongside the existing
+  "See What's Inside" link on both cards in `src/pages/cards/index.astro`.
+- FAQ internal-planning language sweep: FIXED — "the current working offer
+  is $24.99..." and "the working plan is that one family membership..."
+  rewritten as direct statements; "That is the goal" (QR permanence)
+  rewritten as a direct statement. All in `src/pages/faq.astro`.
+- Privacy/Terms "staging draft" customer-visible disclaimers: FIXED —
+  removed the visible disclaimer paragraphs from both `privacy.astro` and
+  `terms.astro`, and dropped "staging draft" from their meta descriptions.
+  Internal staging-draft/legal-review status stays tracked in this file.
+- Refund & Returns: FIXED — replaced the "should be published" placeholder
+  in `terms.astro`'s "Refunds and replacements" section with a real,
+  conservative digital/physical refund policy (no refunds on delivered
+  digital content except missing/defective files or billing errors;
+  case-by-case Founding Season cancellation before next release;
+  physical/POD replacement or refund for damaged/lost items). Updated the
+  matching FAQ answer. **Not lawyer-reviewed — needs real legal review
+  before production**, same as the rest of Privacy/Terms.
+- Characters page approval-process language: PASS — "approved" language
+  only exists in source code comments, not rendered customer copy.
+- Poji copy: PASS — current blurb does not overreach.
+- For Parents physical-Club FAQ hedge: PASS — already updated (by a
+  concurrent session during this pass) to state the digital reality
+  directly without a "can be tested later" hedge.
+- App page roadmap framing: FIXED — softened "Planned direction: ..." to
+  "We're working on ..." in `src/pages/app.astro`; no PLANNED badges or
+  false Adventure Club-in-app claims found.
+- About page tone: PASS — already reads with brand history/credibility
+  framing from prior passes.
+- Shop bridge page: PASS — already lists Cards & Games, Adventure Club,
+  and the book with internal links; only "Buy" buttons go external.
+- `scripts/check-links.mjs` markers: FIXED — added "STAGING DRAFT" and
+  "CHECK BACK SOON" to `FAKE_CONTENT_MARKERS`.
+- `noindex,nofollow` in `Layout.astro`: VERIFIED still present — matters
+  since the site is live at a real public URL (as.nur.city).
+- Deferred per instructions: real checkout/Stripe/QR flows, Playwright/
+  axe testing, sitemap/robots.txt, OG/share-image work — unchanged.
+
+`npm run build` succeeds (31 pages) and `scripts/check-links.mjs`
+postbuild check passes after this pass's changes.

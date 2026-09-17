@@ -6,8 +6,7 @@ const nav = [
   { label: 'Cards & Games', href: routes.cards },
   { label: 'Adventure Club', href: routes.club },
   { label: 'Characters', href: routes.characters },
-  { label: 'For Parents', href: routes.parents },
-  { label: 'App', href: routes.app }
+  { label: 'For Parents', href: routes.parents }
 ];
 ---
 <header class="site-header">
@@ -26,7 +25,8 @@ const nav = [
     </nav>
 
     <div class="header-cta">
-      <a class="btn btn-secondary" href={routes.shop} rel="noopener">Shop</a>
+      <a class="btn btn-ghost" href={routes.shop} rel="noopener">Shop</a>
+      <a class="btn btn-primary" href={routes.club}>Join Adventure Club</a>
     </div>
 
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
@@ -100,7 +100,7 @@ const nav = [
   .primary-nav { display: none; }
   .primary-nav ul { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
   .primary-nav a { text-decoration: none; font-weight: 600; font-size: .95rem; }
-  .header-cta { display: none; }
+  .header-cta { display: none; align-items: center; gap: .75rem; }
 
   .nav-toggle {
     background: none;

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
 import { routes } from '../../config/routes.ts';
+import { commerce } from '../../config/commerce.ts';
 ---
 <Layout title="Cards & Games">
   <section class="section">
@@ -18,21 +19,29 @@ import { routes } from '../../config/routes.ts';
 
   <section class="section section--surface">
     <div class="container">
-      <h2>Two card series. Built to grow.</h2>
+      <h2>Two decks. Lots of ways to play.</h2>
       <div class="grid grid-2" style="margin-top:1.5rem;">
         <div class="card">
           <MediaPlaceholder label="Quran Edition — sample card faces and backs" ratio="wide" variant={1} />
           <span class="tag">Volume 1</span>
           <h3>Quran Edition — Volume 1</h3>
           <p class="muted">Build familiarity with Quran vocabulary through visual cards, listening and repeat play. Use the deck on its own, alongside the audio companion, or with simple games that make practice more active.</p>
-          <a class="btn btn-ghost" href={routes.quranEdition}>View Quran Edition</a>
+          <p class="muted" style="font-weight:600;">{commerce.quranDeckPrice}</p>
+          <div class="btn-row">
+            <a class="btn btn-ghost" href={routes.quranEdition}>See What's Inside</a>
+            <a class="btn btn-primary" href={commerce.quranDeck} rel="noopener">Buy</a>
+          </div>
         </div>
         <div class="card">
           <MediaPlaceholder label="Surah Edition — sample card faces and backs" ratio="wide" variant={2} />
           <span class="tag">Volume 1</span>
           <h3>Surah Edition — Volume 1</h3>
           <p class="muted">Work through Al-Fatihah, Al-Ikhlas and Al-'Asr with a focused set of cards that helps children break the surahs into smaller pieces they can see, hear and revisit.</p>
-          <a class="btn btn-ghost" href={routes.surahEdition}>View Surah Edition</a>
+          <p class="muted" style="font-weight:600;">{commerce.surahDeckPrice}</p>
+          <div class="btn-row">
+            <a class="btn btn-ghost" href={routes.surahEdition}>See What's Inside</a>
+            <a class="btn btn-primary" href={commerce.surahDeck} rel="noopener">Buy</a>
+          </div>
         </div>
       </div>
       <p class="muted" style="margin-top:1.5rem;">Volume 1 is the beginning of each series. Additional card content can expand the library over time as new sets are completed.</p>

@@ -154,7 +154,26 @@ import { routes } from '../config/routes.ts';
     <div class="container">
       <h2>Muslim childhood is full of stories.</h2>
       <p>Faith is not a separate subject in Aya and Sura's lives. It can show up in how they greet people, give thanks to Allah, celebrate, help their family, care for a friend, visit a new place or make a difficult choice. Some adventures will be explicitly about Islamic moments. Others will simply let Muslim kids see a world where being Muslim is already normal.</p>
-      <MediaPlaceholder label="LIFESTYLE ART — everyday Muslim family scene with Aya & Sura" ratio="wide" variant={2} />
+      <img
+        src="/images/brand/dua-hands.png"
+        alt="Open hands raised in dua"
+        class="dua-art"
+        width="1290"
+        loading="lazy"
+      />
+      <style>
+        .dua-art {
+          width: 100%;
+          max-width: 480px;
+          aspect-ratio: 16 / 9;
+          object-fit: contain;
+          margin: 0 auto;
+          border-radius: var(--radius-card);
+          background:
+            radial-gradient(circle at 50% 30%, rgba(255,255,255,.6), transparent 60%),
+            linear-gradient(160deg, var(--accent-soft), var(--brand-soft));
+        }
+      </style>
       <div class="grid grid-3" style="margin-top:1.5rem;">
         <div class="card"><h3>Faith &amp; Values</h3></div>
         <div class="card"><h3>Family &amp; Friends</h3></div>

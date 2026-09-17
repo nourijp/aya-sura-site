@@ -28,5 +28,30 @@ const { title, description = 'Aya & Sura — stories, games, activities and adve
       <slot />
     </main>
     <Footer />
+    <img
+      src="/images/brand/corner-mascot.png"
+      alt=""
+      aria-hidden="true"
+      class="corner-mascot"
+      width="500"
+      loading="lazy"
+    />
   </body>
 </html>
+
+<style>
+  .corner-mascot {
+    display: none;
+    position: fixed;
+    left: -18px;
+    bottom: -14px;
+    width: 130px;
+    height: auto;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(0 6px 10px rgba(39,35,31,.15));
+  }
+  @media (min-width: 980px) {
+    .corner-mascot { display: block; }
+  }
+</style>

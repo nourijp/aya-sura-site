@@ -52,6 +52,12 @@ from the UI, and check items off as the owner resolves them.
       is a real product spec, Lulu quote, price, and shipping rules. Per
       the audit, no "printed option being explored" copy should ever be
       shown — either it's fully live with real details, or it's absent.
+- [ ] Reserved art for a future "how your monthly package arrives" /
+      unboxing page: `public/images/reserved/physical-club-delivery-scene.jpg`
+      (Sura handing Aya a delivered box, sourced from `for.psd`). Not
+      wired into any page yet — build that page only once
+      `physicalClubEnabled` is true and real shipping/delivery details
+      are confirmed, per the no-"coming soon" rule above.
 
 ## Book
 

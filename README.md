@@ -113,7 +113,45 @@ dead/empty hrefs and 0 unresolved internal links).
 /start/            (secondary adult/new-Muslim landing page, footer-linked only)
 /privacy/
 /terms/
+/faq/
+/contact/
+/free/confirmed-preview/
+/free/starter-pack-preview/
 ```
+
+## What changed in v12
+
+Applied in place on top of v10, per the owner's `aya_sura_strategy_audit_v12`
+correction set (see `docs/OWNER_DECISIONS.md` for the full checklist):
+
+- **Naming**: the intro offer is now "Founding Season" everywhere (was
+  "Founding Club"). Product name is consistently "Aya & Sura Adventure
+  Club".
+- **New global pages**: `/faq/` (global FAQ), `/contact/` (general contact
+  form). `/privacy/` and `/terms/` now render real staging-draft legal text
+  instead of empty placeholders.
+- **Free Starter Pack preview flow** extended to
+  `/free/` → `/free/check-your-email/` → `/free/confirmed-preview/` →
+  `/free/starter-pack-preview/`, and the check-your-email page no longer
+  implies a real email was sent while in preview mode.
+- **Card resource pages** (`/resources/cards/quran-edition/`,
+  `/resources/cards/surah-edition/`) no longer show fabricated sample audio
+  entries ("Sample vocabulary word", "audio coming soon") — they show an
+  honest "resources are being migrated" state instead.
+- **Parent feedback form** (`/feedback/`) restructured: no child-name
+  field, separate contact-me/quote-me consent checkboxes, product/age-range
+  selects, Privacy link.
+- **Characters/Aya pages**: fixed an oversized single-item placeholder on
+  the Characters page, removed the giant speculative "future cast" block,
+  and removed Aya's three generic gradient "expression crop" placeholders
+  (no real approved art exists for them).
+- **App page**: removed customer-facing "Planned" feature cards in favor of
+  an honest "the app is in development" section.
+- **`business.formMode`** added alongside `emailMode` to make the
+  preview/live distinction explicit for Contact and Parent feedback too.
+- **`scripts/check-links.mjs`** now fails the build if `/privacy/`,
+  `/terms/`, `/faq/`, or `/contact/` is missing, or if rendered HTML
+  contains `TODO`, `Sample vocabulary word`, or `audio coming soon`.
 
 ## Key config files
 

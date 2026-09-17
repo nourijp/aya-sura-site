@@ -13,12 +13,11 @@ import { routes } from '../config/routes.ts';
       <div>
         <p class="eyebrow">Stories • Play • Faith • Learning</p>
         <h1>Grow up with Aya &amp; Sura.</h1>
-        <p>Meet a brother-and-sister duo at the center of stories, games and adventures made for Muslim kids. Join their first three monthly adventures, explore the cards, and meet the friends who make their world bigger.</p>
+        <p>Meet a brother-and-sister duo at the center of stories, games and adventures made for Muslim kids. Read with them, play with them, meet their friends and return to a world that grows with your family.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href={routes.club}>Join the Founding Club — ${business.foundingPrice.toFixed(2)}</a>
+          <a class="btn btn-primary" href={routes.club}>Join the Adventure Club</a>
           <a class="btn btn-secondary" href={routes.characters}>Meet the Characters</a>
         </div>
-        <p class="muted" style="margin-top:.9rem;"><a href={routes.cardResources}>Already have the cards? Open Card Audio &amp; Resources</a></p>
       </div>
       <MediaPlaceholder
         label="HERO: Aya + Sura + Poji together, with hints of the wider cast"
@@ -28,22 +27,23 @@ import { routes } from '../config/routes.ts';
     </div>
   </section>
 
-  <!-- FOUNDING CLUB FEATURED SECTION -->
+  <!-- AYA & SURA ADVENTURE CLUB FEATURED SECTION -->
   <section class="section section--deep">
     <div class="container hero hero--split">
       <div>
-        <p class="eyebrow" style="color:#fff2df;">Founding Adventure Club</p>
+        <p class="eyebrow" style="color:#fff2df;">AYA &amp; SURA ADVENTURE CLUB</p>
+        <span class="tag" style="background:#fff9f0;color:var(--brand-deep);">FOUNDING SEASON</span>
         <h2>Three months. Three new adventures. One world to keep coming back to.</h2>
-        <p>Join the first Aya &amp; Sura Adventure Club cohort for ${business.foundingPrice.toFixed(2)} total. Each month starts with a new illustrated story and expands into activities, coloring, collectibles and family conversation.</p>
+        <p>Join the first Aya &amp; Sura Adventure Club season for ${business.foundingPrice.toFixed(2)} total. Each month begins with a short illustrated story and expands into activities, coloring, puzzles, character moments and a family connection.</p>
         <div class="grid grid-3" style="margin:1.5rem 0;">
           <div class="card"><span class="tag">Month 1</span><p class="muted">First adventure arrives about {business.foundingDeliveryDelayDays} days after founding enrollment.</p></div>
           <div class="card"><span class="tag">Month 2</span><p class="muted">A new story and activity pack, about one month later.</p></div>
           <div class="card"><span class="tag">Month 3</span><p class="muted">The final founding-season adventure, about one month later.</p></div>
         </div>
         <div class="btn-row">
-          <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href={routes.club}>Join All 3 Months — ${business.foundingPrice.toFixed(2)}</a>
+          <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href={routes.club}>Join the Founding Season — ${business.foundingPrice.toFixed(2)}</a>
         </div>
-        <p class="muted" style="color:#fff2df;">One-time founding payment. No automatic recurring charge.</p>
+        <p class="muted" style="color:#fff2df;">One-time payment. No automatic renewal.</p>
       </div>
       <MediaPlaceholder label="CLUB COMPOSITE — story cover + activity spread + coloring page + cards" ratio="wide" variant={4} />
     </div>
@@ -69,9 +69,9 @@ import { routes } from '../config/routes.ts';
         <div class="card bento-tile bento-tile--wide">
           <MediaPlaceholder label="CLUB — monthly digital pack composite" ratio="wide" variant={4} />
           <h3>A new adventure every month.</h3>
-          <p class="muted">Join the Founding Adventure Club for three story-led monthly releases with activities, coloring and collectibles.</p>
+          <p class="muted">Join the Aya &amp; Sura Adventure Club Founding Season for three story-led monthly releases with activities, coloring and collectibles.</p>
           <span class="tag">3 months · ${business.foundingPrice.toFixed(2)}</span>
-          <div><a class="btn btn-ghost" href={routes.club}>Join the Founding Club</a></div>
+          <div><a class="btn btn-ghost" href={routes.club}>Join the Founding Season</a></div>
         </div>
         <div class="card bento-tile">
           <MediaPlaceholder label="APP — phone/tablet showing real app screen" ratio="wide" variant={1} />

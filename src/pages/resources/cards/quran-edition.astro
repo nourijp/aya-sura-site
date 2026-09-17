@@ -1,21 +1,20 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import AudioResourceList from '../../../components/AudioResourceList.astro';
 
-// Owner TODO: replace with the real legacy QR/audio inventory once
-// migration/legacy-url-inventory.csv is filled in — see docs/OWNER_DECISIONS.md.
-// Entries with src: null are unmigrated placeholders; do not invent audio files.
-const entries = [
-  { title: 'Sample vocabulary word — audio coming soon', src: null, cardNumber: 'Card 1' },
-  { title: 'Sample vocabulary word — audio coming soon', src: null, cardNumber: 'Card 2' }
-];
+// Real legacy QR/audio inventory has not been migrated yet — see
+// docs/OWNER_DECISIONS.md. Do not invent sample card entries here; show an
+// honest "being migrated" state instead until the real inventory lands.
 ---
 <Layout title="Quran Edition Resources">
   <section class="section">
     <div class="container">
       <h1>Quran Edition — Audio &amp; Resources</h1>
-      <p class="muted">Listen to the audio companion for your Quran Edition deck below. More cards are being added as audio is finished.</p>
-      <AudioResourceList entries={entries} />
+      <p class="muted">Quran Edition audio and card resources are currently being migrated to this site. This page does not yet contain the full card-by-card audio library.</p>
+      <div class="card" style="max-width:560px;margin-top:1.5rem;">
+        <h3>Resources are being migrated</h3>
+        <p class="muted">If you scanned a QR code from a printed Quran Edition card and landed here, that resource is on its way but not yet live on the new site. Contact us with your card number or a photo of the deck and we'll help directly.</p>
+        <a class="btn btn-primary" href="/contact/">Contact Us</a>
+      </div>
     </div>
   </section>
 </Layout>

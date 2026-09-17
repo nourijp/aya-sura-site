@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+import { routes } from '../../config/routes.ts';
+---
+<Layout title="Starter Pack Preview" description="Staging preview of the Free Starter Pack contents.">
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Staging preview</p>
+      <h1>Here's what's inside the Free Starter Pack.</h1>
+      <p>This page previews what a family receives after confirming their email. In production, these files are attached to or linked from the confirmation email itself.</p>
+      <div class="grid grid-3" style="margin-top:2rem;">
+        <div class="card">
+          <MediaPlaceholder label="Free Starter Pack — short illustrated story" ratio="card" variant={1} />
+          <h3>Short story</h3>
+          <p class="muted">A short illustrated Aya &amp; Sura story to read together.</p>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="Free Starter Pack — coloring pages" ratio="card" variant={2} />
+          <h3>Coloring pages</h3>
+          <p class="muted">Printable line art from the story.</p>
+        </div>
+        <div class="card">
+          <MediaPlaceholder label="Free Starter Pack — sample cards" ratio="card" variant={3} />
+          <h3>Sample printable cards</h3>
+          <p class="muted">A small taste of the Quran Edition and Surah Edition card decks.</p>
+        </div>
+      </div>
+      <div class="btn-row" style="margin-top:2rem;">
+        <a class="btn btn-primary" href={routes.club}>Join the Founding Season</a>
+        <a class="btn btn-secondary" href={routes.home}>Back to Home</a>
+      </div>
+    </div>
+  </section>
+</Layout>

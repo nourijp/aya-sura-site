@@ -25,6 +25,8 @@ export const routes = {
   qrResources: '/resources/cards/',
   shop: 'https://www.ayasura.com',
   feedback: '/feedback/',
+  contact: '/contact/',
+  faq: '/faq/',
   privacy: '/privacy/',
   terms: '/terms/',
   start: '/start/'

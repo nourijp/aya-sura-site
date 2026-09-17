@@ -1,15 +1,28 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { routes } from '../../config/routes.ts';
+import { business } from '../../config/business.ts';
+
+const isPreview = business.emailMode === 'preview';
 ---
 <Layout title="Check Your Email" description="Confirm your email to receive your free Aya & Sura Starter Pack.">
   <section class="section confetti-section">
     <div class="container">
       <h1>Check your email to confirm.</h1>
-      <p>We've sent a confirmation link to the address you entered. Click it to receive your free Aya &amp; Sura story, coloring pages, activity and sample cards.</p>
-      <p class="muted">Don't see it in a minute or two? Check your spam or promotions folder, or <a href={routes.feedback}>contact us</a> and we'll help.</p>
+      {isPreview ? (
+        <>
+          <p>In a live environment, we'd send a confirmation link to the address you entered right now. This is a local staging preview, so <strong>no real email has been sent</strong>.</p>
+          <p class="muted">You can continue through the preview flow to see what a family would experience after confirming.</p>
+          <div class="btn-row" style="margin-top:1.5rem;">
+            <a class="btn btn-primary" href="/free/confirmed-preview/">Continue the Preview →</a>
+          </div>
+        </>
+      ) : (
+        <p>We've sent a confirmation link to the address you entered. Click it to receive your free Aya &amp; Sura story, coloring pages, activity and sample cards.</p>
+      )}
+      <p class="muted">Don't see it in a minute or two? Check your spam or promotions folder, or <a href={routes.contact}>contact us</a> and we'll help.</p>
       <div class="btn-row" style="margin-top:1.5rem;">
-        <a class="btn btn-primary" href={routes.club}>Join the Founding Club</a>
+        <a class="btn btn-primary" href={routes.club}>Join the Founding Season</a>
         <a class="btn btn-secondary" href={routes.home}>Back to Home</a>
       </div>
     </div>

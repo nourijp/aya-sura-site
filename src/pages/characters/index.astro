@@ -36,26 +36,24 @@ const cardImgStyle = 'width:100%;aspect-ratio:3/4;object-fit:cover;border-radius
   <section class="section">
     <div class="container">
       <h2>Always nearby</h2>
-      <div class="grid grid-3" style="margin-top:1.5rem;">
-        <div class="card">
-          <MediaPlaceholder label="CHARACTER — Poji approved art" ratio="portrait" variant={3} />
-          <h3>Poji</h3>
-          <p class="muted">Aya's little lion doll and a constant companion in the Aya &amp; Sura world.</p>
-          <a class="btn btn-ghost" href={routes.characterPoji}>Meet Poji</a>
-        </div>
+      <div class="card" style="max-width:320px;margin-top:1.5rem;">
+        <MediaPlaceholder label="CHARACTER — Poji approved art" ratio="portrait" variant={3} />
+        <h3>Poji</h3>
+        <p class="muted">Aya's little lion doll and a constant companion in the Aya &amp; Sura world.</p>
+        <a class="btn btn-ghost" href={routes.characterPoji}>Meet Poji</a>
       </div>
     </div>
   </section>
 
   <!-- Friends & Family: only names/art with approved information are shown.
-       Do not invent biographies for characters not already defined in the
-       existing copy files (see docs/OWNER_DECISIONS.md for candidates
-       awaiting approval, e.g. Isa, Nao, other Muslim Manga Club adaptations). -->
+       No approved Isa/Nao (or other) entries exist yet, so nothing is
+       rendered here rather than a large "future cast" placeholder — see
+       docs/OWNER_DECISIONS.md for candidates awaiting approval. Do not
+       invent biographies for unapproved characters. -->
   <section class="section section--soft">
     <div class="container">
       <h2>Friends &amp; family</h2>
       <p>Aya &amp; Sura is not built around a single one-off story. As new friends, family members and guest characters are approved, they will appear here alongside Aya, Sura and Poji.</p>
-      <MediaPlaceholder label="FUTURE CAST — leave as tasteful placeholder until approved characters are selected" ratio="wide" variant={4} />
     </div>
   </section>
 </Layout>

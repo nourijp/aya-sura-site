@@ -4,7 +4,7 @@ import FreeStarterPack from '../../components/FreeStarterPack.astro';
 import { routes } from '../../config/routes.ts';
 ---
 <Layout title="Free Starter Pack" description="Get a free Aya & Sura story, coloring pages, activity and sample cards by email.">
-  <section class="section">
+  <section class="section" style="padding-top:clamp(3rem, 8vw, 6rem);">
     <div class="container hero hero--split">
       <div>
         <p class="eyebrow">Try Aya &amp; Sura Free</p>
@@ -21,9 +21,9 @@ import { routes } from '../../config/routes.ts';
   <section class="section section--surface">
     <div class="container">
       <h2>Want more right away?</h2>
-      <p>Families ready to join now can start with the Founding Adventure Club, or explore the current Quran Edition and Surah Edition card series.</p>
+      <p>Families ready to join now can start with the Aya & Sura Adventure Club — Founding Season, or explore the current Quran Edition and Surah Edition card series.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href={routes.club}>Join the Founding Club</a>
+        <a class="btn btn-primary" href={routes.club}>Join the Founding Season</a>
         <a class="btn btn-secondary" href={routes.cards}>Explore Cards &amp; Games</a>
       </div>
     </div>

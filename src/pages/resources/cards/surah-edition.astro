@@ -1,20 +1,20 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import AudioResourceList from '../../../components/AudioResourceList.astro';
 
-// Owner TODO: replace with real legacy QR/audio inventory — see docs/OWNER_DECISIONS.md.
-const entries = [
-  { title: 'Al-Fatihah — audio coming soon', arabic: 'الفاتحة', src: null },
-  { title: 'Al-Ikhlas — audio coming soon', arabic: 'الإخلاص', src: null },
-  { title: "Al-'Asr — audio coming soon", arabic: 'العصر', src: null }
-];
+// Real legacy QR/audio inventory has not been migrated yet — see
+// docs/OWNER_DECISIONS.md. Do not invent sample card entries here; show an
+// honest "being migrated" state instead until the real inventory lands.
 ---
 <Layout title="Surah Edition Resources">
   <section class="section">
     <div class="container">
       <h1>Surah Edition — Audio &amp; Resources</h1>
-      <p class="muted">Listen to the audio companion for your Surah Edition deck (Al-Fatihah, Al-Ikhlas, Al-'Asr) below.</p>
-      <AudioResourceList entries={entries} />
+      <p class="muted">Surah Edition audio and card resources (Al-Fatihah, Al-Ikhlas, Al-'Asr) are currently being migrated to this site.</p>
+      <div class="card" style="max-width:560px;margin-top:1.5rem;">
+        <h3>Resources are being migrated</h3>
+        <p class="muted">If you scanned a QR code from a printed Surah Edition card and landed here, that resource is on its way but not yet live on the new site. Contact us with your card number or a photo of the deck and we'll help directly.</p>
+        <a class="btn btn-primary" href="/contact/">Contact Us</a>
+      </div>
     </div>
   </section>
 </Layout>

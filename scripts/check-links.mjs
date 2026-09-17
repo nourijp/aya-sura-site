@@ -27,6 +27,24 @@ if (!existsSync(DIST)) {
   process.exit(1);
 }
 
+// v12: required routes that must exist in the built site.
+const REQUIRED_ROUTES = ['/privacy/', '/terms/', '/faq/', '/contact/'];
+for (const route of REQUIRED_ROUTES) {
+  const p = join(DIST, route, 'index.html');
+  if (!existsSync(p)) {
+    console.error(`Required route missing from build: ${route}`);
+    process.exit(1);
+  }
+}
+
+// v12: fake-content markers that must never render on the live site.
+const FAKE_CONTENT_MARKERS = [
+  'TODO',
+  'Sample vocabulary word',
+  'audio coming soon',
+  'Audio coming soon'
+];
+
 const htmlFiles = walk(DIST);
 // Only <a href="..."> — not <link>/<script> asset references.
 const hrefPattern = /<a\s[^>]*href="([^"]*)"/g;
@@ -42,6 +60,13 @@ function internalPathExists(path) {
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
+
+  for (const marker of FAKE_CONTENT_MARKERS) {
+    if (html.includes(marker)) {
+      failures.push(`${file}: rendered text contains fake/internal marker "${marker}"`);
+    }
+  }
+
   let match;
   while ((match = hrefPattern.exec(html))) {
     const href = match[1];

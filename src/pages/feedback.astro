@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { routes } from '../config/routes.ts';
 ---
 <Layout title="Feedback">
   <section class="section">
@@ -7,7 +8,7 @@ import Layout from '../layouts/Layout.astro';
       <h1>Already used Aya &amp; Sura with your family?</h1>
       <p>We are reconnecting with families who have already used Aya &amp; Sura products so we can learn what children actually enjoyed, what parents found useful and what we should build next. Honest feedback is more valuable than praise.</p>
 
-      <form class="card" style="max-width:640px;margin-top:1.5rem;" data-mock="true" onsubmit="event.preventDefault(); this.querySelector('[data-status]').textContent='Thanks for sharing — this staging form is not yet connected to a live inbox.';">
+      <form class="card" style="max-width:640px;margin-top:1.5rem;" data-mock="true" onsubmit="event.preventDefault(); this.querySelector('[data-status]').textContent='Thanks for sharing (staging preview) — this form is not yet connected to a live inbox.';">
         <div class="grid" style="gap:1rem;">
           <label>Name (optional)
             <input type="text" name="name" />
@@ -15,11 +16,24 @@ import Layout from '../layouts/Layout.astro';
           <label>Email
             <input type="email" name="email" required />
           </label>
-          <label>Which product did you use?
-            <input type="text" name="product" />
+          <label>Product used
+            <select name="product">
+              <option>Quran Edition — Volume 1</option>
+              <option>Surah Edition — Volume 1</option>
+              <option>Aya &amp; Sura app</option>
+              <option>Giving Thanks to Allah / preview</option>
+              <option>Other</option>
+            </select>
           </label>
-          <label>Approximate child age range
-            <input type="text" name="age_range" />
+          <label>Child age range
+            <select name="age_range">
+              <option>2–4</option>
+              <option>5–6</option>
+              <option>7–8</option>
+              <option>9–10</option>
+              <option>11–12</option>
+              <option>Prefer not to say</option>
+            </select>
           </label>
           <label>What did your child enjoy most?
             <textarea name="enjoyed"></textarea>
@@ -36,14 +50,19 @@ import Layout from '../layouts/Layout.astro';
           <label>What would you like Aya &amp; Sura to make next?
             <textarea name="next"></textarea>
           </label>
-          <label>May we contact you about your feedback?
-            <select name="contact_ok"><option>Yes</option><option>No</option></select>
+          <label style="display:flex;flex-direction:row;align-items:flex-start;gap:.6rem;font-weight:400;">
+            <input type="checkbox" name="contact_ok" style="width:auto;margin-top:.3rem;" />
+            <span>You may contact me about this feedback.</span>
+          </label>
+          <label style="display:flex;flex-direction:row;align-items:flex-start;gap:.6rem;font-weight:400;">
+            <input type="checkbox" name="quote_ok" style="width:auto;margin-top:.3rem;" />
+            <span>You may contact me to ask whether part of my feedback can be quoted publicly.</span>
           </label>
         </div>
         <button class="btn btn-primary" type="submit" style="margin-top:1.5rem;">Share Your Experience</button>
-        <p data-status class="muted" style="margin-top:.75rem;"></p>
+        <p data-status class="muted" role="status" style="margin-top:.75rem;"></p>
       </form>
-      <p class="muted" style="margin-top:1rem;">We do not ask for your child's name. Submissions are reviewed before any quote is ever published — see content/outreach for the testimonial permission workflow.</p>
+      <p class="muted" style="margin-top:1rem;">We do not ask for your child's name. Checking the quote box only means we may ask permission later — we never publish an exact quote without sending it to you for approval first. See our <a href={routes.privacy}>Privacy Policy</a>.</p>
     </div>
   </section>
 </Layout>

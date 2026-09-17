@@ -8,19 +8,20 @@ import { routes } from '../config/routes.ts';
 const checkoutHref = getFoundingCheckoutUrl();
 const priceLabel = `$${business.foundingPrice.toFixed(2)}`;
 ---
-<Layout title="Founding Adventure Club" description="Three months. Three new Aya & Sura adventures. Join the Founding Adventure Club.">
+<Layout title="Aya & Sura Adventure Club" description="Aya & Sura Adventure Club — Founding Season. $24.99 total, 3 monthly digital Adventures.">
   <!-- HERO / SALES PAGE ABOVE FOLD -->
   <section class="section">
     <div class="container hero hero--split">
       <div>
-        <p class="eyebrow">Founding Adventure Club</p>
+        <p class="eyebrow">Aya &amp; Sura Adventure Club</p>
+        <span class="tag">FOUNDING SEASON</span>
         <h1>Three months. Three new Aya &amp; Sura adventures.</h1>
-        <p style="font-size:1.6rem;font-weight:800;color:var(--brand-deep);">{priceLabel} total</p>
+        <p style="font-size:1.6rem;font-weight:800;color:var(--brand-deep);">{priceLabel} total · 3 monthly digital Adventures</p>
         <p>Join the first group of families to receive the new Aya &amp; Sura Adventure Club. Each month begins with an illustrated story and expands into activities, coloring, collectibles and family conversation.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href={checkoutHref}>Join All 3 Months — {priceLabel}</a>
+          <a class="btn btn-primary" href={checkoutHref}>Join the Founding Season — {priceLabel}</a>
         </div>
-        <p class="muted">One-time founding payment. No automatic renewal.</p>
+        <p class="muted">One-time payment. No automatic renewal.</p>
       </div>
       <MediaPlaceholder label="CLUB HERO — story cover + activity spread + coloring page + cards composite" ratio="wide" variant={1} />
     </div>
@@ -30,7 +31,7 @@ const priceLabel = `$${business.foundingPrice.toFixed(2)}`;
   <section class="section section--surface">
     <div class="container">
       <h2>What's included each month</h2>
-      <p>Instead of unrelated worksheets, every month is built around one Aya &amp; Sura story and one theme.</p>
+      <p>Each monthly issue is designed around approximately 16 interior pages. The mix can shift with the story, but a typical issue includes a 4–8 page illustrated Aya &amp; Sura story, story-connected activities, coloring, a puzzle or game, a family challenge, a Muslim value or parent-child discussion, a recurring character/world segment, a flexible feature and an answer/teaser page. Digital bonus files such as printable cards or badges may be included separately.</p>
       <div class="grid grid-3" style="margin-top:2rem;">
         <div class="card">
           <MediaPlaceholder label="Illustrated short story / comic — sample page" ratio="card" variant={1} />
@@ -69,8 +70,8 @@ const priceLabel = `$${business.foundingPrice.toFixed(2)}`;
   <!-- TIMELINE -->
   <section class="section">
     <div class="container">
-      <h2>How the founding cohort works</h2>
-      <p>The Founding Club is a cohort launch: you can enroll now, and each release goes out to every founding family together. Exact calendar dates will be confirmed once the founding enrollment window closes.</p>
+      <h2>How the Founding Season works</h2>
+      <p>The Founding Season is a cohort launch: you can enroll now, and each release goes out to every founding family together. Exact calendar dates will be confirmed once the founding enrollment window closes.</p>
       <div class="grid grid-4" style="margin-top:2rem;">
         <div class="card"><span class="tag">Join</span><p class="muted">Become a Founding Family.</p></div>
         <div class="card"><span class="tag">About {business.foundingDeliveryDelayDays} days later</span><p class="muted">Adventure 1 arrives by email.</p></div>
@@ -102,8 +103,16 @@ const priceLabel = `$${business.foundingPrice.toFixed(2)}`;
     <div class="container">
       <h2>Join the first three adventures.</h2>
       <p>Founding families receive the first three digital Aya &amp; Sura Adventure Club releases as they are published. This first run is intentionally simple: one purchase, three monthly releases, and no automatic renewal.</p>
-      <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href={checkoutHref}>Join All 3 Months — {priceLabel}</a>
-      <p class="muted" style="color:#fff2df;">Digital product. Print at home. One-time founding payment.</p>
+      <a class="btn btn-primary" style="background:#fff9f0;color:var(--brand-deep);" href={checkoutHref}>Join the Founding Season — {priceLabel}</a>
+      <p class="muted" style="color:#fff2df;">Digital product. Print at home. One-time payment.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDING SEASON IS THE BEGINNING -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2>The Founding Season is the beginning—not the end.</h2>
+      <p>The Adventure Club is designed to continue beyond the first three releases. Founding families will be invited to see the next season or ongoing plan before the Founding Season ends. The {priceLabel} Founding Season does not automatically renew.</p>
     </div>
   </section>
 
@@ -151,8 +160,8 @@ const priceLabel = `$${business.foundingPrice.toFixed(2)}`;
           <p>Yes. One family membership can be used by children in the same household. Classroom, school or group use may require a separate license later.</p>
         </details>
         <details>
-          <summary>Is the Founding Club a subscription?</summary>
-          <p>No. The Founding Adventure Club is a one-time {priceLabel} purchase covering all three founding monthly releases. It does not automatically renew.</p>
+          <summary>Is the Founding Season a subscription?</summary>
+          <p>No. The Founding Season is a one-time {priceLabel} purchase covering all three founding monthly releases. It does not automatically renew.</p>
         </details>
         <details>
           <summary>When do I get Month 1?</summary>
@@ -163,6 +172,7 @@ const priceLabel = `$${business.foundingPrice.toFixed(2)}`;
           <p>Founding families will be invited to see what comes next. We will not automatically charge you for a new plan unless you explicitly choose one.</p>
         </details>
       </div>
+      <p style="margin-top:1.5rem;"><a class="btn btn-ghost" href="/faq/">See all FAQs →</a></p>
     </div>
   </section>
 

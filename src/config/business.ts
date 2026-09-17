@@ -7,11 +7,19 @@
 export type LaunchState = 'prelaunch' | 'founding_open' | 'founding_closed' | 'evergreen';
 export type CheckoutMode = 'preview' | 'woocommerce';
 export type EmailMode = 'preview' | 'brevo';
+// FORM_MODE covers every local form (Free Starter Pack, Contact, Parent
+// feedback): 'preview' validates fields client-side, shows a realistic
+// success/check-email state, never claims real delivery, and only logs the
+// payload server-side. 'live' wires the form to its real provider endpoint.
+// Today every form on this site is preview-only by construction (no backend
+// beyond functions/api/free-starter.ts), so this mirrors emailMode until a
+// real Contact/feedback backend exists.
+export type FormMode = 'preview' | 'live';
 
 export const business = {
   launchState: 'founding_open' as LaunchState,
 
-  // Founding Adventure Club offer
+  // Aya & Sura Adventure Club — Founding Season offer
   foundingPrice: 24.99,
   foundingMonths: 3,
   foundingDeliveryDelayDays: 14,
@@ -34,11 +42,16 @@ export const business = {
   socialProofEnabled: false,
 
   // Email capture mode for the Free Starter Pack (see functions/api/free-starter.ts)
-  emailMode: (import.meta.env.EMAIL_MODE as EmailMode) || 'preview'
+  emailMode: (import.meta.env.EMAIL_MODE as EmailMode) || 'preview',
+
+  // Form-submission mode shared by Free Starter Pack, Contact and Parent
+  // feedback. No live backend exists yet for Contact/feedback, so this is
+  // 'preview' until real endpoints are wired up (see docs/OWNER_DECISIONS.md).
+  formMode: (import.meta.env.FORM_MODE as FormMode) || 'preview'
 };
 
 /**
- * Resolve where the "Join the Founding Club" CTA should send a customer.
+ * Resolve where the "Join the Founding Season" CTA should send a customer.
  * - preview: staging checkout summary page, no payment collected.
  * - woocommerce: real direct-to-checkout WooCommerce URL from config/env.
  */

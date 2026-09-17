@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  {
+    title: 'About Aya & Sura',
+    items: [
+      ['What is Aya & Sura?', "Aya & Sura is a character-led children's brand built around stories, play, learning and everyday Muslim life. Aya and Sura are the center of the world, but their friends, family and recurring characters can take the lead as the world grows."],
+      ['Who is Aya & Sura made for?', 'Aya & Sura is primarily being built for children under 12, but different products can suit different stages. A picture book, flashcard deck, Adventure Club issue and app feature do not need to target exactly the same age. Each product should explain the kind of reading, printing or grown-up help it expects.'],
+      ['How is Islam part of Aya & Sura?', "Aya & Sura is created for Muslim families. Faith is part of the characters' everyday world—in how they give thanks to Allah, make choices, celebrate, care for people, learn and understand the world around them. Some stories focus directly on Islamic topics; others begin with ordinary childhood experiences and let Muslim identity be a natural part of the story."],
+      ['Is Aya & Sura only for homeschool families?', 'No. Aya & Sura can be used at home, after school, while traveling, during family time or as a supplement to other learning. Classroom/group licensing may be offered separately.'],
+      ['Does my child need to know Arabic?', 'No. Aya & Sura should be usable without prior Arabic knowledge. Arabic, Quran vocabulary or pronunciation may appear where appropriate, with explanations or audio when available.'],
+      ['How do you review Islamic content?', 'Religious claims, Quran/Arabic content and topics that could be interpreted as formal Islamic teaching should receive separate human review before release. Ordinary story moments do not need to read like a lesson, but the Muslim worldview should remain coherent and respectful.'],
+    ],
+  },
+  {
+    title: 'Adventure Club',
+    items: [
+      ['What is the Aya & Sura Adventure Club?', 'The Adventure Club is a recurring Aya & Sura story-and-activity experience. Each release starts with a short illustrated story and expands into activities, coloring, puzzles, character moments and family interaction.'],
+      ['What is the Founding Season?', 'The Founding Season is the first three-month Adventure Club release cycle. Families who join it are the first group to receive the new monthly Adventure format.'],
+      ['How much is the Founding Season?', 'The current working offer is $24.99 total for three digital monthly releases. The checkout page should always show the exact current price before purchase.'],
+      ['Is the Founding Season a subscription?', 'No. It is planned as a one-time payment covering all three founding releases and should not automatically renew.'],
+      ['When do I get Month 1?', 'The first Founding Season Adventure is planned approximately 14 days after enrollment closes. The confirmation email should include the release calendar.'],
+      ['What happens after Month 3?', 'The Adventure Club can continue after the Founding Season. Founding families may be invited to join the next season or an ongoing membership, but they should not be automatically charged unless they explicitly choose a new plan.'],
+      ['Can siblings share one membership?', 'Yes, the working plan is that one family membership can be used by children in the same household. Classroom/school/group use may require separate licensing later.'],
+      ['Do I need a printer?', 'For the digital edition, a printer is recommended for the full activity experience because coloring, puzzles and other pages are designed to be printed. The story can still be read on a screen.'],
+    ],
+  },
+  {
+    title: 'Cards & Games',
+    items: [
+      ['What card products are available?', 'Aya & Sura currently has two physical card series: Quran Edition — Volume 1 and Surah Edition — Volume 1.'],
+      ['Will there be more card volumes?', 'The Volume 1 naming was designed to leave room for each series to grow. Additional volumes may be released when new sets are completed.'],
+      ['Where do I find the card audio and QR resources?', 'Use the Card Audio & Resources page. Printed QR codes on existing decks should continue to lead to supported companion content as the website changes.'],
+      ['Will my old QR codes still work?', 'That is the goal. Existing printed QR URLs should be treated as permanent product-support links and preserved or redirected to the correct equivalent resource.'],
+      ['What if a QR code does not scan?', 'Open the Card Audio & Resources page manually or contact Aya & Sura and include which deck/card you are using.'],
+    ],
+  },
+  {
+    title: 'Stories & Books',
+    items: [
+      ['What is Giving Thanks to Allah?', 'Giving Thanks to Allah is an illustrated Aya & Sura children’s story currently nearing completion. The website should show purchase/preorder only when printing and fulfillment are confirmed.'],
+      ['Are the monthly Adventure Club stories full-length books?', 'No. Adventure Club stories are intentionally shorter recurring illustrated episodes inside a monthly activity issue. The current plan is typically around 4–8 story pages depending on the story.'],
+      ['Will there be more Aya & Sura books?', 'The brand is designed to support more stories over time in different formats, including books and shorter monthly Adventures.'],
+    ],
+  },
+  {
+    title: 'App',
+    items: [
+      ['What does the Aya & Sura app do?', 'The app is being developed to support the Aya & Sura card experience with digital tools, audio and interactive features. The site should list only functions that are actually verified.'],
+      ['Do I need the app to use the physical cards?', 'No. The physical cards should remain usable on their own; digital/app features can extend the experience where available.'],
+      ['Is the Adventure Club inside the app?', 'Not currently as a promised feature. If Club content is integrated later, the site can be updated then.'],
+    ],
+  },
+  {
+    title: 'Orders & Support',
+    items: [
+      ['Where do I buy physical products?', 'Use the Shop link to open the Aya & Sura store.'],
+      ['Where can I get order help?', 'Use the Contact page and choose the order-help option.'],
+      ['What is the refund policy?', 'Refund rules may depend on whether the product is digital, physical, print-on-demand, damaged/misprinted or part of a Founding Season. A dedicated Refund / Returns policy should be published before taking new live orders from the rebuilt site.'],
+      ['How do I contact Aya & Sura?', 'Use the Contact page and choose the subject that best matches your question.'],
+    ],
+  },
+];
+---
+<Layout title="FAQ" description="Answers about Aya & Sura, the Adventure Club, cards, books, the app and orders.">
+  <section class="section">
+    <div class="container" style="max-width:840px;">
+      <h1>Frequently Asked Questions</h1>
+      <p>Answers about Aya &amp; Sura, the Adventure Club, cards, books, the app and orders.</p>
+
+      {sections.map((section) => (
+        <div style="margin-top:2rem;">
+          <h2>{section.title}</h2>
+          <div class="faq">
+            {section.items.map(([q, a]) => (
+              <details>
+                <summary>{q}</summary>
+                <p>{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

@@ -9,9 +9,27 @@ import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
         <h1>Meet Aya</h1>
         <p>Aya brings a lot of energy into a room. She is curious, expressive and often ready to act before everyone else has finished thinking. That can lead to fun, surprises—and sometimes situations she has to work through.</p>
       </div>
-      <MediaPlaceholder label="CHARACTER — full-body approved Aya" ratio="portrait" variant={1} />
+      <img
+        src="/images/characters/aya-meet-scene.jpg"
+        alt="Aya, laughing and pointing ahead while riding a jumping sheep over a fence"
+        class="character-portrait"
+        width="700"
+        height="700"
+        loading="eager"
+      />
     </div>
   </section>
+
+  <style>
+    .character-portrait {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: var(--radius-card);
+      background: var(--brand-soft);
+    }
+  </style>
 
   <section class="section section--surface">
     <div class="container">

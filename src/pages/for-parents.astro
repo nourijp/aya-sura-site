@@ -9,7 +9,13 @@ import MediaPlaceholder from '../components/MediaPlaceholder.astro';
         <h1>What are we trying to build for your child?</h1>
         <p>Aya &amp; Sura is a character world for Muslim children, but the goal is not to turn every story into a lesson or every activity into schoolwork. We want children to enjoy the characters first—and give parents stories, games and activities that can naturally support good conversations, useful skills and Muslim identity along the way.</p>
       </div>
-      <MediaPlaceholder label="PARENT PAGE — product/story/activity laid out clearly; avoid generic stock parent photo" ratio="wide" variant={2} />
+      <img
+        src="/images/faith/aya-sura-prayer.png"
+        alt="Aya and Sura praying together on their prayer mats"
+        class="parent-hero-art"
+        width="1158"
+        loading="eager"
+      />
     </div>
   </section>
 
@@ -34,11 +40,39 @@ import MediaPlaceholder from '../components/MediaPlaceholder.astro';
   </section>
 
   <section class="section section--deep">
-    <div class="container">
-      <h2>Islam is part of the world—not pasted on top of it.</h2>
-      <p>Aya &amp; Sura can talk about gratitude to Allah, Ramadan, Quran, generosity and other explicitly Islamic subjects. They can also have a disagreement with a friend, try a new recipe, visit another community or make a mistake at home. Muslim children deserve stories where faith can matter without every moment becoming a classroom.</p>
+    <div class="container hero hero--split">
+      <div>
+        <h2>Islam is part of the world—not pasted on top of it.</h2>
+        <p>Aya &amp; Sura can talk about gratitude to Allah, Ramadan, Quran, generosity and other explicitly Islamic subjects. They can also have a disagreement with a friend, try a new recipe, visit another community or make a mistake at home. Muslim children deserve stories where faith can matter without every moment becoming a classroom.</p>
+      </div>
+      <img
+        src="/images/faith/aya-quran.png"
+        alt="Aya holding the Quran with both hands"
+        class="faith-art"
+        width="1200"
+        loading="lazy"
+      />
     </div>
   </section>
+
+  <style>
+    .parent-hero-art {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: var(--radius-card);
+      background: var(--brand-soft);
+    }
+    .faith-art {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+  </style>
 
   <section class="section section--surface">
     <div class="container">

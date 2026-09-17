@@ -28,13 +28,31 @@ import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
 
   <section class="section">
     <div class="container hero hero--split">
-      <MediaPlaceholder label="SCENE — Sura and Aya sibling scene" ratio="wide" variant={3} />
+      <img
+        src="/images/characters/sura-aya-sandcastle.jpg"
+        alt="Sura carefully building a tall sandcastle wall while Aya watches, delighted, nearby"
+        class="sibling-scene"
+        width="1400"
+        height="788"
+        loading="lazy"
+      />
       <div>
         <h2>Sura and Aya</h2>
         <p>Sura may try to slow things down while Aya tries to speed them up. Their stories work best when neither child is always right. They learn by dealing with the situation—and with each other.</p>
       </div>
     </div>
   </section>
+
+  <style>
+    .sibling-scene {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center 70%;
+      border-radius: var(--radius-card);
+      background: var(--brand-soft);
+    }
+  </style>
 
   <section class="section section--soft">
     <div class="container">

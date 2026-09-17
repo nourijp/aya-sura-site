@@ -23,7 +23,7 @@ export const routes = {
   freeConfirm: '/free/check-your-email/',
   cardResources: '/resources/cards/',
   qrResources: '/resources/cards/',
-  shop: 'https://www.ayasura.com',
+  shop: '/shop/',
   feedback: '/feedback/',
   contact: '/contact/',
   faq: '/faq/',

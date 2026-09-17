@@ -44,7 +44,8 @@ const FAKE_CONTENT_MARKERS = [
   'audio coming soon',
   'Audio coming soon',
   'STAGING DRAFT',
-  'CHECK BACK SOON'
+  'CHECK BACK SOON',
+  'WORKING'
 ];
 
 const htmlFiles = walk(DIST);

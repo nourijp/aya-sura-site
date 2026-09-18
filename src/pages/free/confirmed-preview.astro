@@ -2,12 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import { routes } from '../../config/routes.ts';
 ---
-<Layout title="Email Confirmed (Preview)" description="Staging preview of the Free Adventure Sampler email confirmation.">
+<Layout title="Email Confirmed (Preview)" description="Preview of the Free Adventure Sampler email confirmation.">
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Staging preview</p>
+      <p class="eyebrow">Preview</p>
       <h1>Email confirmed. Your free Adventure Sampler is ready.</h1>
-      <p>This is a local staging preview of the confirmation state — no real subscriber was created and no real email was sent. In production, clicking the real confirmation link lands here and the Adventure Sampler is delivered by email.</p>
+      <p>This preview build doesn't create a real subscriber or send a real email yet. Once that's connected, clicking the real confirmation link will land here and the Adventure Sampler will be delivered by email.</p>
       <div class="btn-row" style="margin-top:1.5rem;">
         <a class="btn btn-primary" href="/free/starter-pack-preview/">See the Adventure Sampler Preview →</a>
         <a class="btn btn-secondary" href={routes.home}>Back to Home</a>

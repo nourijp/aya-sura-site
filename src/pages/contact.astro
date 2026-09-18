@@ -11,8 +11,7 @@ import { routes } from '../config/routes.ts';
       <form
         class="card"
         style="max-width:640px;margin-top:1.5rem;"
-        data-mock="true"
-        onsubmit="event.preventDefault(); this.querySelector('[data-status]').textContent='Message received (staging preview) — no message was actually delivered. In production this form sends to the Aya & Sura support inbox.'; this.querySelector('[data-status]').hidden=false;"
+        data-contact-form
       >
         <div class="grid" style="gap:1rem;">
           <label>Name (optional)
@@ -48,10 +47,21 @@ import { routes } from '../config/routes.ts';
         <button class="btn btn-primary" type="submit" style="margin-top:1.5rem;">Send Message</button>
         <p data-status class="muted" role="status" style="margin-top:.75rem;"></p>
       </form>
-      <p class="muted" style="margin-top:1rem;">See our <a href={routes.privacy}>Privacy Policy</a>. This is a local staging form — no message is actually delivered until a real support inbox is connected.</p>
+      <p class="muted" style="margin-top:1rem;">See our <a href={routes.privacy}>Privacy Policy</a>.</p>
     </div>
   </section>
 </Layout>
+
+<script>
+  const form = document.querySelector('[data-contact-form]') as HTMLFormElement | null;
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const status = form.querySelector('[data-status]') as HTMLElement | null;
+    if (status) {
+      status.textContent = "Thanks for reaching out. This preview build doesn't send messages to our inbox yet, so please also reach us directly for anything urgent while this is being finished.";
+    }
+  });
+</script>
 
 <style>
   label { display: grid; gap: .35rem; font-weight: 600; font-size: .9rem; }

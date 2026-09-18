@@ -8,7 +8,7 @@ import { routes } from '../config/routes.ts';
       <h1>Already used Aya &amp; Sura with your family?</h1>
       <p>We are reconnecting with families who have already used Aya &amp; Sura products so we can learn what children actually enjoyed, what parents found useful and what we should build next. Honest feedback is more valuable than praise.</p>
 
-      <form class="card" style="max-width:640px;margin-top:1.5rem;" data-mock="true" onsubmit="event.preventDefault(); this.querySelector('[data-status]').textContent='Thanks for sharing (staging preview) — this form is not yet connected to a live inbox.';">
+      <form class="card" style="max-width:640px;margin-top:1.5rem;" data-feedback-form>
         <div class="grid" style="gap:1rem;">
           <label>Name (optional)
             <input type="text" name="name" />
@@ -66,6 +66,17 @@ import { routes } from '../config/routes.ts';
     </div>
   </section>
 </Layout>
+
+<script>
+  const form = document.querySelector('[data-feedback-form]') as HTMLFormElement | null;
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const status = form.querySelector('[data-status]') as HTMLElement | null;
+    if (status) {
+      status.textContent = "Thank you — this is exactly the kind of feedback that helps shape what we build next. This preview build doesn't save submissions yet, so please also reach us directly if you'd like a reply.";
+    }
+  });
+</script>
 
 <style>
   label { display: grid; gap: .35rem; font-weight: 600; font-size: .9rem; }

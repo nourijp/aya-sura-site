@@ -11,7 +11,7 @@ const isPreview = business.emailMode === 'preview';
       <h1>Check your email to confirm.</h1>
       {isPreview ? (
         <>
-          <p>In a live environment, we'd send a confirmation link to the address you entered right now. This is a local staging preview, so <strong>no real email has been sent</strong>.</p>
+          <p>This preview build doesn't send real confirmation emails yet, so <strong>no email has been sent</strong> to the address you entered.</p>
           <p class="muted">You can continue through the preview flow to see what a family would experience after confirming.</p>
           <div class="btn-row" style="margin-top:1.5rem;">
             <a class="btn btn-primary" href="/free/confirmed-preview/">Continue the Preview →</a>

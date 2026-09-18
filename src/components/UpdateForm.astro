@@ -12,7 +12,7 @@ const { heading, body, buttonLabel, formId = 'update-form' } = Astro.props;
 <div class="update-form card">
   <h3>{heading}</h3>
   <p class="muted">{body}</p>
-  <form id={formId} data-mock="true" onsubmit="event.preventDefault(); this.querySelector('[data-status]').textContent='Thanks — this staging form is not yet connected to a live list.';">
+  <form id={formId} data-mock="true" onsubmit="event.preventDefault(); this.querySelector('[data-status]').textContent=&quot;Thanks — this preview build doesn't add you to a live list yet.&quot;;">
     <label class="visually-hidden" for={`${formId}-email`}>Email address</label>
     <div class="update-form-row">
       <input id={`${formId}-email`} type="email" name="email" placeholder="you@example.com" required />

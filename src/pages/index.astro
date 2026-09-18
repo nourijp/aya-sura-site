@@ -54,9 +54,23 @@ import { routes } from '../config/routes.ts';
   <section class="section section--surface">
     <div class="container">
       <h2>More than one story. More than one way into the world.</h2>
+      <style>
+        .bento-img {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+          border-radius: var(--radius-card);
+        }
+      </style>
       <div class="grid grid-2" style="margin-top:2rem;">
         <div class="card bento-tile">
-          <MediaPlaceholder label="BOOK/STORY — open illustrated spread" ratio="wide" variant={2} />
+          <img
+            src="/images/books/aya-sura-library.jpg"
+            alt="Aya and Sura together in a room lined with bookshelves"
+            class="bento-img"
+            width="1400"
+            loading="lazy"
+          />
           <h3>Read their adventures.</h3>
           <p class="muted">Follow Aya, Sura and their friends through stories about family, friendship, faith, curiosity and growing up.</p>
           <a class="btn btn-ghost" href={routes.stories}>Explore Stories</a>

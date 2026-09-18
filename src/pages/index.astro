@@ -20,13 +20,23 @@ import { routes } from '../config/routes.ts';
         </div>
         <p class="muted" style="margin-top:.75rem;font-size:.85rem;">Founding Season · {business.foundingMonths} monthly digital Adventures · ${business.foundingPrice.toFixed(2)} total</p>
       </div>
-      <MediaPlaceholder
-        label="HERO: Aya + Sura + Poji together, with hints of the wider cast"
-        ratio="wide"
-        variant={1}
+      <img
+        src="/images/brand/hero-group.png"
+        alt="Aya, Sura and Poji together in a group photo, with friends from the wider cast"
+        class="hero-group-art"
+        width="1600"
+        loading="eager"
       />
     </div>
   </section>
+
+  <style>
+    .hero-group-art {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
 
   <!-- AYA & SURA ADVENTURE CLUB FEATURED SECTION -->
   <section class="section section--deep">

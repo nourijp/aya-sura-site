@@ -67,11 +67,17 @@ from the UI, and check items off as the owner resolves them.
 
 ## Characters
 
-- [ ] Candidate "Friends & Family" characters awaiting approved art/bio
-      (e.g. Isa, Nao, other Muslim Manga Club adaptations per
-      `33_Cards_Series_Characters_and_Page_Expansion.md`). Do not add them
-      to `src/pages/characters/index.astro` until approved — no invented
-      biographies.
+- [x] Owner approved adding Isa and Nao to the "Friends & Family" section
+      (September 2026). Real art cropped from existing flashcard
+      illustrations (`they believe.psd`). Only name + art + one neutral,
+      non-invented line each ("One of the familiar faces from the wider
+      Aya & Sura cast.") — no personality/backstory copy has been approved,
+      so none was added. If real bios are approved later, update
+      `src/pages/characters/index.astro` accordingly.
+- [ ] Other Muslim Manga Club adaptations per
+      `33_Cards_Series_Characters_and_Page_Expansion.md` are still
+      unapproved — do not add further characters without the owner
+      explicitly naming them.
 
 ## Testimonials / parent proof
 

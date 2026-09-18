@@ -45,15 +45,25 @@ const cardImgStyle = 'width:100%;aspect-ratio:3/4;object-fit:cover;border-radius
     </div>
   </section>
 
-  <!-- Friends & Family: only names/art with approved information are shown.
-       No approved Isa/Nao (or other) entries exist yet, so nothing is
-       rendered here rather than a large "future cast" placeholder — see
-       docs/OWNER_DECISIONS.md for candidates awaiting approval. Do not
-       invent biographies for unapproved characters. -->
+  <!-- Friends & Family: name + real art + one short, truthful, non-invented
+       line per entry. No personality/backstory details are added beyond
+       what's established — see docs/OWNER_DECISIONS.md. -->
   <section class="section section--soft">
     <div class="container">
       <h2>Friends &amp; family</h2>
-      <p>Aya &amp; Sura is not built around a single one-off story. More friends and familiar faces join the Aya &amp; Sura world as their stories are ready to share — they'll appear here alongside Aya, Sura and Poji.</p>
+      <p>Aya &amp; Sura is not built around a single one-off story. More friends and familiar faces join the world as their stories are ready to share.</p>
+      <div class="grid grid-2" style="margin-top:1.5rem;">
+        <div class="card">
+          <img src="/images/characters/isa.png" alt="Isa" style={`${cardImgStyle}object-fit:contain;`} width="321" loading="lazy" />
+          <h3>Isa</h3>
+          <p class="muted">One of the familiar faces from the wider Aya &amp; Sura cast.</p>
+        </div>
+        <div class="card">
+          <img src="/images/characters/nao.png" alt="Nao" style={`${cardImgStyle}object-fit:contain;`} width="539" loading="lazy" />
+          <h3>Nao</h3>
+          <p class="muted">One of the familiar faces from the wider Aya &amp; Sura cast.</p>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>

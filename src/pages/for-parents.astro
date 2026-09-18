@@ -72,6 +72,12 @@ import MediaPlaceholder from '../components/MediaPlaceholder.astro';
       object-fit: contain;
       margin: 0 auto;
     }
+    .family-art {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: var(--radius-card);
+    }
   </style>
 
   <section class="section section--surface">
@@ -98,7 +104,13 @@ import MediaPlaceholder from '../components/MediaPlaceholder.astro';
 
   <section class="section section--surface">
     <div class="container hero hero--split">
-      <MediaPlaceholder label="PARENT — opening a printed Adventure Club activity page with a child" ratio="wide" variant={3} />
+      <img
+        src="/images/faith/family-father.jpg"
+        alt="A father spending time with Aya and Sura"
+        class="family-art"
+        width="1400"
+        loading="lazy"
+      />
       <div>
         <h2>You should not need to build the lesson yourself.</h2>
         <p>A major goal of the Adventure Club is to give parents something ready to use. Open the story. Print the activity. Ask one of the conversation questions if it feels useful. Skip the pieces your family does not need. The product should reduce planning, not create more of it.</p>

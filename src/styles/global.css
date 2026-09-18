@@ -48,7 +48,7 @@ a { color: inherit; }
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  padding: 0 clamp(1.5rem, 5vw, 3rem);
 }
 
 .section { padding: clamp(2.5rem, 6vw, 5rem) 0; }
@@ -122,7 +122,22 @@ a { color: inherit; }
   display: grid;
   gap: 2.5rem;
   align-items: center;
-  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  /* padding-block (not the `padding` shorthand) -- every .hero is also a
+     .container, and a bare `padding: Y 0` here would zero out the
+     horizontal padding .container just set, running text and buttons
+     edge-to-edge on every hero section site-wide. */
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+/* Below the split breakpoint, center the hero column instead of leaving it
+   left-aligned like the desktop split layout -- a left-aligned block reads
+   as unbalanced once it's the only thing in a single-column mobile view. */
+@media (max-width: 899px) {
+  .hero.hero--split > div:first-child {
+    text-align: center;
+  }
+  .hero.hero--split .btn-row {
+    justify-content: center;
+  }
 }
 @media (min-width: 900px) {
   .hero.hero--split { grid-template-columns: 1.1fr 1fr; }

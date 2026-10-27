@@ -1,0 +1,514 @@
+{
+ "qe1": [
+  {
+   "n": 1,
+   "code": "QE1-01",
+   "label": "All-Seeing",
+   "path": "/wp-content/uploads/2021/03/Card-1-All-Seeing.mp3"
+  },
+  {
+   "n": 2,
+   "code": "QE1-02",
+   "label": "And",
+   "path": "/wp-content/uploads/2021/03/Card-2-And.mp3"
+  },
+  {
+   "n": 3,
+   "code": "QE1-03",
+   "label": "Angels",
+   "path": "/wp-content/uploads/2021/03/Card-3-Angels.mp3"
+  },
+  {
+   "n": 4,
+   "code": "QE1-04",
+   "label": "Believers",
+   "path": "/wp-content/uploads/2021/03/Card-4-Believers.mp3"
+  },
+  {
+   "n": 5,
+   "code": "QE1-05",
+   "label": "Book",
+   "path": "/wp-content/uploads/2021/03/Card-5-Book.mp3"
+  },
+  {
+   "n": 6,
+   "code": "QE1-06",
+   "label": "Day",
+   "path": "/wp-content/uploads/2021/03/Card-6-Day.mp3"
+  },
+  {
+   "n": 7,
+   "code": "QE1-07",
+   "label": "Daytime",
+   "path": "/wp-content/uploads/2021/03/Card-7-Daytime.mp3"
+  },
+  {
+   "n": 8,
+   "code": "QE1-08",
+   "label": "Dust",
+   "path": "/wp-content/uploads/2021/03/Card-8-Dust.mp3"
+  },
+  {
+   "n": 9,
+   "code": "QE1-09",
+   "label": "Earth",
+   "path": "/wp-content/uploads/2021/03/Card-9-Earth.mp3"
+  },
+  {
+   "n": 10,
+   "code": "QE1-10",
+   "label": "Enemy",
+   "path": "/wp-content/uploads/2021/03/Card-10-Enemy.mp3"
+  },
+  {
+   "n": 11,
+   "code": "QE1-11",
+   "label": "Grateful Ones",
+   "path": "/wp-content/uploads/2021/03/Card-11-Grateful-Ones.mp3"
+  },
+  {
+   "n": 12,
+   "code": "QE1-12",
+   "label": "He created",
+   "path": "/wp-content/uploads/2021/03/Card-12-He-created.mp3"
+  },
+  {
+   "n": 13,
+   "code": "QE1-13",
+   "label": "He wants",
+   "path": "/wp-content/uploads/2021/03/Card-13-He-wants.mp3"
+  },
+  {
+   "n": 14,
+   "code": "QE1-14",
+   "label": "Heavens",
+   "path": "/wp-content/uploads/2021/03/Card-14-Heavens.mp3"
+  },
+  {
+   "n": 15,
+   "code": "QE1-15",
+   "label": "Judgment",
+   "path": "/wp-content/uploads/2021/03/Card-15-Judgment.mp3"
+  },
+  {
+   "n": 16,
+   "code": "QE1-16",
+   "label": "Mankind",
+   "path": "/wp-content/uploads/2021/03/Card-16-Mankind.mp3"
+  },
+  {
+   "n": 17,
+   "code": "QE1-17",
+   "label": "Merciful",
+   "path": "/wp-content/uploads/2021/03/Card-17-Merciful.mp3"
+  },
+  {
+   "n": 18,
+   "code": "QE1-18",
+   "label": "Deliver",
+   "path": "/wp-content/uploads/2021/03/Card-18-Deliver.mp3"
+  },
+  {
+   "n": 19,
+   "code": "QE1-19",
+   "label": "Month",
+   "path": "/wp-content/uploads/2021/03/Card-19-Month.mp3"
+  },
+  {
+   "n": 20,
+   "code": "QE1-20",
+   "label": "Moon",
+   "path": "/wp-content/uploads/2021/03/Card-20-Moon.mp3"
+  },
+  {
+   "n": 21,
+   "code": "QE1-21",
+   "label": "Night",
+   "path": "/wp-content/uploads/2021/03/Card-21-Night.mp3"
+  },
+  {
+   "n": 22,
+   "code": "QE1-22",
+   "label": "No",
+   "path": "/wp-content/uploads/2021/03/Card-22-No.mp3"
+  },
+  {
+   "n": 23,
+   "code": "QE1-23",
+   "label": "O",
+   "path": "/wp-content/uploads/2021/03/Card-23-O.mp3"
+  },
+  {
+   "n": 24,
+   "code": "QE1-24",
+   "label": "Card-24-Our",
+   "path": "/wp-content/uploads/2021/04/Card-24-Our.mp3"
+  },
+  {
+   "n": 25,
+   "code": "QE1-25",
+   "label": "Path",
+   "path": "/wp-content/uploads/2021/03/Card-25-Path.mp3"
+  },
+  {
+   "n": 26,
+   "code": "QE1-26",
+   "label": "Patience",
+   "path": "/wp-content/uploads/2021/03/Card-26-Patience.mp3"
+  },
+  {
+   "n": 27,
+   "code": "QE1-27",
+   "label": "Peace",
+   "path": "/wp-content/uploads/2021/03/Card-27-Peace.mp3"
+  },
+  {
+   "n": 28,
+   "code": "QE1-28",
+   "label": "Pharaoh",
+   "path": "/wp-content/uploads/2021/03/Card-28-Pharaoh.mp3"
+  },
+  {
+   "n": 29,
+   "code": "QE1-29",
+   "label": "Power",
+   "path": "/wp-content/uploads/2021/03/Card-29-Power.mp3"
+  },
+  {
+   "n": 30,
+   "code": "QE1-30",
+   "label": "Praise",
+   "path": "/wp-content/uploads/2021/03/Card-30-Praise.mp3"
+  },
+  {
+   "n": 31,
+   "code": "QE1-31",
+   "label": "Prayer",
+   "path": "/wp-content/uploads/2021/03/Card-31-Prayer.mp3"
+  },
+  {
+   "n": 32,
+   "code": "QE1-32",
+   "label": "Ramadhan",
+   "path": "/wp-content/uploads/2021/03/Card-32-Ramadhan.mp3"
+  },
+  {
+   "n": 33,
+   "code": "QE1-33",
+   "label": "Religion",
+   "path": "/wp-content/uploads/2021/03/Card-33-Religion.mp3"
+  },
+  {
+   "n": 34,
+   "code": "QE1-34",
+   "label": "Remember [Youall]",
+   "path": "/wp-content/uploads/2021/03/Card-34-Remember-Youall.mp3"
+  },
+  {
+   "n": 35,
+   "code": "QE1-35",
+   "label": "Satan [Iblis]",
+   "path": "/wp-content/uploads/2021/03/Card-35-Satan-Iblis.mp3"
+  },
+  {
+   "n": 36,
+   "code": "QE1-36",
+   "label": "Servants",
+   "path": "/wp-content/uploads/2021/03/Card-36-Servants.mp3"
+  },
+  {
+   "n": 37,
+   "code": "QE1-37",
+   "label": "Signs",
+   "path": "/wp-content/uploads/2021/03/Card-37-Signs.mp3"
+  },
+  {
+   "n": 38,
+   "code": "QE1-38",
+   "label": "Straight",
+   "path": "/wp-content/uploads/2021/03/Card-38-Straight.mp3"
+  },
+  {
+   "n": 39,
+   "code": "QE1-39",
+   "label": "Sun",
+   "path": "/wp-content/uploads/2021/03/Card-39-Sun.mp3"
+  },
+  {
+   "n": 40,
+   "code": "QE1-40",
+   "label": "Supplication",
+   "path": "/wp-content/uploads/2021/03/Card-40-Supplication.mp3"
+  },
+  {
+   "n": 41,
+   "code": "QE1-41",
+   "label": "That",
+   "path": "/wp-content/uploads/2021/03/Card-41-That.mp3"
+  },
+  {
+   "n": 42,
+   "code": "QE1-42",
+   "label": "To - Towards",
+   "path": "/wp-content/uploads/2021/03/Card-42-To-Towards.mp3"
+  },
+  {
+   "n": 43,
+   "code": "QE1-43",
+   "label": "Upon - Over",
+   "path": "/wp-content/uploads/2021/03/Card-43-Upon-Over.mp3"
+  },
+  {
+   "n": 44,
+   "code": "QE1-44",
+   "label": "We gave",
+   "path": "/wp-content/uploads/2021/03/Card-44-We-gave.mp3"
+  },
+  {
+   "n": 45,
+   "code": "QE1-45",
+   "label": "Worlds",
+   "path": "/wp-content/uploads/2021/03/Card-45-Worlds.mp3"
+  },
+  {
+   "n": 46,
+   "code": "QE1-46",
+   "label": "Worship [You all]",
+   "path": "/wp-content/uploads/2021/03/Card-46-Worship-You-all.mp3"
+  },
+  {
+   "n": 47,
+   "code": "QE1-47",
+   "label": "Card-47-Your",
+   "path": "/wp-content/uploads/2021/04/Card-47-Your.mp3"
+  },
+  {
+   "n": 48,
+   "code": "QE1-48",
+   "label": "God",
+   "path": "/wp-content/uploads/2021/03/Card-48-God.mp3"
+  },
+  {
+   "n": 49,
+   "code": "QE1-49",
+   "label": "Allah",
+   "path": "/wp-content/uploads/2021/03/Card-49-Allah.mp3"
+  },
+  {
+   "n": 50,
+   "code": "QE1-50",
+   "label": "Lord",
+   "path": "/wp-content/uploads/2021/03/Card-50-Lord.mp3"
+  }
+ ],
+ "se1": [
+  {
+   "label": "fi",
+   "path": "/wp-content/uploads/2023/11/fi.mp3"
+  },
+  {
+   "label": "insan",
+   "path": "/wp-content/uploads/2023/11/insan.mp3"
+  },
+  {
+   "label": "la",
+   "path": "/wp-content/uploads/2023/11/la.mp3"
+  },
+  {
+   "label": "khusr",
+   "path": "/wp-content/uploads/2023/11/khusr.mp3"
+  },
+  {
+   "label": "illa",
+   "path": "/wp-content/uploads/2023/11/illa.mp3"
+  },
+  {
+   "label": "amanu",
+   "path": "/wp-content/uploads/2023/11/amanu.mp3"
+  },
+  {
+   "label": "'amilu",
+   "path": "/wp-content/uploads/2023/11/amilu.mp3"
+  },
+  {
+   "label": "ṢawliḤat",
+   "path": "/wp-content/uploads/2023/11/ṢawliḤat.mp3"
+  },
+  {
+   "label": "tawasau",
+   "path": "/wp-content/uploads/2023/11/tawasau.mp3"
+  },
+  {
+   "label": "haq",
+   "path": "/wp-content/uploads/2023/11/haq.mp3"
+  },
+  {
+   "label": "Ṡawbr",
+   "path": "/wp-content/uploads/2023/11/Ṡawbr.mp3"
+  },
+  {
+   "label": "inna",
+   "path": "/wp-content/uploads/2023/11/inna.mp3"
+  },
+  {
+   "label": "'aṢr",
+   "path": "/wp-content/uploads/2023/11/aṢr.mp3"
+  },
+  {
+   "label": "wa",
+   "path": "/wp-content/uploads/2023/11/wa.mp3"
+  },
+  {
+   "label": "QUL",
+   "path": "/wp-content/uploads/2023/11/QUL.mp3"
+  },
+  {
+   "label": "aḤad",
+   "path": "/wp-content/uploads/2023/11/aḤad.mp3"
+  },
+  {
+   "label": "Ṣawmad",
+   "path": "/wp-content/uploads/2023/11/Ṣawmad.mp3"
+  },
+  {
+   "label": "lam",
+   "path": "/wp-content/uploads/2023/11/lam.mp3"
+  },
+  {
+   "label": "yalid",
+   "path": "/wp-content/uploads/2023/11/yalid.mp3"
+  },
+  {
+   "label": "yulad",
+   "path": "/wp-content/uploads/2023/11/yulad.mp3"
+  },
+  {
+   "label": "huwa",
+   "path": "/wp-content/uploads/2023/11/huwa.mp3"
+  },
+  {
+   "label": "yakun",
+   "path": "/wp-content/uploads/2023/11/yakun.mp3"
+  },
+  {
+   "label": "kufuwan",
+   "path": "/wp-content/uploads/2023/11/kufuwan.mp3"
+  },
+  {
+   "label": "hi - hu",
+   "path": "/wp-content/uploads/2023/11/hi-hu.mp3"
+  },
+  {
+   "label": "Allawh",
+   "path": "/wp-content/uploads/2023/11/Allawh.mp3"
+  },
+  {
+   "label": "wa2",
+   "path": "/wp-content/uploads/2023/11/wa2.mp3"
+  },
+  {
+   "label": "li 2",
+   "path": "/wp-content/uploads/2023/11/li-2.mp3"
+  },
+  {
+   "label": "na'budu",
+   "path": "/wp-content/uploads/2023/11/nabudu.mp3"
+  },
+  {
+   "label": "ihdi",
+   "path": "/wp-content/uploads/2023/11/ihdi.mp3"
+  },
+  {
+   "label": "rawhman",
+   "path": "/wp-content/uploads/2023/11/rawhman.mp3"
+  },
+  {
+   "label": "him",
+   "path": "/wp-content/uploads/2023/11/him.mp3"
+  },
+  {
+   "label": "malik",
+   "path": "/wp-content/uploads/2023/11/malik.mp3"
+  },
+  {
+   "label": "iyyaka",
+   "path": "/wp-content/uploads/2023/11/iyyaka.mp3"
+  },
+  {
+   "label": "nasta'in",
+   "path": "/wp-content/uploads/2023/11/nastain.mp3"
+  },
+  {
+   "label": "al",
+   "path": "/wp-content/uploads/2023/11/al.mp3"
+  },
+  {
+   "label": "ism",
+   "path": "/wp-content/uploads/2023/11/ism.mp3"
+  },
+  {
+   "label": "dhawllin",
+   "path": "/wp-content/uploads/2023/11/dhawllin.mp3"
+  },
+  {
+   "label": "rawb",
+   "path": "/wp-content/uploads/2023/11/rawb.mp3"
+  },
+  {
+   "label": "la",
+   "path": "/wp-content/uploads/2023/11/la-1.mp3"
+  },
+  {
+   "label": "'ala",
+   "path": "/wp-content/uploads/2023/11/ala.mp3"
+  },
+  {
+   "label": "mustaqim",
+   "path": "/wp-content/uploads/2023/11/mustaqim.mp3"
+  },
+  {
+   "label": "Ṡirawṭ",
+   "path": "/wp-content/uploads/2023/11/Ṡirawṭ.mp3"
+  },
+  {
+   "label": "'alamin",
+   "path": "/wp-content/uploads/2023/11/alamin.mp3"
+  },
+  {
+   "label": "hamd",
+   "path": "/wp-content/uploads/2023/11/hamd.mp3"
+  },
+  {
+   "label": "an'amta",
+   "path": "/wp-content/uploads/2023/11/anamta.mp3"
+  },
+  {
+   "label": "maĠdhub",
+   "path": "/wp-content/uploads/2023/11/maGdhub.mp3"
+  },
+  {
+   "label": "Ġayr",
+   "path": "/wp-content/uploads/2023/11/Gayr.mp3"
+  },
+  {
+   "label": "allathina",
+   "path": "/wp-content/uploads/2023/11/allathina.mp3"
+  },
+  {
+   "label": "rawhim",
+   "path": "/wp-content/uploads/2023/11/rawhim.mp3"
+  },
+  {
+   "label": "yaumiddin",
+   "path": "/wp-content/uploads/2023/11/yaumiddin.mp3"
+  },
+  {
+   "label": "bi",
+   "path": "/wp-content/uploads/2023/11/bi.mp3"
+  },
+  {
+   "label": "na",
+   "path": "/wp-content/uploads/2023/11/na.mp3"
+  }
+ ]
+}

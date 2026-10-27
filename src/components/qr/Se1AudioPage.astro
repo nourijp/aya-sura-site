@@ -1,0 +1,18 @@
+---
+import QrShell from './QrShell.astro';
+import CardAudioList from './CardAudioList.astro';
+import { audioPacks } from '../../data/audio-packs.ts';
+---
+<QrShell
+  title="Audio for Aya & Sura Cards"
+  eyebrow="Surah Edition — Volume 1"
+  description="Listen to every Surah Edition word, pronounced slowly by a native speaker."
+  back={{ href: '/qr/cards/se1/', label: 'Back to Surah Edition' }}
+>
+  <p class="qr-intro">Tap play on any word to hear it. Recordings are listed by word.</p>
+  <CardAudioList deck="se1" />
+  <div class="qr-note">
+    <p>The individual recordings of the words from Volume 1 of the Aya &amp; Sura flashcards have been purposefully pronounced slowly by a native speaker. However, keep in mind that the way an Arabic word is pronounced in isolation will vary from the way it is pronounced in an ayah of the Holy Quran because there are various rules about how to connect the words together. (In the future we are planning to include individual recordings of the verses referenced in the flashcards. For now please refer to a website of your choice to hear the recordings of the ayahs.)</p>
+  </div>
+  <p><a class="btn btn-secondary" href={audioPacks.se1.href} download>Download all {audioPacks.se1.count} recordings ({audioPacks.se1.size})</a></p>
+</QrShell>

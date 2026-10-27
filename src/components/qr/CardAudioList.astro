@@ -1,0 +1,54 @@
+---
+import data from '../../data/legacy-audio.json';
+
+interface Props { deck: 'qe1' | 'se1' }
+const { deck } = Astro.props;
+const enc = (p: string) => p.split('/').map(encodeURIComponent).join('/');
+
+const items = deck === 'qe1'
+  ? data.qe1.map((c) => ({ n: String(c.n), code: c.code, label: c.label, src: enc(c.path) }))
+  : data.se1.map((c) => ({ n: '', code: '', label: c.label, src: enc(c.path) }));
+---
+<div class="audio-list" data-audio-list>
+  <label class="audio-filter">
+    <span>{deck === 'qe1' ? 'Find a card by its number (bottom-left of the card) or by word' : 'Find a word'}</span>
+    <input type="search" placeholder={deck === 'qe1' ? 'e.g. 7, QE1-07 or Moon' : 'e.g. Allah'} autocomplete="off" data-filter />
+  </label>
+  <ul class="audio-rows">
+    {items.map((it) => (
+      <li data-n={it.n} data-key={`${it.code} ${it.label}`.toLowerCase()}>
+        <div class="audio-meta">
+          {it.code && <span class="audio-code">{it.code}</span>}
+          <span class="audio-label">{it.label}</span>
+        </div>
+        <audio controls preload="none" src={it.src} aria-label={`Listen: ${it.label}`}></audio>
+      </li>
+    ))}
+  </ul>
+  <p class="audio-empty" data-empty hidden>No match — try the card number or a different word.</p>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-audio-list]').forEach((root) => {
+    const rows = Array.from(root.querySelectorAll<HTMLElement>('.audio-rows li'));
+    const input = root.querySelector<HTMLInputElement>('[data-filter]');
+    const empty = root.querySelector<HTMLElement>('[data-empty]');
+
+    input?.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      const num = q.match(/^(?:qe1-?)?0*(\d+)$/);
+      let shown = 0;
+      rows.forEach((li) => {
+        const hit = !q || (num ? li.dataset.n === num[1] : (li.dataset.key || '').includes(q));
+        li.hidden = !hit;
+        if (hit) shown++;
+      });
+      if (empty) empty.hidden = shown > 0;
+    });
+
+    // Only one recording plays at a time.
+    root.addEventListener('play', (e) => {
+      root.querySelectorAll('audio').forEach((a) => { if (a !== e.target) (a as HTMLAudioElement).pause(); });
+    }, true);
+  });
+</script>

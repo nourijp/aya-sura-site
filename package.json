@@ -8,9 +8,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "check-links": "node scripts/check-links.mjs",
-    "postbuild": "node scripts/check-links.mjs"
+    "postbuild": "node scripts/check-links.mjs",
+    "prebuild": "node scripts/build-redirects.mjs"
   },
   "dependencies": {
+    "@astrojs/sitemap": "3.2.1",
     "astro": "^4.16.0"
   }
 }

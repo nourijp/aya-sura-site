@@ -1,0 +1,10 @@
+{
+  "_comment": "Short links for QR codes. Print NEW QR codes as https://scan.ayasura.com/<key> (or https://ayasura.com/s/<key>) — never as a deep page URL. The destination can then be changed at any time (companion app, audio pack, new volume page) without reprinting. Redirects are 302 so they stay changeable. Existing printed codes (/about/, /qr/cards/se1/) keep working as real pages.",
+  "qe1": "/qr/cards/qe1/",
+  "se1": "/qr/cards/se1/",
+  "qe1-audio": "/qr/audio/qe1-audio/",
+  "se1-audio": "/qr/audio/se1/",
+  "games": "/qr/games/",
+  "pronunciation": "/qr/pronounciation/",
+  "audio-packs": "/qr/#audio-packs"
+}

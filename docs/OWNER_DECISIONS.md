@@ -98,16 +98,17 @@ from the UI, and check items off as the owner resolves them.
 
 ## QR / legacy resource migration
 
-- [ ] Full legacy QR/audio URL inventory from the live WordPress site
-      (`migration/legacy-url-inventory.csv`, `public/_redirects`, and
-      `migration/qr-test-results.md` are still empty templates). Do not cut
-      over production DNS until every printed QR destination has been
-      tested per `12_QR_RESOURCE_COMPATIBILITY.md`.
-- [ ] Real audio/card data for `/resources/cards/quran-edition/` and
-      `/resources/cards/surah-edition/`. Per the v12 audit, these pages no
-      longer show fabricated "Sample vocabulary word" / "audio coming soon"
-      sample entries — they now show an honest "resources are being
-      migrated" state with a Contact link until the real inventory lands.
+- [x] Legacy URL inventory built from the live WordPress sitemap (`migration/legacy-url-inventory.csv`, 57 URLs).
+- [x] All 14 card-support pages rebuilt at their **original paths** (`/qr/*`, `/support/`, `/about/`) with the
+      real content; 102 audio files preserved at their original `/wp-content/uploads/…` paths; 2 downloadable
+      audio packs. The fake "being migrated" `/resources/*` pages were removed (they now redirect to `/qr/`).
+- [x] Printed codes identified from product photos: Quran box → `ayasura.com/about/`,
+      Surah box → `ayasura.com/qr/cards/se1/` (see `migration/qr-test-results.md`).
+- [ ] **Owner:** scan the guide cards / promo cards of both decks and record the URLs (checklist in `qr-test-results.md`).
+- [ ] **Owner:** Surah Edition number→word mapping (cards are SE01–SE40; legacy site never had it) — optional.
+- [ ] **Owner:** run `migration/CUTOVER_RUNBOOK.md` (needs a Cloudflare API token + DreamHost/WordPress access).
+- [ ] Do not cut over production DNS until `node scripts/verify-legacy-urls.mjs https://<preview>` is green and the
+      manual scans are logged.
 
 ## v12 pass (September 2026) — see `aya_sura_strategy_audit_v12/`
 

@@ -51,11 +51,17 @@ const FAKE_CONTENT_MARKERS = [
 const htmlFiles = walk(DIST);
 // Only <a href="..."> — not <link>/<script> asset references.
 const hrefPattern = /<a\s[^>]*href="([^"]*)"/g;
+// Media/image sources: a QR-linked audio file or product image must never 404.
+const srcPattern = /<(?:audio|source|img)\s[^>]*\ssrc="([^"]+)"/g;
 let failures = [];
 
 function internalPathExists(path) {
-  const clean = path.split('#')[0].split('?')[0];
+  let clean = path.split('#')[0].split('?')[0];
+  try { clean = decodeURIComponent(clean).normalize('NFC'); } catch { /* keep raw */ }
   if (clean === '') return true;
+  // real static files (audio, zips, images, pdfs) are valid link targets too
+  const asFile = join(DIST, clean);
+  if (extname(clean) && extname(clean) !== '.html' && existsSync(asFile) && statSync(asFile).isFile()) return true;
   const candidate = join(DIST, clean, clean.endsWith('/') || clean === '' ? 'index.html' : '');
   const direct = join(DIST, clean.endsWith('.html') ? clean : join(clean, 'index.html'));
   return existsSync(direct);
@@ -67,6 +73,14 @@ for (const file of htmlFiles) {
   for (const marker of FAKE_CONTENT_MARKERS) {
     if (html.includes(marker)) {
       failures.push(`${file}: rendered text contains fake/internal marker "${marker}"`);
+    }
+  }
+
+  let sm;
+  while ((sm = srcPattern.exec(html))) {
+    const src = sm[1];
+    if (src.startsWith('/') && !src.startsWith('//') && !internalPathExists(src)) {
+      failures.push(`${file}: media/image src "${src}" does not exist in dist/`);
     }
   }
 

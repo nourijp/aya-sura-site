@@ -1,0 +1,11 @@
+---
+interface Props { deck: 'qe1' | 'se1' | 'generic' }
+const { deck } = Astro.props;
+const audio = deck === 'se1' ? '/qr/audio/se1/' : '/qr/audio/';
+---
+<ul class="qr-menu">
+  <li><a href={audio}><span>Audio<small>Hear every word, pronounced slowly by a native speaker</small></span></a></li>
+  <li><a href="/qr/games/"><span>Games<small>Ways to play and learn with your deck</small></span></a></li>
+  <li><a href="/qr/pronounciation/"><span>Pronunciation help<small>Elementary, intermediate and advanced guides</small></span></a></li>
+  <li><a href="/qr/cards-disclaimer/"><span>Disclaimer<small>About the illustrations, verses and respectful etiquette</small></span></a></li>
+</ul>

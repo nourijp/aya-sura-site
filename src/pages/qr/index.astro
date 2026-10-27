@@ -1,0 +1,29 @@
+---
+import QrShell from '../../components/qr/QrShell.astro';
+import { audioPacks } from '../../data/audio-packs.ts';
+---
+<QrShell
+  title="Card Audio & Resources"
+  eyebrow="Aya & Sura flashcards"
+  description="Audio recordings, games and pronunciation help for the Aya & Sura flashcards. Choose your deck."
+  intro="Scanned a code on your Aya & Sura flashcards? Choose your deck to hear every word, learn games to play together and get pronunciation help."
+>
+  <ul class="qr-menu">
+    <li><a href="/qr/cards/qe1/"><span>Quran Edition — Volume 1<small>50 vocabulary cards · audio, games and pronunciation help</small></span></a></li>
+    <li><a href="/qr/cards/se1/"><span>Surah Edition — Volume 1<small>Al-Fatihah, Al-Ikhlas and Al-‘Asr · audio, games and pronunciation help</small></span></a></li>
+  </ul>
+
+  <h2 id="audio-packs">Take the audio with you</h2>
+  <p>Download all of the recordings for a deck to keep on your phone or computer — no internet needed once they’re saved.</p>
+  <p>
+    <a class="btn btn-primary" href={audioPacks.qe1.href} download>Quran Edition audio ({audioPacks.qe1.size})</a>
+    <a class="btn btn-secondary" href={audioPacks.se1.href} download>Surah Edition audio ({audioPacks.se1.size})</a>
+  </p>
+
+  <h2>More help</h2>
+  <ul class="qr-menu">
+    <li><a href="/qr/games/"><span>Game ideas<small>Karuta, Round About, Solo and more</small></span></a></li>
+    <li><a href="/qr/pronounciation/"><span>Pronunciation guide<small>Elementary, intermediate and advanced</small></span></a></li>
+    <li><a href="/contact/"><span>Contact us<small>Questions about your cards or an order</small></span></a></li>
+  </ul>
+</QrShell>

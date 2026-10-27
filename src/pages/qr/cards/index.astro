@@ -1,0 +1,13 @@
+---
+import QrShell from '../../../components/qr/QrShell.astro';
+import QrMenu from '../../../components/qr/QrMenu.astro';
+---
+<QrShell
+  title="Aya & Sura Cards"
+  eyebrow="Getting started with Aya & Sura Flashcards"
+  description="Audio, games, pronunciation help and more for your Aya & Sura flashcards."
+  back={{ href: '/qr/', label: 'Card Audio & Resources' }}
+>
+  <QrMenu deck="generic" />
+  <p class="qr-note">Have the <strong>Surah Edition</strong>? <a href="/qr/cards/se1/">Go to the Surah Edition page →</a></p>
+</QrShell>

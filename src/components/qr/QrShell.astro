@@ -1,0 +1,78 @@
+---
+// Shared shell for card-support ("QR") pages. Mobile-first: these pages are
+// opened by phone after scanning the code on a printed deck.
+import Layout from '../../layouts/Layout.astro';
+interface Props {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  back?: { href: string; label: string };
+  intro?: string;
+}
+const { title, description, eyebrow = 'Card Audio & Resources', back, intro } = Astro.props;
+---
+<Layout title={title} description={description}>
+  <section class="section qr-page">
+    <div class="container qr-container">
+      {back && <a class="qr-back" href={back.href}>← {back.label}</a>}
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      {intro && <p class="qr-intro">{intro}</p>}
+      <slot />
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .qr-container { max-width: 760px; }
+  .qr-page h1 { margin-bottom: .5rem; }
+  .qr-back { display: inline-block; margin-bottom: 1rem; font-weight: 600; text-decoration: none; }
+  .qr-back:hover { text-decoration: underline; }
+  .qr-intro { color: var(--muted); font-size: 1.05rem; max-width: 60ch; }
+
+  /* big tap targets for phone scanners */
+  .qr-menu { display: grid; gap: .85rem; margin: 1.75rem 0; padding: 0; list-style: none; }
+  .qr-menu a {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 1.1rem 1.25rem; min-height: 64px; text-decoration: none; color: var(--text);
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card);
+    font-weight: 700; font-size: 1.1rem;
+  }
+  .qr-menu a small { display: block; font-weight: 400; color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+  .qr-menu a:hover, .qr-menu a:focus-visible { border-color: var(--brand-deep); }
+  .qr-menu a::after { content: "→"; color: var(--brand-deep); font-size: 1.3rem; }
+
+  /* audio list */
+  .audio-filter { display: grid; gap: .35rem; font-weight: 600; margin: 1.25rem 0 .75rem; }
+  .audio-filter input { padding: .85em 1em; border: 1px solid var(--line); border-radius: var(--radius-small); font: inherit; font-size: 1.05rem; }
+  .audio-rows { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+  .audio-rows li { display: grid; gap: .4rem; padding: .85rem 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-small); }
+  .audio-rows li[hidden] { display: none; }
+  .audio-meta { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
+  .audio-code { font-weight: 800; color: var(--brand-deep); font-variant-numeric: tabular-nums; }
+  .audio-label { font-weight: 600; }
+  .audio-rows audio { width: 100%; height: 44px; }
+  .audio-empty { color: var(--muted); }
+
+  .qr-note { background: var(--brand-soft); border-radius: var(--radius-small); padding: 1rem 1.25rem; margin: 1.25rem 0; }
+
+  /* sanitized legacy WordPress content (games, pronunciation guide, disclaimers) */
+  .legacy-content { line-height: 1.65; }
+  .legacy-content section { scroll-margin-top: 5.5rem; margin: 2.25rem 0; }
+  .legacy-content h2 { margin-top: 2rem; }
+  .legacy-content h5 { font-size: 1rem; font-weight: 400; margin: .6rem 0; }
+  .legacy-content h5 b, .legacy-content h5 strong { font-weight: 700; }
+  .legacy-content img { max-width: 100%; height: auto; border-radius: var(--radius-small); margin: .5rem 0; }
+  .legacy-content ul, .legacy-content ol { padding-left: 1.25rem; }
+  .legacy-content li > h5 { margin: .25rem 0; }
+  .legacy-content mark.hl { background: none; color: #c0392b; font-weight: 800; }
+  .legacy-content .legacy-btn {
+    display: inline-block; margin: .25rem .4rem .25rem 0; padding: .55em 1em; border-radius: 999px;
+    border: 1px solid var(--brand-deep); color: var(--brand-deep); text-decoration: none; font-weight: 600; font-size: .95rem;
+  }
+  .legacy-content .legacy-btn:hover { background: var(--brand-deep); color: #fff; }
+  .legacy-content table { display: block; overflow-x: auto; border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+  .legacy-content th, .legacy-content td { border: 1px solid var(--line); padding: .55em .8em; text-align: left; vertical-align: top; }
+  .legacy-content th { background: var(--brand-soft); }
+  .legacy-content tbody tr:nth-child(even) { background: rgba(0,0,0,.025); }
+</style>

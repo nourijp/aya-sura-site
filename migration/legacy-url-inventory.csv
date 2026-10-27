@@ -1,5 +1,58 @@
-old_url,product,printed_qr,current_http_status,current_destination,resource_type,new_route,migration,verified
-# TODO(owner): populate this inventory by inspecting the live WordPress/WooCommerce
-# site and by manually scanning every physical card/deck QR code, per
-# 12_QR_RESOURCE_COMPATIBILITY.md. Do not invent rows — leave this file empty
-# of real data until the actual inventory has been collected.
+path,category,printed_on_product,expect_status,expect_location_contains,notes
+/about/,qr-landing,YES — Quran Edition (QE1) box back QR (decoded from product photos),200,,Real page. Has 'Card audio & games' shortcut at top so box scans reach /qr/cards/ in one tap. Old site: apex->www 301 then page w/ 'About Cards' button.
+/qr/cards/se1/,qr-landing,YES — Surah Edition (SE1) box back QR (decoded from product photo),200,,Real page: audio / games / pronunciation / disclaimer menu.
+/qr/,qr,unknown — verify by scanning guide cards,200,,Old page was blank. Now a deck chooser + audio pack downloads.
+/qr/cards/,qr,unknown — verify by scanning guide cards,200,,Menu page; linked from old /about/ 'About Cards' button.
+/qr/cards/qe1/,qr,unknown — verify by scanning guide cards,200,,
+/qr/cards-qe1/,qr,unknown,200,,QE1 audio by number (old 'Search by Number' target).
+/qr/cards-disclaimer/,qr,unknown,200,,
+/qr/games/,qr,unknown,200,,"Game ideas (Karuta, Round About, Solo, Numbers)."
+/qr/pronounciation/,qr,unknown,200,,Legacy misspelling preserved deliberately.
+/qr/audio/,qr,unknown,200,,QE1 audio.
+/qr/audio/qe1-audio/,qr,unknown,200,,
+/qr/audio/qe1-n/,qr,unknown,200,,
+/qr/audio/se1/,qr,unknown,200,,SE1 audio (52 words).
+/qr/audio/se1-n/,qr,unknown,200,,Old page wrongly showed the QE1 list; now shows SE1 list.
+/support/,app-store,YES — App Store / Google Play support URL (confirm in store consoles),200,,Text preserved verbatim incl. App Name / Website / Support Email.
+/qr/pronunciation/,alias,no,301,/qr/pronounciation/,Correct spelling alias.
+/s/qe1,short-link,no (future QR codes),302,/qr/cards/qe1/,
+/s/se1,short-link,no (future QR codes),302,/qr/cards/se1/,
+/aya/,marketing,no,301,/characters/aya/,
+/sura/,marketing,no,301,/characters/sura/,
+/games/,marketing,no,301,/qr/games/,
+/cards-by-code/,marketing,no,301,/qr/cards/se1/,Old draft page listing SE01-SE40 only.
+/collection/flashcards/,marketing,no,301,/cards/,
+/collection/book/,marketing,no,301,/books/,
+/collection/magazine/,marketing,no,301,/adventure-club/,
+/subscribe/,marketing,no,301,/adventure-club/,Stale 'Aya & Sura Monthly' pitch (dead plugin). OWNER: confirm no live subscribers.
+/subscription-plan/,marketing,no,301,/adventure-club/,
+/all-blocks/,marketing,no,301,/adventure-club/,
+/form/,marketing,no,301,/contact/,
+/products/,marketing,no,301,/shop/,
+/member-tos-page/,marketing,no,301,/terms/,
+/shop/,marketing,no,200,,New internal shop bridge page (old WooCommerce /shop/ moves to store).
+/member-login/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/member-logout/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/register/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/lost-password/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/dashboard/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/student-registration/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/instructor-registration/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/public-individual-page/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/default-redirect-page/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/sample-page/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/be-back-soon/,dead-plugin-page,no,301,/,Showed raw unrendered plugin shortcodes on the old site.
+/cart/,store,no,301,{STORE}/cart/,
+/checkout/,store,no,301,{STORE}/checkout/,
+/my-account/,store,no,301,{STORE}/my-account/,
+/stripe-checkout-result/,store,no,301,{STORE}/stripe-checkout-result/,
+/my-account-2/,store,no,301,{STORE}/my-account/,
+/product/aya-sura-quran-deck-1/,store,maybe — product links in emails/social,301,{STORE}/product/aya-sura-quran-deck-1/,
+/product/sura-edition-deck-1/,store,maybe — product links in emails/social,301,{STORE}/product/sura-edition-deck-1/,
+/product/donation/,store,maybe — product links in emails/social,301,{STORE}/product/donation/,
+/product/pre-order-aya-sticker-set/,store,maybe — product links in emails/social,301,{STORE}/product/pre-order-aya-sticker-set/,
+/product/sura-sticker-set/,store,maybe — product links in emails/social,301,{STORE}/product/sura-sticker-set/,
+/product/aya-sura-flashcards-quran-edition-no-shipping/,store,maybe — product links in emails/social,301,{STORE}/product/aya-sura-flashcards-quran-edition-no-shipping/,
+/product/aya-sura-deck-surah-edition-bonus-sticker-no-shipping/,store,maybe — product links in emails/social,301,{STORE}/product/aya-sura-deck-surah-edition-bonus-sticker-no-shipping/,
+/wp-login.php,store,no,302,{STORE}/wp-login.php,
+/wp-json/wc/store/v1/products,store,no (Facebook/Google catalog feeds may use),302,{STORE}/wp-json/wc/store/v1/products,

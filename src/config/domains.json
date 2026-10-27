@@ -1,0 +1,9 @@
+{
+  "_comment": "Single source of truth for hosts. Flip storeLive to true ONLY after store.ayasura.com serves WooCommerce, and production to true on launch day — see migration/CUTOVER_RUNBOOK.md. Before storeLive, shop/legacy redirects and Buy links point at legacyOrigin (the current live WordPress). production=false keeps the site noindex with a Disallow-all robots.txt (staging); production=true removes noindex, publishes a sitemap and uses the apex as the canonical site.",
+  "apex": "https://ayasura.com",
+  "store": "https://store.ayasura.com",
+  "scan": "https://scan.ayasura.com",
+  "legacyOrigin": "https://www.ayasura.com",
+  "storeLive": false,
+  "production": false
+}

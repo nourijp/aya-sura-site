@@ -3,6 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import MediaPlaceholder from '../components/MediaPlaceholder.astro';
 ---
 <Layout title="About Aya & Sura">
+  <!-- The QR code printed on the Quran Edition box points to /about/ (verified by decoding
+       product photos; see migration/qr-test-results.md). Scanners must find their audio in
+       one tap, so this shortcut stays at the very top of the page. -->
+  <section class="scan-shortcut" aria-label="Flashcard owners">
+    <div class="container scan-shortcut-inner">
+      <p><strong>Using Aya &amp; Sura flashcards?</strong> Hear every word, learn games to play and get pronunciation help.</p>
+      <a class="btn btn-primary" href="/qr/cards/">Card audio &amp; games →</a>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container hero hero--split">
       <div>
@@ -15,6 +25,9 @@ import MediaPlaceholder from '../components/MediaPlaceholder.astro';
   </section>
 
   <style>
+    .scan-shortcut { background: var(--brand-soft); border-bottom: 1px solid var(--line); }
+    .scan-shortcut-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; padding-top: 1rem; padding-bottom: 1rem; }
+    .scan-shortcut-inner p { margin: 0; }
     .about-wordmark {
       width: 100%;
       max-width: 340px;

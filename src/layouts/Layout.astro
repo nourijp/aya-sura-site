@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import domains from '../config/domains.json';
 
 interface Props {
   title: string;
@@ -14,7 +15,7 @@ const { title, description = 'Aya & Sura — stories, games, activities and adve
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex,nofollow" />
+    <meta name="robots" content={domains.production ? 'index,follow' : 'noindex,nofollow'} />
     <title>{title} · Aya & Sura</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png" />

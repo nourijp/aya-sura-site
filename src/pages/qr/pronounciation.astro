@@ -1,0 +1,14 @@
+---
+import QrShell from '../../components/qr/QrShell.astro';
+import html from '../../content/legacy/pronounciation.html?raw';
+// the legacy page repeated its own title as the first <h2>; the shell supplies the <h1>
+const body = html.replace(/^\s*<h2>[\s\S]*?<\/h2>\s*/, '');
+---
+<QrShell
+  title="Pronunciation guide"
+  eyebrow="Aya & Sura Cards"
+  description="Elementary, intermediate and advanced pronunciation guides for the Aya & Sura flashcards."
+  back={{ href: '/qr/cards/', label: 'Back to main' }}
+>
+  <div class="legacy-content" set:html={body} />
+</QrShell>

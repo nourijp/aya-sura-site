@@ -1,0 +1,14 @@
+---
+import QrShell from '../../components/qr/QrShell.astro';
+import html from '../../content/legacy/disclaimer.html?raw';
+// the legacy page repeated its own title as the first <h2>; the shell supplies the <h1>
+const body = html.replace(/^\s*<h2>[\s\S]*?<\/h2>\s*/, '');
+---
+<QrShell
+  title="Disclaimers"
+  eyebrow="Aya & Sura Cards"
+  description="About the illustrations, the Quranic verses and respectful etiquette for the Aya & Sura flashcards."
+  back={{ href: '/qr/cards/', label: 'Back to main' }}
+>
+  <div class="legacy-content" set:html={body} />
+</QrShell>

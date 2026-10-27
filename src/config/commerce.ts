@@ -3,11 +3,16 @@
 // The Astro site does not implement its own cart/checkout; "Buy" buttons
 // link out to the existing WooCommerce store.
 
+import domains from './domains.json';
+
+// Where WooCommerce currently lives. Flips from the legacy WordPress origin to
+// store.ayasura.com when domains.json -> storeLive is set at cutover.
+export const shopOrigin: string = domains.storeLive ? domains.store : domains.legacyOrigin;
+
 export const commerce = {
-  // TODO(owner): confirm final shop base at cutover (may become shop.ayasura.com)
-  shopBase: 'https://www.ayasura.com',
-  quranDeck: 'https://www.ayasura.com/product/aya-sura-quran-deck-1/',
-  surahDeck: 'https://www.ayasura.com/product/sura-edition-deck-1/',
+  shopBase: shopOrigin,
+  quranDeck: `${shopOrigin}/product/aya-sura-quran-deck-1/`,
+  surahDeck: `${shopOrigin}/product/sura-edition-deck-1/`,
   // Prices below are staging values taken from source docs; keep centralized
   // so they can be corrected without touching page copy.
   quranDeckPrice: '$19.99',

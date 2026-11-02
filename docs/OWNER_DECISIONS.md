@@ -104,6 +104,8 @@ from the UI, and check items off as the owner resolves them.
       audio packs. The fake "being migrated" `/resources/*` pages were removed (they now redirect to `/qr/`).
 - [x] Printed codes identified from product photos: Quran box → `ayasura.com/about/`,
       Surah box → `ayasura.com/qr/cards/se1/` (see `migration/qr-test-results.md`).
+- [x] SSH inventory of the live server done; backup taken and verified (see `migration/CUTOVER_RUNBOOK.md`). Extra static pages
+      (`/aya1/ /sura1/ /edu/ /form1/ /register/`, `/PDF/promotion.pdf`) and 53 older audio files preserved.
 - [ ] **Owner:** scan the guide cards / promo cards of both decks and record the URLs (checklist in `qr-test-results.md`).
 - [ ] **Owner:** Surah Edition number→word mapping (cards are SE01–SE40; legacy site never had it) — optional.
 - [ ] **Owner:** run `migration/CUTOVER_RUNBOOK.md` (needs a Cloudflare API token + DreamHost/WordPress access).

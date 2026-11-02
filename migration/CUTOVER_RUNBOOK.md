@@ -48,10 +48,36 @@ Save it in a file only you and I can read (never paste it into chat):
 
 ---
 
+## Server findings (read-only SSH inventory, 2026-11-02)
+
+DreamHost shared server `iad1-shared-b8-43` (173.236.255.109), user `ultimate_smiley` (key `~/.ssh/muslimmanga_dreamhost`).
+That one account also hosts Muslim Manga and other sites — **only touch `~/ayasura.com`**.
+
+* Live WordPress 7.1.4 in `~/ayasura.com` (home/siteurl `https://www.ayasura.com`, WP-CLI + PHP 8.2 available).
+* **Not in the public sitemap, found via SSH:** static folders `/aya1/ /sura1/ /edu/ /form1/ /register/` (Dec-2020 Typeform
+  full-screen embeds — `aya1`/`sura1` very likely the "2 promotions" cards in the Quran box), `/PDF/promotion.pdf`
+  (+ copy in `/sura1/`), and `/.well-known/apple-developer-merchantid-domain-association` (Apple Pay). All now preserved
+  verbatim at the root in this repo.
+* 155 audio files in the media library (102 current + 53 older versions) — all preserved at original paths.
+* No custom redirects in `.htaccess` (stock WordPress rules only). `go.ayasura.com` has DNS but does not connect;
+  `new.ayasura.com` is an empty "Just another WordPress site" — nothing to preserve.
+* Plugins: WooCommerce, Stripe gateway, WooPayments, Facebook for WooCommerce, USPS shipping, WC Services, Product Add-ons,
+  legacy REST API, WPBakery, Impreza core, W3 Total Cache, All-in-One WP Migration. **No membership/LMS plugin is active**
+  (their pages are dead shells). 40 WooCommerce orders (31 completed), **no subscriptions** — the old "Monthly" page is dead.
+* A `qr` custom post type (6 published + 2 draft) holds older copies of the `/qr/*` pages; it is not registered, so it has no URLs.
+* The "Refund and Returns" draft in WordPress is WooCommerce's stock template (not usable as the real policy).
+
+## Backup (DONE, 2026-11-02)
+
+`~/backups/ayasura-pre-split-20261102/` on DreamHost **and** `~/Documents/Backups/ayasura-pre-split-20261102/` on the owner's Mac
+(outside the repo — it contains customer data): database (96 tables), uploads, themes, root files/static dirs,
+plugin/theme lists, `SHA256SUMS.txt`. Checksums verified on both copies. Plugins (769 MB) were not archived — they are
+untouched in place; versions are in `plugins.csv`.
+
 ## Phase 0 — Safety net (do first, ~20 min)
 
-1. **Export the Cloudflare DNS zone** for `ayasura.com` (DNS → Records → Export). This is the rollback.
-2. **Full WordPress backup**: database (`wp db export`) + `wp-content/`. Download a copy off DreamHost.
+1. **Export the Cloudflare DNS zone** for `ayasura.com` (DNS → Records → Export) and list any Cloudflare Redirect/Page Rules (they can hide old redirects). This is the rollback.
+2. ~~Full WordPress backup~~ — **done** (see above).
 3. Add to `wp-config.php` now (makes URL changes and rollbacks instant, no DB edit needed):
    ```php
    // define('WP_HOME',    'https://store.ayasura.com');   // uncomment on cutover day

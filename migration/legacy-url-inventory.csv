@@ -55,10 +55,10 @@ path,category,printed_on_product,expect_status,expect_location_contains,notes
 /product/aya-sura-deck-surah-edition-bonus-sticker-no-shipping/,store,maybe — product links in emails/social,301,{STORE}/product/aya-sura-deck-surah-edition-bonus-sticker-no-shipping/,
 /wp-login.php,store,no,302,{STORE}/wp-login.php,
 /wp-json/wc/store/v1/products,store,no (Facebook/Google catalog feeds may use),302,{STORE}/wp-json/wc/store/v1/products,
-/aya1/,legacy-static,LIKELY — original Dec-2020 short link (probably the 'Aya' promotion card),200,,"Found via SSH, not in WP sitemap. Typeform full-screen embed (form eKjGQ3sq). Copied verbatim."
-/sura1/,legacy-static,LIKELY — original short link (probably the 'Sura' promotion card),200,,Typeform embed (qg1WqzWx) + promotion.pdf + aya-logo.jpg in the same folder.
-/edu/,legacy-static,unknown,200,,Typeform 'Center Registration' (Fam6W9ly).
-/form1/,legacy-static,unknown,200,,Typeform (Zw3iEcNO).
-/PDF/promotion.pdf,legacy-static,LIKELY — promotion card / printed material,200,,4.7 MB promotion PDF.
-/sura1/promotion.pdf,legacy-static,LIKELY,200,,"Same PDF, second location."
+/aya1/,legacy-static,"no — launch-era (Dec 2020) campaign form, unused since (owner confirmed); kept in case old links exist",200,,"Found via SSH, not in WP sitemap. Typeform full-screen embed (form eKjGQ3sq). Copied verbatim."
+/sura1/,legacy-static,"no — launch-era (Dec 2020) campaign form, unused since (owner confirmed); kept in case old links exist",200,,Typeform embed (qg1WqzWx) + promotion.pdf + aya-logo.jpg in the same folder.
+/edu/,legacy-static,"no — launch-era (Dec 2020) campaign form, unused since (owner confirmed); kept in case old links exist",200,,Typeform 'Center Registration' (Fam6W9ly).
+/form1/,legacy-static,"no — launch-era (Dec 2020) campaign form, unused since (owner confirmed); kept in case old links exist",200,,Typeform (Zw3iEcNO).
+/PDF/promotion.pdf,legacy-static,"no — launch-era (Dec 2020) campaign form, unused since (owner confirmed); kept in case old links exist",200,,4.7 MB promotion PDF.
+/sura1/promotion.pdf,legacy-static,"no — launch-era (Dec 2020) campaign form, unused since (owner confirmed); kept in case old links exist",200,,"Same PDF, second location."
 /.well-known/apple-developer-merchantid-domain-association,platform,n/a — Apple Pay domain verification,200,,Must also be served from store.ayasura.com (stays in the WordPress folder; re-register the store domain in Stripe).

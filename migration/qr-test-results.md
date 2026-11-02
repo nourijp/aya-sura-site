@@ -15,8 +15,8 @@ Decoded with OpenCV from photographs in the old site's WordPress media library
 | `S__3194893.jpg` (#4221) | `https://ayasura.com/about/` | Quran Edition box (back) |
 | `se1-1-back-box-scaled.jpg` (#4503) | `https://ayasura.com/qr/cards/se1/` | Surah Edition box (back) |
 
-Likely further printed codes (found on the server, not in the media library): `ayasura.com/aya1/` and `ayasura.com/sura1/`
-(Typeform pages, Dec 2020) — almost certainly the two promotion cards. **Owner: confirm by scanning the promo cards.**
+`/aya1/`, `/sura1/`, `/edu/`, `/form1/`, `/register/` (Typeform pages) are **launch-era campaign forms from Dec 2020, unused since** (owner
+confirmed) — not the card QR codes. They are preserved anyway at their original paths.
 
 The Quran Edition box states: *"Includes: 50 vocab cards, 3 guide cards, 2 promotions."* The guide/promo cards
 were **not** photographed — their QR codes (if any) are unverified. 36 of the 88 library images are not exposed by

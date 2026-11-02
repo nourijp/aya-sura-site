@@ -55,7 +55,7 @@ That one account also hosts Muslim Manga and other sites — **only touch `~/aya
 
 * Live WordPress 7.1.4 in `~/ayasura.com` (home/siteurl `https://www.ayasura.com`, WP-CLI + PHP 8.2 available).
 * **Not in the public sitemap, found via SSH:** static folders `/aya1/ /sura1/ /edu/ /form1/ /register/` (Dec-2020 Typeform
-  full-screen embeds — `aya1`/`sura1` very likely the "2 promotions" cards in the Quran box), `/PDF/promotion.pdf`
+  full-screen embeds from the card launch — **unused since, not the card QR codes**, per the owner), `/PDF/promotion.pdf`
   (+ copy in `/sura1/`), and `/.well-known/apple-developer-merchantid-domain-association` (Apple Pay). All now preserved
   verbatim at the root in this repo.
 * 155 audio files in the media library (102 current + 53 older versions) — all preserved at original paths.

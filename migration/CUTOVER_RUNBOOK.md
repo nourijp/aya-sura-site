@@ -71,7 +71,7 @@ Save it in a file only you and I can read (never paste it into chat):
 
 ## Phase 2 — Deploy the new site to Cloudflare Pages (no DNS change yet)
 
-1. Pages → Create project → connect `nourijp/aya-sura-site` → build `npm run build`, output `dist`, env `NODE_VERSION=20`, `ASTRO_TELEMETRY_DISABLED=1`. *(Do not set `PRODUCTION_CUTOVER` yet.)*
+1. Pages → Create project → connect `nourijp/aya-sura-site` → build `npm run build`, output `dist`, env `NODE_VERSION=20`, `ASTRO_TELEMETRY_DISABLED=1`, `DO_NOT_TRACK=1`. *(Do not set `PRODUCTION_CUTOVER` yet.)*
 2. Test on the `*.pages.dev` URL: `node scripts/verify-legacy-urls.mjs https://<project>.pages.dev` (the host-based www/scan tests only apply on real domains — expect those to be the only differences).
 3. Add custom domain **`scan.ayasura.com`** (new hostname, zero risk) → verify `https://scan.ayasura.com/qe1` → `/qr/cards/qe1/`.
 

@@ -10,6 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  ASTRO_TELEMETRY_DISABLED: '1'
+  WRANGLER_SEND_METRICS: 'false'
+  DO_NOT_TRACK: '1'
+
 concurrency:
   group: pages
   cancel-in-progress: true

@@ -53,7 +53,6 @@
 # Dead-plugin / placeholder pages (unrendered shortcodes on the old site) -> home
 /member-login/                     / 301
 /member-logout/                    / 301
-/register/                         / 301
 /lost-password/                    / 301
 /dashboard/                        / 301
 /student-registration/             / 301

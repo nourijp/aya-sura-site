@@ -27,7 +27,6 @@
   "/member-tos-page/": "/terms/",
   "/member-login/": "/",
   "/member-logout/": "/",
-  "/register/": "/",
   "/lost-password/": "/",
   "/dashboard/": "/",
   "/student-registration/": "/",

@@ -47,6 +47,15 @@ for (const c of [...audio.qe1, ...audio.se1]) {
   const r = await get(p);
   check(c.path, r.status === 200 && /audio/.test(r.type), `audio expected 200 audio/*, got ${r.status} ${r.type}`);
 }
+// every other preserved file (extra audio versions, static short-link pages, PDFs) — read from the manifest
+const preserved = JSON.parse(fs.readFileSync('src/data/preserved-files.json', 'utf8'));
+const have = new Set([...audio.qe1, ...audio.se1].map((c) => c.path));
+for (const p of [...preserved.audio.filter((x) => !have.has(x)), ...preserved.static]) {
+  const url = p.replace(/index\.html$/, '');   // Pages serves /x/index.html at /x/
+  const r = await get(url.split('/').map(encodeURIComponent).join('/'));
+  const wantType = p.endsWith('.pdf') ? /pdf/ : p.endsWith('.mp3') ? /audio/ : /./;
+  check(p, r.status === 200 && wantType.test(r.type), `expected 200 ${wantType}, got ${r.status} ${r.type}`);
+}
 for (const z of ['Aya-and-Sura-Quran-Edition-Vol1-Audio.zip', 'Aya-and-Sura-Surah-Edition-Vol1-Audio.zip']) {
   const r = await get('/downloads/' + z); check('/downloads/' + z, r.status === 200, `got ${r.status}`);
 }

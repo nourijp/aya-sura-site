@@ -72,7 +72,8 @@ add('/products/', '/shop/');
 add('/member-tos-page/', '/terms/');
 
 section('Dead-plugin / placeholder pages (unrendered shortcodes on the old site) -> home');
-for (const p of ['member-login', 'member-logout', 'register', 'lost-password', 'dashboard', 'student-registration',
+// NOTE: /register/ is NOT here — it is a real static Typeform page (public/register/) that wins over the empty WP page.
+for (const p of ['member-login', 'member-logout', 'lost-password', 'dashboard', 'student-registration',
   'instructor-registration', 'public-individual-page', 'default-redirect-page', 'sample-page', 'be-back-soon']) {
   add(`/${p}/`, '/');
 }

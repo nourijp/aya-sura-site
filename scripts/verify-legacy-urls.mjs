@@ -64,17 +64,22 @@ for (const z of ['Aya-and-Sura-Quran-Edition-Vol1-Audio.zip', 'Aya-and-Sura-Sura
 let r = await get('/wp-content/uploads/2020/12/not-a-real-file.jpg');
 check('/wp-content fallback', r.status === 302 && r.location.startsWith(STORE), `got ${r.status} ${r.location}`);
 
-// Host-based behaviours (only meaningful on Cloudflare Pages / wrangler)
+// Host-based behaviours need real custom domains (Host header routing), so they are skipped on *.pages.dev previews.
 const apexHost = new URL(domains.apex).host, scanHost = new URL(domains.scan).host;
-r = await get('/about/', { host: `www.${apexHost}` });
-const wl = r.location ? new URL(r.location) : null;   // scheme follows the request (http locally, https on the edge)
-check('www → apex', r.status === 301 && wl && wl.host === apexHost && wl.pathname === '/about/', `got ${r.status} ${r.location}`);
-r = await get('/qe1', { host: scanHost });
-check('scan short link /qe1', r.status === 302 && r.location.endsWith('/qr/cards/qe1/'), `got ${r.status} ${r.location}`);
-r = await get('/', { host: scanHost });
-check('scan root', r.status === 302 && r.location.endsWith('/qr/'), `got ${r.status} ${r.location}`);
-r = await get('/?add-to-cart=123');
-check('?add-to-cart forward', r.status === 307 && r.location.includes('add-to-cart=123') && r.location.startsWith(STORE), `got ${r.status} ${r.location}`);
+const hostTests = !base.hostname.endsWith('.pages.dev');
+if (hostTests) {
+  let r = await get('/about/', { host: `www.${apexHost}` });
+  const wl = r.location ? new URL(r.location) : null;   // scheme follows the request (http locally, https on the edge)
+  check('www → apex', r.status === 301 && wl && wl.host === apexHost && wl.pathname === '/about/', `got ${r.status} ${r.location}`);
+  r = await get('/qe1', { host: scanHost });
+  check('scan short link /qe1', r.status === 302 && r.location.endsWith('/qr/cards/qe1/'), `got ${r.status} ${r.location}`);
+  r = await get('/', { host: scanHost });
+  check('scan root', r.status === 302 && r.location.endsWith('/qr/'), `got ${r.status} ${r.location}`);
+} else {
+  console.log('(host-based www/scan tests skipped on a *.pages.dev preview — run them against the real domains)');
+}
+const rq = await get('/?add-to-cart=123');
+check('?add-to-cart forward', rq.status === 307 && rq.location.includes('add-to-cart=123') && rq.location.startsWith(STORE), `got ${rq.status} ${rq.location}`);
 
 console.log(`\n${pass} passed, ${fail.length} failed (target ${base.origin}, store=${STORE})`);
 if (fail.length) { console.log(fail.map((f) => ' ✖ ' + f).join('\n')); process.exit(1); }

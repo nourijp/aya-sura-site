@@ -74,6 +74,16 @@ That one account also hosts Muslim Manga and other sites — **only touch `~/aya
 plugin/theme lists, `SHA256SUMS.txt`. Checksums verified on both copies. Plugins (769 MB) were not archived — they are
 untouched in place; versions are in `plugins.csv`.
 
+## Preview on real Cloudflare (DONE, 2026-11-20)
+
+Wrangler is logged in via OAuth (`staff@muslimmanga.org`, scopes include `pages:write`, `zone:read`; **no DNS-edit**, so DNS records and
+custom domains are dashboard clicks). Direct-upload project **`aya-sura-preview`** → https://aya-sura-preview.pages.dev
+(Functions + `_redirects` + `_headers` included). `node scripts/verify-legacy-urls.mjs https://aya-sura-preview.pages.dev` →
+**237/237 pass** (host-based www/scan checks need real custom domains). Redeploy: `npx wrangler pages deploy dist --project-name aya-sura-preview --branch main`.
+A Direct-Upload project cannot later be switched to Git integration, so the **production** project should be created in the dashboard
+(Pages → Create → Connect to Git → `nourijp/aya-sura-site`; build `npm run build`, output `dist`, env `NODE_VERSION=20`, `ASTRO_TELEMETRY_DISABLED=1`, `DO_NOT_TRACK=1`)
+so every push to `main` deploys automatically.
+
 ## Phase 0 — Safety net (do first, ~20 min)
 
 1. **Export the Cloudflare DNS zone** for `ayasura.com` (DNS → Records → Export) and list any Cloudflare Redirect/Page Rules (they can hide old redirects). This is the rollback.
